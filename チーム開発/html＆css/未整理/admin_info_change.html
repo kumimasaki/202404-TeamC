@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者情報を変更</title>
+    <link rel="stylesheet" href="admin_info_change.css">
+</head>
+<body>
+    <div class="container">
+        <a href="#" class="back-button">ホームに戻る</a>
+        <h1>管理者情報を変更</h1>
+        <form id="adminForm">
+            <div class="form-content">
+                <div class="icon-container">
+                    <div class="icon-circle">
+                        <span>アイコン</span>
+                    </div>
+                    <input type="file" id="iconUpload" class="file-input">
+                    <label for="iconUpload" class="file-label">ファイル選択</label>
+                </div>
+                <div class="input-fields">
+                    <div class="input-group">
+                        <label for="username">ユーザー名:</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="input-group">
+                        <label for="email">ユーザーメール:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">パスワード:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <div class="input-group">
+                        <label for="confirmPassword">パスワード確認:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword">
+                    </div>
+                </div>
+            </div>
+            <div class="button-group">
+                <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
+                <button type="submit" class="submit-button">変更</button>
+            </div>
+        </form>
+    </div>
+    <script src="admin_info_change.js"></script>
+</body>
+</html>
