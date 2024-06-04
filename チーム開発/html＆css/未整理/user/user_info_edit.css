@@ -1,0 +1,168 @@
+/* Reset some default styles */
+body, h2, a, p, input, label, button {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*body style */
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+/*header全体のスタイル*/
+header {
+    position: fixed; /*topに保持する*/
+    width: 100%;
+    top: 0;
+    padding: 10px 0;
+    background-color: #5475a8b3;
+    color: #fff;
+}
+
+.header-content {
+    display: flex; /* フレックスボックスを使用してヘッダーコンテンツを配置 */
+    justify-content: space-between; /* コンテンツを均等に配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+}
+
+.header-item {
+    display: flex; /* 横並び */
+    gap: 0 30px; /* 隙間を作る */
+    list-style: none; /* 箇条書きの・を削除 */
+}
+
+.item-list {
+    color: white;
+}
+
+#item-icon {
+    display: inline-block; /* インラインブロック要素に変換 */
+    width: 85px;
+    height: 85px;
+    line-height: 85px; /* 文字の行の高さを设置して、内容を垂直中央揃え */
+    text-align: center;
+    border-radius: 50%; /* 円形に表示 */
+    background-color: white;
+    margin-top: -30px;
+}
+
+#item-icon a {
+    color: gray;
+}
+
+/*リンクの线を削除*/
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*main content style*/
+main {
+    padding: 100px 20px 20px;
+}
+
+.main-content {
+    max-width: 600px; /* 调整主体部分的宽度 */
+    margin: 0 auto;
+    font-size: 1.1em; /* 调整字体大小 */
+}
+
+.back-link {
+    display: block;
+    margin-bottom: 20px;
+    color: #5475a8b3;
+    text-decoration: none;
+}
+
+.user-info {
+    display: flex;
+    gap: 20px;
+}
+
+.user-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.circle {
+    width: 120px; /* 调整圆形的尺寸 */
+    height: 120px; /* 调整圆形的尺寸 */
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-bottom: 10px;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.file-btn, .select-btn {
+    margin-top: 10px;
+    font-size: 1em; /* 调整按钮字体大小 */
+    padding: 10px 20px; /* 调整按钮尺寸 */
+    border-radius: 5px; /* 增加圆角 */
+    border: 1px solid #5475a8b3;
+    background-color: #f9f9f9;
+    cursor: pointer;
+}
+
+.user-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1.1em; /* 调整标签字体大小 */
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px; /* 调整输入框的填充 */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* 增加圆角 */
+    font-size: 1.1em; /* 调整输入框字体大小 */
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.save-btn, .update-btn {
+    padding: 10px 20px; /* 调整按钮的填充 */
+    border: none;
+    border-radius: 5px; /* 增加圆角 */
+    background-color: #a9d18e;
+    cursor: pointer;
+    font-size: 1.1em; /* 调整按钮字体大小 */
+}
+
+/*footer全体のスタイル*/
+footer {
+    position: absolute; /*网站底部*/
+    bottom: 0;
+    width: 100%;
+    background-color: #5475a8b3;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-item {
+    display: flex;
+    justify-content: center; /*水平居中*/
+    gap: 10px;
+    list-style: none; /* 删除列表样式 */
+}
+
+.footer-item a {
+    color: white;
+}

@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 80vh;
+    margin: 0; 
+    padding-bottom: 40px; 
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 145px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #c9d3de;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: #f8fafb;
+}
+
+.back-button {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-fields {
+    flex-grow: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 400px;
+    
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#input-button{
+    align-items: center;
+    position: relative;
+}
+.toggle-password{
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    margin-top: -30px;
+    font-size: 20px;
+    color: #346189;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cancel-button {
+    background-color: #f6d1c9;
+    border-color: #edb9a798;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.submit-button {
+    background-color: #b2ebc3;
+    border-color: #b3e6c2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 120px;
+}
+
+/* header 全体のスタイル */
+header {
+    position: fixed; /* top に保持する */
+    width: 100%;
+    top: 0;
+    padding: 10px 0;
+    background-color: #5475a8b3;
+    color: #fff;
+}
+
+.header-content {
+    display: flex; /* フレックスボックスを使用してヘッダーコンテンツを配置 */
+    justify-content: space-between; /* コンテンツを均等に配置 */
+    align-items: center; /* 垂直方向に中央揃え */
+}
+
+.header-item {
+    float: right; /* 右寄せ */
+    margin-right: 30px;
+    padding-top: 20px;
+    color: #fff;
+}
+
+#item-icon {
+    display: inline-block; /* インラインブロック要素に変換 */
+    width: 85px;
+    height: 85px;
+    line-height: 85px; /* 文字の行の高さを設定して、内容を垂直中央揃え */
+    text-align: center;
+    border-radius: 50%; /* 円形に表示 */
+    background-color: white;
+    margin-top: -30px;
+}
+
+#item-icon a {
+    color: gray;
+}
+
+/* リスト全体のスタイル */
+ul {
+    display: flex; /* 横並びにする */
+    gap: 0 30px; /* 隙間を作る */
+    list-style: none; /* 箇条書きの・を削除 */
+}
+
+/* リンクの線を削除 */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/* footer 全体のスタイル */
+footer {
+    position: absolute; /* サイトの底部に置く */
+    bottom: 0;
+    width: 100%;
+    background-color: #5475a8b3;
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+   
+}
+
+.footer-item {
+    justify-content: center; /* item を水平中央揃え */
+}
+
+main {
+    margin-bottom: 0; /* 调整底部外边距，进一步减小距离 */
+}
