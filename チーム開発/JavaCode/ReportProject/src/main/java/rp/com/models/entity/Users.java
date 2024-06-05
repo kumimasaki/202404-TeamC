@@ -30,43 +30,51 @@ import lombok.RequiredArgsConstructor;
 @Table(name = "users")
 public class Users {
 
-    // これは主キーという特別なIDです
-    @Id
-    // IDを自動で増やしていく設定です
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // テーブルのカラム（列）を指定します
-    @Column(name = "user_id")
-    private Long userId;
+	// これは主キーという特別なIDです
+	@Id
+	// IDを自動で増やしていく設定です
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// テーブルのカラム（列）を指定します
+	@Column(name = "user_id")
+	private Long userId;
 
-    // このフィールドは必ず値が必要です
-    @NonNull
-    // ユーザー名という列を作り、必ず値が入るようにします
-    @Column(name = "user_name", nullable = false)
-    private String userName;
+	// このフィールドは必ず値が必要です
+	@NonNull
+	// ユーザー名という列を作り、必ず値が入るようにします
+	@Column(name = "user_name", nullable = false)
+	private String userName;
 
-    // このフィールドは必ず値が必要です
-    @NonNull
-    // メールアドレスという列を作り、必ず値が入るようにします
-    @Column(name = "user_email", nullable = false)
-    private String userEmail;
+	// このフィールドは必ず値が必要です
+	@NonNull
+	// メールアドレスという列を作り、必ず値が入るようにします
+	@Column(name = "user_email", nullable = false)
+	private String userEmail;
 
-    // このフィールドは必ず値が必要です
-    @NonNull
-    // パスワードという列を作り、必ず値が入るようにします
-    @Column(name = "user_password", nullable = false)
-    private String userPassword;
+	// このフィールドは必ず値が必要です
+	@NonNull
+	// パスワードという列を作り、必ず値が入るようにします
+	@Column(name = "user_password", nullable = false)
+	private String userPassword;
 
-    // 削除フラグという列を作り、必ず値が入るようにします
-    @Column(name = "delete_flg", nullable = false)
-    private int deleteFlg = 0;
+	// 削除フラグという列を作り、必ず値が入るようにします
+	@Column(name = "delete_flg", nullable = false)
+	private int deleteFlg = 0;
 
-    // 作成日時という列を作ります。更新はできません
-    @Column(name = "created_at", nullable = false, updatable = false)
-    private LocalDateTime createdAt = LocalDateTime.now();
+	// 作成日時という列を作ります。更新はできません
+	@Column(name = "created_at", nullable = false, updatable = false)
+	private LocalDateTime createdAt = LocalDateTime.now();
 
-    // 管理者ID（外部キー）という列を作り、必ず値が入るようにします
-    @NonNull
-    @ManyToOne
-    @JoinColumn(name = "admin_id", nullable = false)
-    private Admin admin;
+	// 管理者ID（外部キー）という列を作り、必ず値が入るようにします
+	@NonNull
+	@ManyToOne
+	@JoinColumn(name = "admin_id", nullable = false)
+	private Admin admin;
+
+	public Users(String userEmail, String userName, String userPassword) {
+		this.userEmail = userEmail;
+		this.userName = userName;
+		this.userPassword = userPassword;
+		this.createdAt = LocalDateTime.now();
+		this.deleteFlg = 0;
+	}
 }
