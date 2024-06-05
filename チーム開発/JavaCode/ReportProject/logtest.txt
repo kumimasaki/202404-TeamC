@@ -1,3 +1,32 @@
+<<<<<<< HEAD
+2024-06-04T17:45:14.137+09:00  INFO 8864 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 8864 (C:\Users\Administrator\Desktop\チームプロジェクト\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by Administrator in C:\Users\Administrator\Desktop\チームプロジェクト\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-04T17:45:14.139+09:00  INFO 8864 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-04T17:45:14.680+09:00  INFO 8864 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-04T17:45:14.698+09:00  INFO 8864 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+2024-06-04T17:45:15.136+09:00  INFO 8864 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-04T17:45:15.147+09:00  INFO 8864 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-04T17:45:15.148+09:00  INFO 8864 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-04T17:45:15.213+09:00  INFO 8864 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-04T17:45:15.213+09:00  INFO 8864 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1032 ms
+2024-06-04T17:45:15.360+09:00  INFO 8864 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-04T17:45:15.415+09:00  INFO 8864 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-04T17:45:15.447+09:00  INFO 8864 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-04T17:45:15.744+09:00  INFO 8864 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-04T17:45:15.769+09:00  INFO 8864 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-04T17:45:16.076+09:00  INFO 8864 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@782cc5fa
+2024-06-04T17:45:16.079+09:00  INFO 8864 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-04T17:45:16.114+09:00  WARN 8864 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-04T17:45:16.920+09:00  INFO 8864 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-04T17:45:17.049+09:00  INFO 8864 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04T17:45:17.087+09:00  WARN 8864 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-04T17:45:17.345+09:00  WARN 8864 --- [ReportProject] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-06-04T17:45:17.466+09:00  INFO 8864 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-04T17:45:17.474+09:00  INFO 8864 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.717 seconds (process running for 4.355)
+2024-06-04T17:45:55.487+09:00  INFO 8864 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-04T17:45:55.501+09:00  INFO 8864 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-04T17:45:55.503+09:00  INFO 8864 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-04T17:45:55.506+09:00  INFO 8864 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+=======
 2024-06-04T22:36:56.358+09:00  INFO 9100 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 9100 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
 2024-06-04T22:36:56.361+09:00  INFO 9100 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
 2024-06-04T22:36:56.904+09:00  INFO 9100 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
@@ -25,3 +54,31 @@
 2024-06-04T22:37:09.165+09:00  INFO 9100 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-04T22:37:09.167+09:00  INFO 9100 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-06-04T22:37:09.169+09:00  INFO 9100 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> 6ca2a770743a3643dbd0e19d45dce7c38e76d8cd
+2024-06-05T06:27:36.211+09:00  INFO 18388 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 18388 (C:\Users\Administrator\Desktop\チームプロジェクト\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by Administrator in C:\Users\Administrator\Desktop\チームプロジェクト\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-05T06:27:36.214+09:00  INFO 18388 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-05T06:27:36.676+09:00  INFO 18388 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05T06:27:36.729+09:00  INFO 18388 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2024-06-05T06:27:37.130+09:00  INFO 18388 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-05T06:27:37.142+09:00  INFO 18388 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-05T06:27:37.142+09:00  INFO 18388 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-05T06:27:37.193+09:00  INFO 18388 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-05T06:27:37.193+09:00  INFO 18388 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 943 ms
+2024-06-05T06:27:37.324+09:00  INFO 18388 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05T06:27:37.373+09:00  INFO 18388 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-05T06:27:37.403+09:00  INFO 18388 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-05T06:27:37.665+09:00  INFO 18388 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05T06:27:37.687+09:00  INFO 18388 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-05T06:27:37.873+09:00  INFO 18388 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@47be41c6
+2024-06-05T06:27:37.875+09:00  INFO 18388 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-05T06:27:37.910+09:00  WARN 18388 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-05T06:27:38.704+09:00  INFO 18388 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05T06:27:38.760+09:00  INFO 18388 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T06:27:38.790+09:00  WARN 18388 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05T06:27:38.993+09:00  WARN 18388 --- [ReportProject] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
+2024-06-05T06:27:39.306+09:00  INFO 18388 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-05T06:27:39.314+09:00  INFO 18388 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.461 seconds (process running for 4.079)
+2024-06-05T06:27:47.050+09:00  INFO 18388 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-05T06:27:47.063+09:00  INFO 18388 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05T06:27:47.065+09:00  INFO 18388 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-05T06:27:47.067+09:00  INFO 18388 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
