@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ユーザー報告一覧</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+      <div class="header-content">
+         <div class="site-name">
+            <h2>業務報告システム </h2>
+         </div>
+         <ul class="header-item">
+            <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
+            <li class="item-list"><a href="">管理者名前</a></li>
+            <li class="item-list"><a href="">管理者情報変更</a></li>
+            <li class="item-list"> <a href="">ユーザ追加</a></li>
+            <li class="item-list"><a href="">ユーザ一覧</a> </li>
+            <li class="item-list"><a href="">報告事項一覧</a></li>
+            <li class="item-list"><a href="">ログアウト</a></li>
+         </ul>
+      </div>
+   </header>
+   <main>
+      <div class="search-container">
+            <label>報告事項一覧（検索結果）</label>
+            <input type="text" placeholder="検索内容．．．">
+            <button>検索</button>
+      </div>
+      <button class="report-button">報告登録</button>
+      <div class="report-list">
+            <div class="report-card">
+               <img src="user.png" alt="ユーザー画像" class="report-image">
+               <div class="report-info">
+                  <h3>報告事項</h3>
+                  <p class="content">コンテンツ</p>
+                  <p class="reporter">報告者名</p>
+               </div>
+               <div class="report-actions">
+                  <span class="received">受信済み</span>
+                  <button class="detail-button">報告詳細</button>
+                  <button class="delete-button">削除</button>
+               </div>
+            </div>
+            <div class="report-card">
+               <img src="user.png" alt="ユーザー画像" class="report-image">
+               <div class="report-info">
+                  <h3>報告事項</h3>
+                  <p>コンテンツ</p>
+                  <p class="reporter">報告者名</p>
+               </div>
+               <div class="report-actions">
+                  <span class="unconfirmed"> 未確認 </span>
+                  <button class="detail-button">報告詳細</button>
+                  <button class="delete-button">削除</button>
+               </div>
+            </div>
+      </div>
+   </main>
+   <footer>
+      <div class="footer-content">
+         <div>
+            <ul class="footer-item">
+                  <li><a href="">情報変更</a></li>
+                  <li>|</li>
+                  <li><a href="">ログアウト</a></li>
+            </ul>
+         </div>
+         <div>
+            <p> Copyright &copy; 2024</p>
+         </div>
+      </div>
+</footer>
+</body>
+</html>
