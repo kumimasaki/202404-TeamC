@@ -1,3 +1,24 @@
+/*********************************header************************************/
+
+.adminpage {
+   background-color:  #5475a8b3;
+   padding: 20px;
+   width:100%;
+   height:100px;
+}
+.userpage{
+   background-color:rgb(112, 141, 203);
+   padding: 20px;
+   width:100%;
+   height:100px;
+}
+header h1 {
+   color: #fff;
+   text-align: center;
+}
+
+
+
 /*********************************ログイン画面************************************/
 *{
 	margin: 0;
@@ -9,9 +30,10 @@
    width: 30%;
    margin: 50px auto; 
    position: relative;
-   top:50px;
+   top:-20px;
 }
- .login-form {
+
+.login-form {
    background-color: #f8fafb;
    width: 450px;
    height:400px;
@@ -47,7 +69,6 @@ form {
 
 .form-text:focus {
    border-color: #346189; 
-   /* outline: none;  */
 }
 .password-field {
    display: flex;
@@ -65,11 +86,11 @@ form {
 }
 
 .toggle-password i {
-   font-size: 13px; 
+   font-size: 15px; 
    color: #346189; 
    outline: none;  
    position: absolute;
-   top: -8px;
+   top: -7px;
    right: 10px;
 } 
 
@@ -93,6 +114,7 @@ button[type="submit"]:hover {
    display: block;
    margin-top: 10px;
    color: #007bff;
+   text-decoration-line:none;
 }
 .link span{
    text-decoration-line: underline;
@@ -101,6 +123,7 @@ button[type="submit"]:hover {
    display: block;
    margin-top: 10px;
    color: #007bff;
+   text-decoration-line:none;
 }
 .link{
    margin-top: 25px;
