@@ -1,138 +1,77 @@
-/* Header styles */
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    padding: 10px 0;
-    background-color: #5475a8b3;
-    color: #fff;
-}
 
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-item {
-    display: flex;
-    gap: 0 30px;
-    list-style: none;
-    margin-right: 30px;
-    padding-top: 20px;
-}
-
-#item-icon {
-    display: inline-block;
-    width: 85px;
-    height: 85px;
-    line-height: 85px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: white;
-    margin-top: -30px;
-}
-
-#item-icon a {
-    color: gray;
-}
-
-/* Remove link underline */
-a {
-    text-decoration: none;
-    color: white;
-}
 
 /* Body styles */
-body {
-    position: relative; /* 相对定位 */
-    min-height: 100vh; /* 最小高度为视口高度 */
-    padding-top: 100px; /* 顶部内边距，确保内容不被头部遮挡 */
-    display: flex; /* 使用Flexbox布局 */
-    justify-content: center; /* 水平居中对齐内容 */
-    align-items: center; /* 垂直居中对齐内容 */
-    flex-direction: column; /* 子项垂直排列 */
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 145px;
 }
 
-/* Main content styles */
-main {
-    width: 90%; /* 宽度为父容器的90% */
-    max-width: 800px; /* 最大宽度 */
+.content-text {
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid #c9d3de;
+    border-radius: 10px;
+    background-color: #f8fafb;
 }
-
-
-
+.content-item{
+    font-size: small;
+}
+.item{
+    margin-top: 50px;
+}
 .back-link {
-    display: inline-flex; /* 使用inline-flex布局 */
-    align-items: center; /* 确保子项在垂直方向上居中对齐 */
+    display: block;
     margin-bottom: 20px;
+    text-decoration: none;
     color: #5475a8;
-}
-
-
-.large-symbol {
-    font-size: 2em; /* 调整符号的字体大小 */
-    margin-right: 10px; /* 符号与文本之间的间距 */
+    font-size: 16px;
 }
 
 .download-button {
-    background-color: #8bc34a;
-    color: white;
-    border: none;
-    padding: 5px 10px;
+    background-color: #d6fbe1;
+    border-color: #b3e6c2;
+    border-radius: 5px;
     cursor: pointer;
+    margin-left: 10px;
+    height: 25px;
 }
 
 .report-summary {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .report-summary label {
     display: block;
     margin-bottom: 10px;
+    font-size: 20px;
 }
 
 .report-summary textarea {
-    width: 100%;
+    width: 1000px;
+    height: 200px;
     padding: 10px;
+    border-color:#c9d3de;
+    border-radius: 5px;
 }
 
 /* Container for the submit button, aligned to the right */
 .submit-container {
     display: flex;
-    justify-content: flex-end; /* 右对齐 */
+    justify-content:center; /* 右对齐 */
 }
 
-
-
-
 .submit-button {
-    display: inline-block;
     margin-top: 20px;
-    background-color: #8bc34a;
+    background-color: #8ecb49;
+    border: 1px solid #3f822986;
     color: white;
     padding: 10px 20px;
     text-align: center;
     cursor: pointer;
     text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
-/* Footer styles */
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: #5475a8b3;
-    padding: 10px 0;
-    text-align: center;
-    color: #fff;
-}
-
-.footer-item {
-    display: flex;
-    justify-content: center;
-    gap: 0 10px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
