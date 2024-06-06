@@ -30,19 +30,31 @@
             <input type="text" placeholder="検索内容．．．">
             <button>検索</button>
       </div>
-      <button class="report-button">報告登録</button>
+
+      <div class="report-button-content">
+         <button class="report-button">報告登録</button>
+      </div>
+      
       <div class="report-list">
             <div class="report-card">
                <img src="user.png" alt="ユーザー画像" class="report-image">
                <div class="report-info">
                   <h3>報告事項</h3>
                   <p class="content">コンテンツ</p>
-                  <p class="reporter">報告者名</p>
                </div>
+
                <div class="report-actions">
-                  <span class="received">受信済み</span>
-                  <button class="detail-button">報告詳細</button>
-                  <button class="delete-button">削除</button>
+
+                  <div class="reporter-received">
+                     <p class="reporter">報告者名</p>
+                     <span class="received">受信済み</span>
+                  </div>
+        
+                  <div class="detail-button-content">                 
+                     <button class="detail-button">報告詳細</button>
+                     <button class="delete-button">削除</button>
+                  </div>
+
                </div>
             </div>
             <div class="report-card">
@@ -50,12 +62,19 @@
                <div class="report-info">
                   <h3>報告事項</h3>
                   <p>コンテンツ</p>
-                  <p class="reporter">報告者名</p>
                </div>
-               <div class="report-actions">
-                  <span class="unconfirmed"> 未確認 </span>
-                  <button class="detail-button">報告詳細</button>
-                  <button class="delete-button">削除</button>
+              <div class="report-actions">
+
+                  <div class="reporter-received">
+                     <p class="reporter">報告者名</p>
+                     <span class="unconfirmed">未確認</span>
+                  </div>
+        
+                  <div class="detail-button-content">                 
+                     <button class="detail-button">報告詳細</button>
+                     <button class="delete-button">削除</button>
+                  </div>
+                  
                </div>
             </div>
       </div>

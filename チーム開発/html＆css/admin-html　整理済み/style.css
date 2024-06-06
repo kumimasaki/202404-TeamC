@@ -8,6 +8,7 @@ body {
    font-family: Arial, sans-serif;
    background-color: #f2f2f2;
 }
+
 /************************bodyと＊全体のスタイルは以上です************************/
 
 
@@ -28,6 +29,7 @@ body {
    border-radius: 5px;
    margin-right: 15px;
    margin-left: 20px;
+   outline-color: #8a9ca5;
 }
 .search-container button {
    padding: 10px 20px;
@@ -75,19 +77,30 @@ body {
 .user-info p {
    margin: 5px 0;
 }
-.delete-button1 {
-   position: absolute;
-   bottom: 10px;
-   right: 10px;
-   padding: 5px 10px;
-   background-color:#989696;
+
+   
+.delete-button,.detail-button {
+   background-color: #989696;
    color: white;
    border: none;
-   border-radius: 5px;
    cursor: pointer;
+   position: relative;
+   width: 80px;
+   padding:5px;
+   border-radius:3px ;  
+   border: 1px solid #ccc; 
 }
-   
-
+.detail-button{
+   background-color: #5475a8b3;
+   color: white;
+   text-align: center;
+   font-size: small;
+}
+#delete-button1{
+   position: absolute; 
+   right: 15px;
+   bottom: 15px;  
+}
 /********************************** user_list画面************************************/
 
 
@@ -122,6 +135,7 @@ body {
 }
 .report-info {
    flex-grow: 1;
+   margin-top: -20px;
 }
 .report-info h3 {
    margin-bottom: 10px;
@@ -129,96 +143,72 @@ body {
 .report-info p {
    margin-bottom: 10px;
 }
-.username {
-   display: block;
-   margin-top: 10px; 
-   text-align: right; 
-   position:relative;
-   top:-70px;
-   right:-200px;
-}
-.received {
+
+.received ,.unconfirmed,.correction{
    font-size: smaller;
-   border:#5cb85c solid ;
    background-color: #5cb85c;
-   padding:5px;
+   width: 70px;
+   padding:3px;
+   border-radius:3px ;
    color: #fff;
    position:relative;
-   right:-120px;
-   top:-60px;
+   margin-top: -10px;
+   text-align: center;
 }
 .unconfirmed {
-   font-size: smaller;
-   border:#d9534f solid;
-   background-color: #d9534f;
-   padding:3px;
-   color: #fff;
-   position:relative;
-   right:-120px;
-   top:-60px;
+   background-color: #d9534f;  
 }
 .correction {
-   font-size: smaller;
-   border: #0275d8 solid;
-   background-color: #0275d8;
-   padding:3px;
-   color: #fff;
-   position:relative;
-   right:-120px;
-   top:-60px;
+   background-color: #0275d8; 
 }
 .report-actions {
    display: flex;
    flex-direction: column;
-   display: inline-block;  /*  buttonを並べて置きます */
-   position: relative;
-   right:5px;
-   top:50px;
+   gap: 20px;
 }
-.delete-button {
-   background-color: #989696;
-   color: white;
-   padding: 8px;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   margin-right: 1px;
-   position: relative;
-   top:-10px;
+
+.reporter-received {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+   margin-top: -15px; 
 }
-.detail-link {
-   background-color:#5475a8b3;
-   color: white;
-   padding: 8px;
-   border: none;
-   border-radius: 5px;
-   cursor: pointer;
-   margin-right: 1px;
-   position: relative;
-   top:-10px;
+.detail-button-content {
+   display: flex;
+   flex-direction: row; /* 将按钮横排排列 */
+   gap: 20px; 
 }
+
 /**********************************admin_reports画面************************************/ 
 
 
 /*********************************** user_reports画面************************************/ 
 .report-button{
-   border: 0.5px solid #8dec8d ;
-   background-color:rgb(215, 238, 212);
-   width:110px;
-   height:35px;
+   border: 0.5px solid #8dec8d;
+   background-color: rgb(215, 238, 212);
+   width: 110px;
+   height: 35px;
    font-size: large;
    font-weight: bolder;
    border-radius: 5px;
-   position: relative;
-   left:240px;
-   top:-180px;
+   color:#0d2d3d;
 }
 .reporter{
    display: block;
    margin-top: 10px; 
    text-align: right; 
    position:relative;
-   top:-80px;
-   right:-200px;
+ 
+  
+}
+.report-button-content {
+   margin-top: 20px; 
+   display: flex;
+   justify-content: center;
+   position: relative; /* 添加相对定位 */
+   top: -180px;
+   left: -330px;
+   margin-bottom: 15px;
 }
 /*********************************** user_reports画面************************************/ 

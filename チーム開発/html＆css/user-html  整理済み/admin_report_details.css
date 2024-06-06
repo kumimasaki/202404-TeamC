@@ -2,10 +2,11 @@
 /***********************管理者報告詳細画面*************************************/
 
 /* Body styles */
+
 .content {
     max-width: 1100px;
     margin: 0 auto;
-    margin-top: 140px;
+    margin-top: 170px;
 }
 .content-text {
     margin: 0 auto;
@@ -13,7 +14,7 @@
     border: 2px solid #c9d3de;
     border-radius: 10px;
     background-color: #f8fafb;
-    margin-bottom: 100px;
+    margin-top: -10px;
 }
 .content-item{
     font-size: small;
@@ -21,7 +22,6 @@
 }
 .item{
     display: flex;
-    margin-top: 5px;
 }
 .back-link {
     display: block;
@@ -50,11 +50,12 @@
 
 .report-summary textarea {
     width: 1000px;
-    height: 200px;
+    height: 180px;
     padding: 10px;
     border-color:#c9d3de;
     border-radius: 5px;
     font-family: Arial, Helvetica, sans-serif;
+    outline-color: #8a9ca5;
 }
 /* Container for the submit button, aligned to the right */
 .submit-container {
@@ -73,6 +74,10 @@
     border-radius: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease;
+    margin-top: -20px;
+}
+#get-btn{
+    margin-top: 30px;
 }
 
 /*****************************ユーザ報告詳細一覧****************************************/
@@ -120,7 +125,7 @@
     border-radius: 3px;
     width: 800px;
     margin-left: 20px;
-    outline-color: #547d86;
+    outline-color: #8a9ca5;
   }
 
 #item-file{
