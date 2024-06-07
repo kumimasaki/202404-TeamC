@@ -29,11 +29,14 @@ header {
 }
 .header-item {
    float: right; /* 右寄せ */
-	margin-right: 30px;
+	margin-right: 40px;
 	color: #fff;
 	margin-top: 25px;
 }
-
+.item-list{
+	text-align: center;
+	margin-top: 15px;
+}
 #item-icon{
    display: inline-block; /* インラインブロック要素に変換 */
     width: 85px; 
