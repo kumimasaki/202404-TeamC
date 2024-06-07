@@ -106,13 +106,12 @@ body {
 
 /**********************************admin_reports画面************************************/ 
 .report-list {
-   padding:30px;
+   padding-top: 30px;
    flex-grow: 1;
    margin-top: -200px; 
    flex-direction: column;
    align-items: center;
    position: relative;
-   left:60px;
    gap: 15px;
    display: flex;
 }
@@ -179,7 +178,13 @@ body {
    flex-direction: row; /* 将按钮横排排列 */
    gap: 20px; 
 }
-
+#footer-report{
+   height: 90px;
+}
+#footer-item-report{
+   justify-content: center;
+   padding: 15px;
+}
 /**********************************admin_reports画面************************************/ 
 
 

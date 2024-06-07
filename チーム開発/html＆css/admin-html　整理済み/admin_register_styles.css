@@ -1,42 +1,88 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
+/*********************************register画面************************************/
 
 .container {
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    padding: 20px;
-}
-
-header {
-    background-color: #aaa;
-    padding: 10px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    color: #fff;
-}
-
+    width: 550px;
+    margin: 30px auto; 
+    position: relative;
+    top:70px;
+ }
 main {
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-color: #f8fafb;
+    border-radius: 40px ;
+    border: 2px solid #c9d3de; 
+    margin-top: 100px;
 }
 
-.register-form {
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-text {
+    width: calc(100% - 30px);
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 350px;
+}
+
+.form-text:focus {
+    border-color: #346189; 
+    outline: none; 
+}
+
+.password-field {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.password-field button {
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.toggle-password i {
+    font-size: 20px; 
+    color: #346189; 
+}
+
+button[type="submit"] {
+    padding: 10px;
+    width:160px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 100px;
+    font-size: 18px;
+ }
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.register-link,
+.forgot-password-link {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-form h1{
     text-align: center;
-}
-
-.register-form h2 {
-    margin-bottom: 20px;
 }
 
 .icon-upload {
@@ -78,56 +124,12 @@ main {
 .icon-upload input[type="file"] {
     display: none;
 }
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.password-field {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.password-field button {
-    background: none;
-    border: none;
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-}
-
-button[type="submit"] {
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
 .login-link {
     display: block;
     margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
     color: #007bff;
     text-decoration: none;
 }
 
-.login-link:hover {
-    text-decoration: underline;
-}
