@@ -6,6 +6,7 @@ header {
 	padding: 8px ;
 	background-color: #5475a8b3;
 	color: #fff;
+	left: 0;
 }
 
 .header-content {
@@ -15,7 +16,7 @@ header {
 }
 
 #header-user{
-	background-color: #5449d0b3;
+	background-color: #5b74beb3;
 }
 
 
@@ -78,5 +79,5 @@ footer {
 	justify-content: center;/*itemを水平中央揃え*/
 }
 #footer-user{
-	background-color: #5449d0b3;
+	background-color: #5b74beb3;
 }
