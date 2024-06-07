@@ -12,7 +12,7 @@
     margin: 0 auto;
     padding: 30px;
     border: 2px solid #c9d3de;
-    border-radius: 10px;
+    border-radius: 40px;
     background-color: #f8fafb;
     margin-top: -10px;
 }
@@ -20,9 +20,7 @@
     font-size: small;
     margin: 1px 0;
 }
-.item{
-    display: flex;
-}
+
 .back-link {
     display: block;
     margin-bottom: 20px;
@@ -64,8 +62,8 @@
 }
 
 .submit-button {
-    background-color: #8ecb49;
-    border: 1px solid #3f822986;
+    background-color: #F6D1C9;
+    border: 1px solid  #F6D1C9;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -137,4 +135,7 @@
 .add-file{
     margin-right: 20px;
     font-weight: bold;
+}
+#title-con{
+    margin-top: -20px;
 }
