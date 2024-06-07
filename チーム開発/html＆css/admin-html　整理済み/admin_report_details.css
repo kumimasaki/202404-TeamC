@@ -62,7 +62,7 @@
 }
 
 .submit-button {
-    background-color: #F6D1C9;
+    background-color: #f3ac9c;
     border: 1px solid  #F6D1C9;
     color: white;
     padding: 10px 20px;
@@ -135,4 +135,7 @@
 .add-file{
     margin-right: 20px;
     font-weight: bold;
+}
+#title-con{
+    margin-top: -20px;
 }

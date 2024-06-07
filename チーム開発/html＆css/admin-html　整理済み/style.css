@@ -96,7 +96,7 @@ body {
    text-align: center;
    font-size: small;
 }
-#delete-button1{
+#delete-button1,#delete-button2{
    position: absolute; 
    right: 15px;
    bottom: 15px;  
@@ -213,7 +213,7 @@ body {
    justify-content: center;
    position: relative; /* 添加相对定位 */
    top: -180px;
-   left: -330px;
+   left: -390px;
    margin-bottom: 15px;
 }
 /*********************************** user_reports画面************************************/ 
