@@ -11,7 +11,9 @@ import rp.com.models.entity.Users;
 @Repository
 public interface UsersDao extends JpaRepository<Users, Long> {
 
+	// ユーザー名またはメールアドレスでユーザーを検索するメソッド
 	List<Users> findByUserNameContainingOrUserEmailContaining(String userName, String userEmail);
+	
 	// 保存処理と更新処理 insertとupdate
 	Users save(Users users);
 
