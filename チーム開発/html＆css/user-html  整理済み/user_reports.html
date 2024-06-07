@@ -8,22 +8,21 @@
    <link rel="stylesheet" href="header.css">
 </head>
 <body>
-   <header>
+   <header id="header-user">
       <div class="header-content">
-         <div class="site-name">
-            <h2>業務報告システム </h2>
-         </div>
-         <ul class="header-item">
-            <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
-            <li class="item-list"><a href="">管理者名前</a></li>
-            <li class="item-list"><a href="">管理者情報変更</a></li>
-            <li class="item-list"> <a href="">ユーザ追加</a></li>
-            <li class="item-list"><a href="">ユーザ一覧</a> </li>
-            <li class="item-list"><a href="">報告事項一覧</a></li>
-            <li class="item-list"><a href="">ログアウト</a></li>
-         </ul>
+      <div class="site-name">
+         <h1>業務報告システム </h1>
       </div>
-   </header>
+</div>
+      <ul class="header-item">
+         <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
+         <li class="item-list"><a href="">ユーザー名前</a></li>
+         <li class="item-list"><a href="">報告一覧</a></li>
+         <li class="item-list"><a href="">情報変更</a></li>
+         <li class="item-list"><a href="">ログアウト</a></li>
+      </ul>
+</div>
+</header>
    <main>
       <div class="search-container">
             <label>報告事項一覧（検索結果）</label>
@@ -49,7 +48,6 @@
                      <p class="reporter">報告者名</p>
                      <span class="received">受信済み</span>
                   </div>
-        
                   <div class="detail-button-content">                 
                      <button class="detail-button">報告詳細</button>
                      <button class="delete-button">削除</button>
@@ -63,13 +61,13 @@
                   <h3>報告事項</h3>
                   <p>コンテンツ</p>
                </div>
-              <div class="report-actions">
+            <div class="report-actions">
 
                   <div class="reporter-received">
                      <p class="reporter">報告者名</p>
                      <span class="unconfirmed">未確認</span>
                   </div>
-        
+
                   <div class="detail-button-content">                 
                      <button class="detail-button">報告詳細</button>
                      <button class="delete-button">削除</button>
@@ -79,7 +77,7 @@
             </div>
       </div>
    </main>
-   <footer>
+   <footer id="footer-user">
       <div class="footer-content">
          <div>
             <ul class="footer-item">

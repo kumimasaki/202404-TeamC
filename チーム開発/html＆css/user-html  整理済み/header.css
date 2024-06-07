@@ -1,15 +1,4 @@
-
 /*header全体のスタイル*/
-/* *{
-	margin: 0;
-	padding:0;
-	box-sizing: border-box;
-} */
-body{
-	margin: 0;
-	padding:0;
-	width:100%;
-}
 header {
 	position: fixed;/*topに保持する*/
 	width: 100%;
@@ -23,11 +12,19 @@ header {
     justify-content: space-between; /* コンテンツを均等に配置 */
     align-items: center; /* 垂直方向に中央揃え */
 }
+
+/****************user画面色の区別****************/
+#header-user{
+	background-color: #5449d0b3;
+}/****************user画面色の区別****************/
+
 .site-name{
    position: relative;
    left: 20px;
 }
-
+.site-name-login{
+	padding: 25px;
+}
 .header-item {
    float: right; /* 右寄せ */
 	margin-right: 30px;
@@ -72,10 +69,14 @@ footer {
 	width: 100%;
 	bottom: 0;
 	background-color: #5475a8b3;
-	padding: 20px 0;
+	padding: 10px 0;
 	text-align: center;
 	color: #fff;
 }
+/****************footer画面色の区別****************/
+#footer-user{
+	background-color: #5449d0b3;
+}/****************footer画面色の区別****************/
 .footer-item{
 	justify-content: center;/*itemを水平中央揃え*/
 }

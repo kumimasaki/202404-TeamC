@@ -125,7 +125,6 @@ right: 700px;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-   
 }
 
 .submit-button {
@@ -135,75 +134,4 @@ right: 700px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 50px;
-}
-
-/* header 全体のスタイル */
-header {
-    position: fixed; /* top に保持する */
-    width: 100%;
-    top: 0;
-    padding: 10px 0;
-    background-color: #5475a8b3;
-    color: #fff;
-}
-
-.header-content {
-    display: flex; /* フレックスボックスを使用してヘッダーコンテンツを配置 */
-    justify-content: space-between; /* コンテンツを均等に配置 */
-    align-items: center; /* 垂直方向に中央揃え */
-}
-
-.header-item {
-    float: right; /* 右寄せ */
-    margin-right: 30px;
-    padding-top: 20px;
-    color: #fff;
-}
-
-#item-icon {
-    display: inline-block; /* インラインブロック要素に変換 */
-    width: 85px;
-    height: 85px;
-    line-height: 85px; /* 文字の行の高さを設定して、内容を垂直中央揃え */
-    text-align: center;
-    border-radius: 50%; /* 円形に表示 */
-    background-color: white;
-    margin-top: -30px;
-}
-
-#item-icon a {
-    color: gray;
-}
-
-/* リスト全体のスタイル */
-ul {
-    display: flex; /* 横並びにする */
-    gap: 0 30px; /* 隙間を作る */
-    list-style: none; /* 箇条書きの・を削除 */
-}
-
-/* リンクの線を削除 */
-a {
-    text-decoration: none;
-    color: white;
-}
-
-/* footer 全体のスタイル */
-footer {
-    position: absolute; /* サイトの底部に置く */
-    bottom: 0;
-    width: 100%;
-    background-color: #5475a8b3;
-    padding: 10px 0;
-    text-align: center;
-    color: #fff;
-   
-}
-
-.footer-item {
-    justify-content: center; /* item を水平中央揃え */
-}
-
-main {
-    margin-bottom: 0; /* 调整底部外边距，进一步减小距离 */
 }

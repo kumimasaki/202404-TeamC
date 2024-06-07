@@ -12,7 +12,7 @@
     margin: 0 auto;
     padding: 30px;
     border: 2px solid #c9d3de;
-    border-radius: 10px;
+    border-radius: 40px;
     background-color: #f8fafb;
     margin-top: -10px;
 }
@@ -20,9 +20,7 @@
     font-size: small;
     margin: 1px 0;
 }
-.item{
-    display: flex;
-}
+
 .back-link {
     display: block;
     margin-bottom: 20px;
@@ -60,12 +58,12 @@
 /* Container for the submit button, aligned to the right */
 .submit-container {
     display: flex;
-    justify-content:center; /* 右对齐 */
+    justify-content:center; /* 鍙冲榻� */
 }
 
 .submit-button {
-    background-color: #8ecb49;
-    border: 1px solid #3f822986;
+    background-color: #F6D1C9;
+    border: 1px solid  #F6D1C9;
     color: white;
     padding: 10px 20px;
     text-align: center;
@@ -91,35 +89,35 @@
     display: flex; 
     align-items: center; 
     margin-top: 30px;
-  }
-  .report-title label{
+}
+.report-title label{
     font-size: 20px;
     font-weight: bold;
-  }
-  .report-name {
+}
+.report-name {
     border: 1px solid #415970;
     padding: 7px;
     border-radius: 3px;
     width: 800px;
     margin-left: 20px;
-  }
-  .reporter{
+}
+.reporter{
     padding-top: 5px;
-  }
-  .reporter label{
+}
+.reporter label{
     font-weight: bold;
-  }
-  #reporter{
+}
+#reporter{
     text-align: center;
     display: block;
     border-radius: 10px;
     margin-top: 8px;
     width: 80px;
     background-color: antiquewhite;
-  }
-  /*****************************ユーザ報告事項登録****************************************/
+}
+/*****************************ユーザ報告事項登録****************************************/
 
-  #report-title{
+#report-title{
     border: 1px solid #415970;
     padding: 7px;
     border-radius: 3px;
@@ -137,4 +135,7 @@
 .add-file{
     margin-right: 20px;
     font-weight: bold;
+}
+#title-con{
+    margin-top: -20px;
 }

@@ -1,4 +1,5 @@
 /*********************************ログイン画面************************************/
+
 *{
 	margin: 0;
 	padding:0;
@@ -9,7 +10,7 @@
    width: 30%;
    margin: 50px auto; 
    position: relative;
-   top:50px;
+   top:70px;
 }
  .login-form {
    background-color: #f8fafb;
@@ -28,9 +29,17 @@
 
 }
 .login-form h1 {
-   margin-bottom: 20px;
+   margin-bottom: 15px;
+   margin-top: 15px;
 }
 
+#login-form-pw{
+   height: 200px;
+}
+#login-form-pw h2{
+   margin-bottom: 15px;
+   margin-top: 15px; 
+}
 form {
    display: flex;
    flex-direction: column;
@@ -39,16 +48,14 @@ form {
 
 
 .form-text {
-   padding: 10px 60px;
+   padding: 12px 60px;
    border: 1px solid #ccc;
    border-radius: 5px;
    justify-content: left;
+   outline-color: #8a9ca5;
 } 
 
-.form-text:focus {
-   border-color: #346189; 
-   /* outline: none;  */
-}
+
 .password-field {
    display: flex;
    align-items: center;
@@ -65,7 +72,7 @@ form {
 }
 
 .toggle-password i {
-   font-size: 13px; 
+   font-size: 18px; 
    color: #346189; 
    outline: none;  
    position: absolute;
@@ -75,14 +82,15 @@ form {
 
 button[type="submit"] {
    padding: 10px;
-   width:200px;
+   width:160px;
    background-color: #007bff;
    color: #fff;
    border: none;
    border-radius: 5px;
    cursor: pointer;
-   margin-top: 30px;
-   margin-left: 30px;;
+   margin-top: 20px;
+   margin-left: 60px;
+   font-size: 18px;
 }
 
 button[type="submit"]:hover {
@@ -91,7 +99,7 @@ button[type="submit"]:hover {
 
 .register-link{
    display: block;
-   margin-top: 10px;
+   margin-top: 15px;
    color: #007bff;
 }
 .link span{

@@ -106,13 +106,12 @@ body {
 
 /**********************************admin_reports画面************************************/ 
 .report-list {
-   padding:30px;
+   padding-top: 30px;
    flex-grow: 1;
    margin-top: -200px; 
    flex-direction: column;
    align-items: center;
    position: relative;
-   left:60px;
    gap: 15px;
    display: flex;
 }
@@ -123,7 +122,7 @@ body {
    width: 900px;
    display: flex;
    padding: 20px;
-   gap: 0 20px;  /* 单个报告方框内各个元素的gap设定 */
+   gap: 0 20px;  /* 鍗曚釜鎶ュ憡鏂规鍐呭悇涓厓绱犵殑gap璁惧畾 */
    align-items: center;
    border-radius:15px;
 }
@@ -176,10 +175,16 @@ body {
 }
 .detail-button-content {
    display: flex;
-   flex-direction: row; /* 将按钮横排排列 */
+   flex-direction: row;/* 将按钮横排排列 */
    gap: 20px; 
 }
-
+#footer-report{
+   height: 90px;
+}
+#footer-item-report{
+   justify-content: center;
+   padding: 15px;
+}
 /**********************************admin_reports画面************************************/ 
 
 
@@ -199,14 +204,13 @@ body {
    margin-top: 10px; 
    text-align: right; 
    position:relative;
- 
-  
+
 }
 .report-button-content {
    margin-top: 20px; 
    display: flex;
    justify-content: center;
-   position: relative; /* 添加相对定位 */
+   position: relative; 
    top: -180px;
    left: -330px;
    margin-bottom: 15px;
