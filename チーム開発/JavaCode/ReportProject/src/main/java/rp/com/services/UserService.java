@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import rp.com.models.dao.UsersDao;
 import rp.com.models.entity.Users;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -47,5 +48,16 @@ public class UserService {
     public Users loginCheck(String userEmail, String userPassword) {
         Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
         return users;
+    }
+        
+        // ユーザーIDでユーザーを取得するメソッド
+        public Users getUserById(Long userId) {
+            Optional<Users> user = usersDao.findById(userId);
+            return user.orElse(null);
+        }
+
+        // ユーザーを更新するメソッド
+        public void updateUser(Users user) {
+            usersDao.save(user);
     }
 }
