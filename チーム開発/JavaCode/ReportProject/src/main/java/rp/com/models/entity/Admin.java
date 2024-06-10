@@ -2,6 +2,8 @@ package rp.com.models.entity;
 
 import java.time.LocalDateTime;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -58,7 +60,7 @@ public class Admin {
     @NonNull
     // アイコンという列を作り、必ず値が入るようにします
     @Column(name = "admin_icon", nullable = false)
-    private String adminIcon;
+    private MultipartFile  adminIcon;
  // 作成日時という列を作ります。更新はできません
     @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

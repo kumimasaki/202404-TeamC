@@ -15,38 +15,31 @@ public class AdminPasswordResetController {
 
 	@Autowired
 	private AdminService adminService;
-	
-	 // パスワード変更画面表示
+
+	// パスワード変更画面表示
 	@GetMapping("/admin/password/reset")
-    public String showPasswordResetForm(Model model) {
-        return "admin_info_change.html";
-    }
-	
+	public String showPasswordResetForm(Model model) {
+		return "admin_change_pw.html";
+	}
 
-    // パスワード変更処理
-    @PostMapping("/admin/password/reset/process")
-    public String processPasswordReset(@RequestParam("adminId") Long adminId,
-                                       @RequestParam("oldPassword") String oldPassword,
-                                       @RequestParam("newPassword") String newPassword,
-                                       @RequestParam("confirmPassword") String confirmPassword,
-                                       Model model) {
-        Admin admin = adminService.getAdminById(adminId);
-        if (admin == null || !admin.getAdminPassword().equals(oldPassword)) {
-            model.addAttribute("errorMessage", "現在のパスワードが正しくありません。");
-            return "admin_info_change.html";
-        }
+	// パスワード変更処理
+	 @PostMapping("/admin/password/reset/process")
+	    public String processPasswordReset(@RequestParam String adminEmail,
+	                                       @RequestParam String newPassword,
+	                                       Model model) {
+	        Admin admin = adminService.findByAdminEmail(adminEmail);
+	        
+	        //もし、adminが存在しない場合、エラーメッセージを出します
+	        if (admin == null) {
+	            model.addAttribute("errorMessage", "指定されたメールアドレスには存在しません。");
+	            return "admin_change_pw.html";
+	        }
 
-        if (!newPassword.equals(confirmPassword)) {
-            model.addAttribute("errorMessage", "新しいパスワードと確認パスワードが一致しません。");
-            return "admin_info_change.html";
-        }
+	        // パスワード変更処理
+	        adminService.updatePassword(admin, newPassword);
 
-        // パスワード変更処理
-        admin.setAdminPassword(newPassword);
-        adminService.saveAdmin(admin);
+	        model.addAttribute("successMessage", "パスワードが変更されました。");
+	        return "admin_pw_changed.html"; 
+	    }
 
-        model.addAttribute("successMessage", "パスワードが正常に変更されました。");
-        return "admin_pw_changed.html"; 
-    }
-    
 }

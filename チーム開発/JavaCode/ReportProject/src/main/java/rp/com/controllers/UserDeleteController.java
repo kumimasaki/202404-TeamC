@@ -14,7 +14,7 @@ public class UserDeleteController {
     private UserService userService;
 
     // ユーザーを削除するメソッド
-    @PostMapping("/delete_user")
+    @PostMapping("/remove_user")
     public String deleteUser(@RequestParam("userId") Long userId) {
         // 指定されたIDのユーザーを削除します
         userService.deleteUser(userId);

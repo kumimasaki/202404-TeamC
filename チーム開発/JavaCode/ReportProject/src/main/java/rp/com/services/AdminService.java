@@ -1,7 +1,14 @@
 package rp.com.services;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
 import rp.com.models.dao.AdminDao;
 import rp.com.models.entity.Admin;
@@ -47,9 +54,39 @@ public class AdminService {
         // 指定されたIDの管理者を取得し、存在しない場合は null を返します
         return adminDao.findById(adminId).orElse(null);
     }
-    
+
     // 管理者情報を保存するメソッド
     public Admin saveAdmin(Admin admin) {
         return adminDao.save(admin);
+    }
+
+    // パスワード更新メソッド
+    @Transactional
+    public void updatePassword(Admin admin, String newPassword) {
+        admin.setAdminPassword(newPassword);
+        adminDao.save(admin);
+    }
+
+    // 管理者をメールで取得するメソッド
+    public Admin findByAdminEmail(String adminEmail) {
+        return adminDao.findByAdminEmail(adminEmail);
+    }
+
+    // iconを保存するメソッド
+    public void saveAdminIcon(Admin admin, MultipartFile adminIconFile) {
+        try {
+            // 创建临时文件并复制头像文件
+            Path tempFile = Files.createTempFile("temp", adminIconFile.getOriginalFilename());
+            Files.copy(adminIconFile.getInputStream(), tempFile, StandardCopyOption.REPLACE_EXISTING);
+
+            // 设置管理员的头像
+            admin.setAdminIcon(adminIconFile);
+
+            // 保存管理员信息
+            adminDao.save(admin);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("アイコン保存が失敗しました。", e);
+        }
     }
 }
