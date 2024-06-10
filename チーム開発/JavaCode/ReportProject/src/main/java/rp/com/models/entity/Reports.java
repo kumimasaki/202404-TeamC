@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Reports {
-	// user_idの設定
+	// report_idの設定
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long reportId;
@@ -126,5 +126,4 @@ public class Reports {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-
 }
