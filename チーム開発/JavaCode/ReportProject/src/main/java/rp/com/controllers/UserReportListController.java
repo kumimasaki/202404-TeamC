@@ -13,18 +13,18 @@ import rp.com.models.entity.Reports;
 import rp.com.services.ReportsService;
 
 @Controller
-public class ReportListController {
+public class UserReportListController {
 
 	@Autowired
 	private ReportsService reportsService;
 
 	// レポート一覧画面を表示するメソッド
-	@GetMapping("/admin/report/list")
+	@GetMapping("/user/report/list")
 	public String showReportList(Model model) {
 		// すべてのレポートを取得してモデルに追加
 		model.addAttribute("reports", reportsService.getAllReports());
 		// レポート一覧画面のテンプレートを返す
-		return "admin/report_list";
+		return "user/report_list";
 	}
 
 	// レポート検索を処理するメソッド
@@ -35,7 +35,7 @@ public class ReportListController {
 		// 検索結果をモデルに追加
 		model.addAttribute("reportList", reportList);
 		// レポート一覧画面のテンプレートを返す
-		return "admin/report_list";
+		return "user/report_list";
 	}
 
 	// レポートを削除するメソッド
@@ -44,6 +44,7 @@ public class ReportListController {
 		// 指定されたIDのレポートを削除する
 		reportsService.deleteReport(reportId);
 		// レポート一覧画面にリダイレクトする
-		return "redirect:admin/report_list";
+		return "redirect:user/report_list";
 	}
+
 }
