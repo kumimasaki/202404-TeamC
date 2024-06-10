@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ユーザー一覧</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <header>
+      <div class="header-content">
+         <div class="site-name">
+            <h2>業務報告システム </h2>
+         </div>
+         <ul class="header-item">
+            <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
+            <li class="item-list"><a href="">管理者名前</a></li>
+            <li class="item-list"><a href="">管理者情報変更</a></li>
+            <li class="item-list"> <a href="">ユーザ追加</a></li>
+            <li class="item-list"><a href="">ユーザ一覧</a> </li>
+            <li class="item-list"><a href="">報告事項一覧</a></li>
+            <li class="item-list"><a href="">ログアウト</a></li>
+         </ul>
+      </div>
+   </header>
+   <main>
+      <div class="search-container">
+         <p>報告事項一覧 (検索結果)</p>
+         <form action="/search_users" method="post">
+            <input type="text" name="search" placeholder="検索内容．．．">
+            <button type="submit">検索</button>
+         </form>
+      </div>
+      <div class="user-list">
+         <div th:each="user : ${usersList}" class="user-card">
+            <img src="user.png" alt="ユーザー画像" class="user-image">
+            <div class="user-info">
+               <h3 th:text="${user.userName}">ユーザー名</h3>
+               <p>メールアドレス：<span th:text="${user.userEmail}"></span></p>
+               <p>パスワード：<span th:text="${user.userPassword}"></span></p>
+               <form action="/delete_user" method="post">
+                  <input type="hidden" name="userId" th:value="${user.userId}">
+                  <button type="submit" class="delete-button1">削除</button>
+               </form>
+            </div>
+         </div>
+      </div>
+   </main>
+   <footer>
+      <div class="footer-content">
+         <div>
+            <ul class="footer-item">
+               <li><a href="">情報変更</a></li>
+               <li>|</li>
+               <li><a href="">ログアウト</a></li>
+            </ul>
+         </div>
+         <div>
+            <p> Copyright &copy; 2024</p>
+         </div>
+      </div>
+   </footer>
+</body>
+</html>

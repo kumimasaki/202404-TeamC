@@ -1,35 +1,51 @@
 
-/*header全体のスタイル*/
 header {
 	position: fixed;/*topに保持する*/
 	width: 100%;
 	top: 0;
-	padding: 10px 0;
+	padding: 8px ;
 	background-color: #5475a8b3;
 	color: #fff;
+	left: 0;
 }
+
 .header-content {
     display: flex; /* フレックスボックスを使用してヘッダーコンテンツを配置 */
     justify-content: space-between; /* コンテンツを均等に配置 */
     align-items: center; /* 垂直方向に中央揃え */
 }
 
-.header-item {
-    float: right; /* 右寄せ */
-	margin-right: 30px;
-	padding-top: 20px;
-	color: #fff;
+#header-user{
+	background-color: #5b74beb3;
 }
 
+
+.site-name,.site-name-login{
+   position: relative;
+   left: 20px;
+}
+.site-name-login{
+	padding: 25px;
+}
+.header-item {
+   float: right; /* 右寄せ */
+	margin-right: 40px;
+	color: #fff;
+	margin-top: 25px;
+}
+.item-list{
+	text-align: center;
+	margin-top: 15px;
+}
 #item-icon{
-	display: inline-block; /* インラインブロック要素に変換 */
+   display: inline-block; /* インラインブロック要素に変換 */
     width: 85px; 
     height: 85px; 
     line-height: 85px; /* 文字の行の高さを設定して、内容を垂直中央揃え */
     text-align: center; 
     border-radius: 50%; /* 円形に表示 */
     background-color: white; 
-	margin-top: -30px;
+	margin-top: -20px;
 }
 #item-icon a{
 	color: gray;
@@ -44,8 +60,6 @@ ul {
 	list-style: none;/*箇条書きの・を削除*/
 }
 
-
-
 /*リンクの線を削除*/
 a {
 	text-decoration: none;
@@ -54,15 +68,11 @@ a {
 
 
 /*footer全体のスタイル*/
-body {
-	position: relative;
-	min-height: 100vh;
-}
 
 footer {
 	position: absolute;/*サイトの底部に置く*/
-	bottom: 0;
 	width: 100%;
+	bottom: 0;
 	background-color: #5475a8b3;
 	padding: 10px 0;
 	text-align: center;
@@ -70,4 +80,7 @@ footer {
 }
 .footer-item{
 	justify-content: center;/*itemを水平中央揃え*/
+}
+#footer-user{
+	background-color: #5b74beb3;
 }
