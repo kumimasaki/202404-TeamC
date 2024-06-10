@@ -17,11 +17,11 @@ public class UserLoginController {
     private UserService userService;
 
     // ログイン画面を表示するメソッド
-    @GetMapping("/login")
+    @GetMapping("/user/login")
     public String showLoginForm(Model model) {
         // ログイン情報をモデルに追加します
         model.addAttribute("loginForm", new Users());
-        return "login";
+        return "user_login.html";
     }
 
     // ログイン処理を行うメソッド
