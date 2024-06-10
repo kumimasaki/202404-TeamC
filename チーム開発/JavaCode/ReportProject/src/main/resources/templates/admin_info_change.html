@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>管理者情報を変更</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/user_add.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
@@ -14,7 +14,6 @@
             <div class="site-name">
                 <h1>業務報告システム </h1>
             </div>
-
             <ul class="header-item">
                 <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
                 <li class="item-list"><a href="">管理者名前</a></li>
@@ -33,9 +32,9 @@
 
             <div class="container">
                 <h1>管理者情報変更</h1>
-                <form id="adminForm" th:action="@{/info/update}" method="post">
+                <form id="adminForm" th:action="@{/admin/info/update}" method="post">
                     <div class="form-content">
-						<input type="hidden" id="adminId" name="adminId" value="1">						
+                        <input type="hidden" id="adminId" name="adminId" th:value="${admin.id}">                     
                         <div class="icon-container">
                             <div class="icon-circle">
                                 <span>アイコン</span>
@@ -46,11 +45,11 @@
                         <div class="input-fields">
                             <div class="input-group">
                                 <label for="username">ユーザー名:</label>
-                                <input type="text" id="username" name="adminName"　th:value="${report.blogTitle}">
+                                <input type="text" id="username" name="adminName" th:value="${admin.adminName}">
                             </div>
                             <div class="input-group">
                                 <label for="email">ユーザーメール:</label>
-                                <input type="email" id="email" name="adminEmail">
+                                <input type="email" id="email" name="adminEmail" th:value="${admin.adminEmail}">
                             </div>
                             <div class="input-group" id="input-button">
                                 <label for="newPassword">パスワード:</label>
@@ -84,8 +83,7 @@
             <p> Copyright &copy; 2024</p>
         </div>
     </footer>
-	<script src="/js/admin_register_scripts.js"></script>
-	<script src="/js/user_add.js"></script>
+    <script th:src="@{/js/admin_info_change.js}"></script>
+    <script th:src="@{/js/user_add.js}"></script>
 </body>
-
 </html>

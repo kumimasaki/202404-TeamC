@@ -31,8 +31,8 @@ public class AdminEditController {
         if (admin != null) {
             // 管理者の情報をモデルに追加します
             model.addAttribute("admin", admin);
-            // admin_edit.htmlという画面を見せます
-            return "admin_edit.html";
+            // admin_info_change.htmlという画面を見せます
+            return "admin_info_change.html";
         } else {
             // 管理者が見つからなかった場合
             model.addAttribute("errorMessage", "管理者が見つかりません");
@@ -52,19 +52,19 @@ public class AdminEditController {
             if (updatedAdmin != null) {
                 // 成功メッセージをモデルに追加します
                 model.addAttribute("successMessage", "管理者情報が更新されました");
-                // admin_info_change.htmlという画面を見せます
-                return "admin_info_change.html";
+                // admin_pw_changed.htmlという画面を見せます
+                return "admin_pw_changed.html";
             } else {
                 // メールアドレスが既に使われている場合
                 model.addAttribute("errorMessage", "メールアドレスは既に使用されています");
-                // admin_edit.htmlという編集画面を再度見せます
-                return "admin_edit.html";
+                // admin_info_change.htmlという編集画面を再度見せます
+                return "admin_info_change.html";
             }
         } catch (Exception e) {
             // 更新中にエラーが発生した場合
             model.addAttribute("errorMessage", "管理者情報の更新中にエラーが発生しました");
-            // admin_edit.htmlという編集画面を再度見せます
-            return "admin_edit.html";
+            // admin_info_change.htmlという編集画面を再度見せます
+            return "admin_info_change.html";
         }
     }
 }

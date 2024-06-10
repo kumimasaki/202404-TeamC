@@ -14,16 +14,15 @@
     <header>
         <div class="header-content">
             <div class="site-name-login">
-                <h1>業務報告システム </h1>
+                <h1>業務報告システム</h1>
             </div>
-
         </div>
     </header>
     <div class="container">
         <main>
             <div class="login-form">
                 <h1>ログイン</h1>
-                <form action="/admin/login/process" method="POST">
+                <form th:action="@{/admin/login/process}" method="POST">
                     <input class="form-text" type="email" name="adminEmail" placeholder="ユーザーメール" required>
                     <div class="password-field">
                         <input class="form-text" type="password" name="adminPassword" placeholder="ユーザーパスワード" required>
@@ -33,16 +32,17 @@
                     </div>
                     <button type="submit">ログイン</button>
                 </form>
-
                 <div class="link">
                     <a href="#" class="register-link">新規登録に<span>戻る</span></a>
                     <a href="#" class="forgot-password-link">パスワードを忘れた方は<span>こちらへ</span></a>
                 </div>
+                <div th:if="${errorMessage != null}">
+                    <p th:text="${errorMessage}" style="color: red;"></p>
+                </div>
             </div>
         </main>
     </div>
-    <script src="admin_login_scripts.js"></script>
-   
+    <script th:src="@{/js/admin_login_scripts.js}"></script>
 </body>
 
 </html>
