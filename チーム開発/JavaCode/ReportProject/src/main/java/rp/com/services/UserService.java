@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import rp.com.models.dao.UsersDao;
 import rp.com.models.entity.Users;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -15,8 +14,12 @@ public class UserService {
     private UsersDao usersDao;
     
     // すべてのユーザーを取得するメソッド
-    public List<Users> getAllUsers() {
+    public List<Users> getAllUserList() {
+		if(usersDao == null) {
+    		return null;
+    	}else {
         return usersDao.findAll();
+        }
     }
 
     // ユーザー名またはメールアドレスでユーザーを検索するメソッド
@@ -32,9 +35,9 @@ public class UserService {
     // ユーザーの作成処理
     // もし、findByUserEmail == nullだったら登録処理を行う
     // 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
-    public boolean createUser(Users user) {
-        if (usersDao.findByUserEmail(user.getUserEmail()) == null) {
-            usersDao.save(user);
+    public boolean createUser(String userName,String userEmail,String userPassword) {
+        if (usersDao.findByUserEmail(userEmail) == null) {
+            usersDao.save(new Users(userName,userEmail,userPassword));
             return true;
         } else {
             return false;
@@ -47,17 +50,27 @@ public class UserService {
     // そうでない場合、ログインしている人の情報をコントローラークラスに渡す
     public Users loginCheck(String userEmail, String userPassword) {
         Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
+       if(users==null) {
+    	   return null;
+       }else {
         return users;
     }
-        
-        // ユーザーIDでユーザーを取得するメソッド
-        public Users getUserById(Long userId) {
-            Optional<Users> user = usersDao.findById(userId);
-            return user.orElse(null);
-        }
-
-        // ユーザーを更新するメソッド
-        public void updateUser(Users user) {
-            usersDao.save(user);
     }
 }
+
+//	public List<Users> searchByUserName(String userName) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	public List<Users> searchByUserEmail(String userEmail) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//	public Users getUserById(Long userId) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+//
+//}
