@@ -42,6 +42,9 @@ public interface ReportsDao extends JpaRepository<Reports, Long> {
 	
 	// コンテンツにキーワードが含まれるレポートを検索
 	List<Reports> findByContentsOfReportContaining(String content);
+	
+	 // タイトルまたはコンテンツでレポートを検索
+	List<Reports> findByReportTitleContainingOrContentsOfReportContaining(String title, String content);
 
 	// receipt_flgでレポートを検索
 	List<Reports> findByReceiptFlg(int receiptFlg);
