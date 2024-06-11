@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ユーザー追加</title>
-    <link rel="stylesheet" th:href="@{/https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/user_create.css}">
     <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
+
 <body>
     <header id="header-user">
         <div class="header-content">
@@ -19,7 +20,7 @@
                 <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
                 <li class="item-list"><a href="">管理者名前</a></li>
                 <li class="item-list"><a href="">管理者情報変更</a></li>
-                <li class="item-list"><a href="">ユーザーー追加</a></li>
+                <li class="item-list"><a href="">ユーザー追加</a></li>
                 <li class="item-list"><a href="">ユーザー一覧</a></li>
                 <li class="item-list"><a href="">報告事項一覧</a></li>
                 <li class="item-list"><a href="">ログアウト</a></li>
@@ -33,37 +34,40 @@
 
             <div class="container">
                 <h1>ユーザー追加</h1>
-                 <form id="adminForm" th:action="@{/user/create/process}" method="post">
+                <form id="adminForm" th:action="@{/admin/user/create/process}" method="post" enctype="multipart/form-data">
                     <div class="form-content">
                         <div class="icon-container">
                             <div class="icon-circle">
-                                <span>アイコン</span>
+                              
                             </div>
-                            <input type="file" id="iconUpload" class="file-input">
-                            <label for="iconUpload" class="file-label">ファイル選択</label>
+                            <input type="file" id="userIcon" name="userIcon" accept="image/*" class="file-input">
+                            <label for="userIcon" class="file-label">ファイル選択</label>
                         </div>
                         <div class="input-fields">
                             <div class="input-group">
                                 <label for="username">ユーザー名:</label>
-                                <input type="text" id="username" name="userName" th:value="${user.userName}">
+                                <input type="text" id="username" name="username">
                             </div>
                             <div class="input-group">
                                 <label for="email">ユーザーメール:</label>
-                                <input type="email" id="email" name="userEmail" th:value="${user.userEmail}">
+                                <input type="email" id="email" name="email">
                             </div>
                             <div class="input-group" id="input-button">
                                 <label for="password">パスワード:</label>
-                                <input type="password" id="password" name="userPassword" th:value="${user.userPassword}">
+                                <input type="password" id="password" name="password">
                                 <button type="button" class="toggle-password">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
                             <div class="input-group">
                                 <label for="confirmPassword">パスワード確認:</label>
-                                <input type="password" id="confirmPassword" name="confirmPassword" th:value="${user.confirmPassword}">
+                                <input type="password" id="confirmPassword" name="confirmPassword">
                             </div>
                         </div>
                     </div>
+					<div class="error-message" th:if="${error != null}">
+					    <p th:text="${error}"></p>
+					</div>
                     <div class="button-group">
                         <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
                         <button type="submit" class="submit-button">追加</button>
@@ -83,7 +87,7 @@
             <p> Copyright &copy; 2024</p>
         </div>
     </footer>
-    <script src="admin_register_scripts.js"></script>
-    <script src="user_add.js"></script>
+    <script src="/js/user_create.js"></script>
 </body>
+
 </html>

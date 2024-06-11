@@ -22,7 +22,7 @@ public class ReportDetailsController {
 	private ReportsService reportService;
 
 	// すべてのレポートを取得し、@return レポートリスト
-	@GetMapping
+	@GetMapping("/details")
 	public List<Reports> getAllReports() {
 		return reportService.getAllReports();
 	}

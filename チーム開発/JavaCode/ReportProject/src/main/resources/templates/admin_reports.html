@@ -4,8 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>管理者報告一覧</title>
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="header.css">
+   <link rel="stylesheet" th:href="@{/css/style.css}">
+   <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <body>
    <header>
@@ -45,7 +45,7 @@
                   </div>
 
                   <div class="detail-button-content">
-                     <a href="#" class="detail-button">報告詳細</a>
+                     <a href="/reports/details" class="detail-button">報告詳細</a>
                      <button type="button" class="delete-button" onclick="deleteFunction()">削除</button>                 
                   </div>
 

@@ -63,6 +63,9 @@ public class Users {
 	// 作成日時という列を作ります。更新はできません
 	@Column(name = "created_at", nullable = false, updatable = false)
 	private LocalDateTime createdAt = LocalDateTime.now();
+	
+	@Column(name = "user_icon")
+	private String userIcon;
 
 	// 管理者ID（外部キー）という列を作り、必ず値が入るようにします
 	@NonNull

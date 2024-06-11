@@ -22,11 +22,11 @@
         <main>
             <div class="register-form">
                 <h1>新規登録</h1>
-				<form action="/admin/register/process" method="POST" enctype="multipart/form-data">
+				<form th:action="@{/admin/register/process}" method="POST" enctype="multipart/form-data">
                 <div class="icon-upload">
                     <div class="icon-placeholder" id="icon-placeholder">
-                        <label for="icon-upload" class="icon-label">アイコン</label>
-                       <input type="file" id="icon-upload" name="adminIcon" accept="image/*" onchange="previewIcon(event)">
+                        <label for="adminIcon" class="icon-label"></label>
+                       <input type="file" id="adminIcon" name="adminIcon" accept="image/*" >
                     </div>
                 </div>
               

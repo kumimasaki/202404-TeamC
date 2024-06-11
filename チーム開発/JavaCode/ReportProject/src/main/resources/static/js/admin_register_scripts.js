@@ -14,24 +14,31 @@ document.addEventListener("DOMContentLoaded", function() {
             icon.classList.add('fa-eye');
         }
     });
-});
 
-function previewIcon(event) {
-    const input = event.target;
-    const reader = new FileReader();
-    reader.onload = function() {
-        const iconPlaceholder = document.getElementById('icon-placeholder');
-        const iconImg = document.createElement('img');
-        iconImg.src = reader.result;
-        iconPlaceholder.innerHTML = '';
-        iconPlaceholder.appendChild(iconImg);
-        console.log(reader.result);
-    };
-    reader.readAsDataURL(input.files[0]);
-}
+    document.getElementById('adminIcon').addEventListener('change', function(event) {
+        const input = event.target;
+        if (input.files && input.files[0]) {
+            const file = input.files[0];
+            const reader = new FileReader();
 
-  // パスワード確認のチェック
+            reader.onload = function() {
+                const imageDataUrl = reader.result;
+                const iconCircle = document.querySelector('.icon-placeholder');
+                iconCircle.style.backgroundImage = `url(${imageDataUrl})`;
+                iconCircle.style.backgroundSize = 'cover';
+                iconCircle.style.backgroundPosition = 'center';
+            };
+
+            reader.readAsDataURL(file);
+        }
+    });
+
+    // パスワード確認のチェック
+    const password = document.querySelector('[name="adminPassword"]').value;
+    const confirmPassword = document.querySelector('[name="confirmPassword"]').value;
     if (password !== confirmPassword) {
         alert('パスワードが一致しません。');
-        return;
+        return false;
     }
+});
+

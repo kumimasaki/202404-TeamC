@@ -24,22 +24,22 @@ public class UserReportListController {
 		// すべてのレポートを取得してモデルに追加
 		model.addAttribute("reports", reportsService.getAllReports());
 		// レポート一覧画面のテンプレートを返す
-		return "user/report_list";
+		return "user_reports.html";
 	}
 
 	// レポート検索を処理するメソッド
-	@PostMapping("/search_reports")
+	@PostMapping("/user/search_reports")
 	public String serchReports(@RequestParam("search") String search, Model model) {
 		// キーワードでレポートを検索
 		List<Reports> reportList = reportsService.searchReportsByContent(search);
 		// 検索結果をモデルに追加
 		model.addAttribute("reportList", reportList);
 		// レポート一覧画面のテンプレートを返す
-		return "user/report_list";
+		return "user_reports.html";
 	}
 
 	// レポートを削除するメソッド
-	@PostMapping("/delete_repotrt")
+	@PostMapping("/user/delete_repotrt")
 	public String deleteReport(@RequestParam("reportId") Long reportId) {
 		// 指定されたIDのレポートを削除する
 		reportsService.deleteReport(reportId);
