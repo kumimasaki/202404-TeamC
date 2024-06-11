@@ -32,7 +32,7 @@
         <div class="content">
             <a href="#" class="back-link"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
 
-            <div class="content-text" >
+            <div class="content-text">
 
                 <div class="title">
                     <h1>報告詳細</h1>
@@ -40,33 +40,33 @@
 
                 <div class="report-title" id="title-con">
                     <label for="report-title">報告名</label>
-                    <p class="report-name">報告名</p>
+                    <p class="report-name" th:text="${report.reportTitle}">報告名</p>
                 </div>
 
                 <div class="item">
-                    <label class="add-file" >添付ファイル</label>
-                    <p class="content-item">ファイル名: xxx.pdf <button class="download-button">ダウンロード</button></p>
+                    <label class="add-file">添付ファイル</label>
+                    <p class="content-item">ファイル名: <span th:text="${report.reportFileName}">xxx.pdf</span> 
+                    <a th:href="@{/files/{id}(id=${report.reportFileId})}" class="download-button">ダウンロード</a></p>
                 </div>
 
                 <div class="report-summary">
                     <label for="summary">報告事項</label>
-                    <textarea id="summary" rows="10" readonly>ご指摘いただいた内容を修正いたしました。</textarea>
+                    <textarea id="summary" rows="10" readonly th:text="${report.contentsOfReport}">ご指摘いただいた内容を修正いたしました。</textarea>
                 </div>
 
                 <div class="reporter">
                     <label for="reporter">報告者</label>
                     <p id="reporter">
-                            <span>管理者1 </span>                       
+                        <span th:text="${report.userName}">管理者1</span>                       
                     </p>
                 </div>
 
                 <div class="submit-container">
-                    <a href="#" class="submit-button">編集画面へ</a>
+                    <a th:href="@{/user/report/edit(reportId=${report.reportId})}" class="submit-button">編集画面へ</a>
                 </div>
             </div>
         </div>
     </main>
-
 
     <footer id="footer-user">
         <div class="footer-content" id="footer-report">

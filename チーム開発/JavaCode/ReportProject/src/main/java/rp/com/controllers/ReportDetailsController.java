@@ -4,46 +4,65 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import rp.com.models.entity.Reports;
 import rp.com.services.ReportsService;
 
-@RestController
+@Controller
 @RequestMapping("/reports")
 public class ReportDetailsController {
 	@Autowired
 	private ReportsService reportService;
 
-	// すべてのレポートを取得し、@return レポートリスト
+	// すべてのレポートを取得し、@return レポートリストのビュー
 	@GetMapping
-	public List<Reports> getAllReports() {
-		return reportService.getAllReports();
+	public String getAllReports(Model model) {
+		List<Reports> reports = reportService.getAllReports();
+		model.addAttribute("reports", reports);
+		return "reports/list"; // 返回视图名称，例如 "reports/list"
 	}
 
-	// IDでレポートを取得し、@param id レポートID、@return レポートを含むレスポンスエンティティ、または404ステータス
+	// IDでレポートを取得し、@param id レポートID、@return レポート詳細のビュー、または404ステータス
 	@GetMapping("/{id}")
-	public ResponseEntity<Reports> getReportById(@PathVariable Long id) {
+	public String getReportById(@PathVariable Long id, Model model) {
 		Optional<Reports> report = reportService.getReportById(id);
-		return report.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+		if (report.isPresent()) {
+			model.addAttribute("report", report.get());
+			return "reports/detail"; // 返回视图名称，例如 "reports/detail"
+		} else {
+			return "redirect:/reports"; // 如果找不到，重定向到报告列表页面
+		}
 	}
 
-	// 新しいレポートを作成し、@param report レポートエンティティ、@return 作成されたレポート
+	// 新しいレポートを作成するフォームの表示
+	@GetMapping("/new")
+	public String showCreateForm(Model model) {
+		model.addAttribute("report", new Reports());
+		return "reports/new"; // 返回视图名称，例如 "reports/new"
+	}
+
+	// 新しいレポートを作成し、@param report レポートエンティティ、@return 作成されたレポートの詳細ビュー
 	@PostMapping
-	public Reports createReport(@RequestBody Reports report) {
-		return reportService.createReport(report);
+	public String createReport(Reports report) {
+		reportService.createReport(report);
+		return "redirect:/reports"; // 成功后重定向到报告列表页面
 	}
 
-	// レポートを受領し、@param id レポートID、@return 受領されたレポートを含むレスポンスエンティティ、または404ステータス
+	// レポートを受領し、@param id レポートID、@return 受領されたレポートのビュー、または404ステータス
 	@PostMapping("/{id}/accept")
-	public ResponseEntity<Reports> acceptReport(@PathVariable Long id) {
+	public String acceptReport(@PathVariable Long id, Model model) {
 		Optional<Reports> acceptedReport = reportService.acceptReport(id);
-		return acceptedReport.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+		if (acceptedReport.isPresent()) {
+			model.addAttribute("report", acceptedReport.get());
+			return "reports/detail"; // 返回视图名称，例如 "reports/detail"
+		} else {
+			return "redirect:/reports"; // 如果找不到，重定向到报告列表页面
+		}
 	}
 }
