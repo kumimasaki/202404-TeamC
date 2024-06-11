@@ -1,68 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>管理者報告一覧</title>
-    <link rel="stylesheet" th:href="@{/css/style.css}">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ユーザー一覧</title>
+<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <body>
-    <header id="header-user">
-        <div class="header-content">
-            <div class="site-name">
-                <h1>業務報告システム</h1>
-            </div>
+	<header id="header-user">
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
             <ul class="header-item">
                 <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
-                <li class="item-list"><a href="">ユーザー名前</a></li>
-                <li class="item-list"><a href="">報告一覧</a></li>
-                <li class="item-list"><a href="">情報変更</a></li>
+                <li class="item-list"><a href="">管理者名前</a></li>
+                <li class="item-list"><a href="">管理者情報変更</a></li>
+                <li class="item-list"> <a href="">ユーザー追加</a></li>
+                <li class="item-list"><a href="">ユーザー一覧</a> </li>
+                <li class="item-list"><a href="">報告事項一覧</a></li>
                 <li class="item-list"><a href="">ログアウト</a></li>
             </ul>
-        </div>
-    </header>
-    <main>
-        <div class="search-container">
-            <label>ユーザー一覧（検索結果）</label>
-            <form th:action="@{/user/search}" method="post">
-                <input type="text" name="search" placeholder="検索内容．．．">
-                <button type="submit" class="search-button">検索</button>
-            </form>
-        </div>
-        <div class="user-list">
-            <div th:if="${usersList != null}">
-                <div th:each="user : ${usersList}" class="user-card">
-                    <img src="user.png" alt="ユーザー画像" class="user-image">
-                    <div class="user-info">
-                        <h3 th:text="${user.username}">ユーザー名</h3>
-                        <p th:text="'メールアドレス：' + ${user.email}">メールアドレス：</p>
-                        <p th:text="'パスワード：' + ${user.password}">パスワード：</p>
-                        <form action="#" th:action="@{/user/delete}" method="post">
-                            <input type="hidden" name="userId" th:value="${user.id}">
-                            <button type="submit" class="delete-button">削除</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div th:if="${usersList == null}">
-                <p>ユーザーが見つかりません</p>
-            </div>
-        </div>
-    </main>
-    <footer id="footer-user">
-        <div class="footer-content" id="footer-report">
-            <div>
-                <ul class="footer-item" id="footer-item-report">
-                    <li><a href="">情報変更</a></li>
-                    <li>|</li>
-                    <li><a href="">ログアウト</a></li>
-                </ul>
-            </div>
-            <div>
-                <p>Copyright &copy; 2024</p>
-            </div>
-        </div>
-    </footer>
+		</div>
+	</header>
+	<main>
+		<div class="search-container">
+			<label>ユーザー一覧（検索結果）</label>
+			<form th:action="@{/user/search}" method="post">
+				<input type="text" name="search" placeholder="検索内容．．．">
+				<button type="submit" class="search-button">検索</button>
+			</form>
+		</div>
+		<div class="user-list">
+			<div th:if="${usersList != null}">
+				<div th:each="user : ${usersList}" class="user-card">
+					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"> 
+					<img th:src="@{user-img/{imagePath}(imagePath=${user.userImage})}" alt=" " class="user-image">
+					</a>
+					<div class="user-info">
+						<h3 th:text="${user.username}">ユーザー名</h3>
+						<p th:text="'メールアドレス：' + ${user.userEmail}">メールアドレス：</p>
+						<p th:text="'パスワード：' + ${user.userPassword}">パスワード：</p>
+						<form th:action="@{/user/delete}" method="post">
+							<input type="hidden" name="userId" th:value="${user.userId}">
+							<button type="submit" class="delete-button">削除</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div th:if="${usersList == null}">
+				<p>ユーザーが見つかりません</p>
+			</div>
+		</div>
+	</main>
+	<footer id="footer-user">
+		<div class="footer-content" id="footer-report">
+			<div>
+				<ul class="footer-item" id="footer-item-report">
+					<li><a href="">情報変更</a></li>
+					<li>|</li>
+					<li><a href="">ログアウト</a></li>
+				</ul>
+			</div>
+			<div>
+				<p>Copyright &copy; 2024</p>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>
