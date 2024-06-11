@@ -78,4 +78,5 @@ public class ReportsService {
 	public List<Reports> searchReportsByTitleOrContent(String query) {
 		return reportsDao.findByReportTitleContainingOrContentsOfReportContaining(query, query);
 	}
+
 }

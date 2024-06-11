@@ -21,7 +21,7 @@ public class UserReportCreateController {
 	// 報告登録画面を表示し、@return 報告登録画面のテンプレート名
 	@GetMapping("/create")
 	public String showReportCreateForm() {
-		return "user/report_create";
+		return "user_report_register";
 	}
 
 	// 報告登録処理を行う、@param reportTitle報告のタイトル
@@ -43,6 +43,13 @@ public class UserReportCreateController {
 		// モデルにメッセージを追加
 		model.addAttribute("message", "レポートが正常に登録されました。");
 		// 登録結果画面のテンプレートを返す
-		return "user/report_create_result";
+		return "redirect:/user/report"; // 登録後に報告一覧画面にリダイレクト
+    }
+
+    // 報告一覧画面を表示するメソッド
+    @GetMapping("/list")
+    public String showReportsList(Model model) {
+        model.addAttribute("reports", reportsService.getAllReports()); // 全ての報告をモデルに追加
+        return "user_reports";
 	}
 }
