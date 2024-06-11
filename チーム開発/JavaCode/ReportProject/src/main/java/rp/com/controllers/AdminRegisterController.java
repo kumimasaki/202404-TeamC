@@ -1,5 +1,12 @@
 package rp.com.controllers;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,32 +38,34 @@ public class AdminRegisterController {
         return "admin_register.html";
     }
 
-    // 管理者登録処理を行うメソッドです
+ 
+ // 管理者登録処理を行うメソッドです
     @PostMapping("/register/process")
-    public String processRegister(@ModelAttribute("admin") Admin admin, 
-                                  @RequestParam("adminIcon") MultipartFile adminIconFile, 
-                                  Model model) {
+    public String processRegister(
+            @RequestParam String adminName,
+            @RequestParam String adminEmail,
+            @RequestParam String adminPassword,
+            @RequestParam("adminIcon") MultipartFile adminIcon,
+            @RequestParam String confirmPassword,
+            Model model) {
+        
         try {
-            // メールアドレスが既に存在するかチェックします
-            if (adminService.emailExists(admin.getAdminEmail())) {
-                model.addAttribute("errorMessage", "メールアドレスは既に存在しています。");
-                return "admin_register.html";
-            }
-
-            // アイコンを保存する
-            adminService.saveAdminIcon(admin, adminIconFile);
-
-            // 管理者を登録します
-            adminService.registerAdmin(admin);
-
-            // 登録が成功したら、ログイン画面を表示します
-            model.addAttribute("successMessage", "登録が成功しました。ログインしてください。");
-            model.addAttribute("admin", new Admin());
+            // 创建 Admin 对象并设置属性
+            Admin admin = new Admin();
+            admin.setAdminName(adminName);
+            admin.setAdminEmail(adminEmail);
+            admin.setAdminPassword(adminPassword);
+            admin.setConfirmPassword(confirmPassword);
+            
+            // 使用 saveAdminWithIcon 方法保存管理员信息和头像
+            adminService.saveAdminWithIcon(adminName, adminEmail, adminPassword, adminIcon, confirmPassword);
+            
+            // 注册成功，重定向到登录页面
             return "admin_login.html";
-        } catch (Exception e) {
-            // その他のエラーが発生した場合、エラーメッセージをモデルに追加して登録画面を再表示します
+        } catch (IOException e) {
             e.printStackTrace();
-            model.addAttribute("errorMessage", "登録処理中にエラーが発生しました。");
+            // 注册失败，返回注册页面并显示错误消息
+            model.addAttribute("errorMessage", "アイコン保存中にエラーが発生しました。");
             return "admin_register.html";
         }
     }
