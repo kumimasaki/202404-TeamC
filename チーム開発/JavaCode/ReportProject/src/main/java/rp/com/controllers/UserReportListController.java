@@ -19,7 +19,7 @@ public class UserReportListController {
 	private ReportsService reportsService;
 
 	// レポート一覧画面を表示するメソッド
-	@GetMapping("/user/report/list")
+	@GetMapping("/user/report/view-list")
 	public String showReportList(Model model) {
 		// すべてのレポートを取得してモデルに追加
 		model.addAttribute("reports", reportsService.getAllReports());
