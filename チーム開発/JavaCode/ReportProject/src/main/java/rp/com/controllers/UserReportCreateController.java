@@ -46,10 +46,5 @@ public class UserReportCreateController {
 		return "redirect:/user/report"; // 登録後に報告一覧画面にリダイレクト
     }
 
-    // 報告一覧画面を表示するメソッド
-    @GetMapping("/list")
-    public String showReportsList(Model model) {
-        model.addAttribute("reports", reportsService.getAllReports()); // 全ての報告をモデルに追加
-        return "user_reports";
-	}
+   
 }

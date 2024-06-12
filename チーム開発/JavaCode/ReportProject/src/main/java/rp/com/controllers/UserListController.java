@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpSession;
 import rp.com.services.UserService;
 import rp.com.models.entity.Users;
 
@@ -17,17 +18,23 @@ public class UserListController {
 
 	@Autowired
 	private UserService userService;
-
+	@Autowired
+	private HttpSession session;
 	// ユーザー一覧ページを表示するメソッド
-	@GetMapping("/user/list")
-	public String showUserList(Model model) {
-		// すべてのユーザーを取得
-		List<Users> usersList = userService.getAllUsers();
-		// 取得したユーザーリストをモデルに追加
-		model.addAttribute("usersList", usersList);
-		// user_list.htmlテンプレートを返す
-		return "user_list.html";
-	}
+	 @GetMapping("/user/list")
+	    public String showUserList(Model model) {
+		 
+		 Users users = (Users) session.getAttribute("loginUsersInfo");
+		 		
+			  // 获取所有用户列表
+		        List<Users> usersList = userService.getAllUserList();
+		        // 将用户列表添加到模型中
+		        model.addAttribute("usersList", usersList);
+		       
+		        return "user_list";			
+			     
+	 }
+	
 
 	// ユーザー検索を処理するメソッド
 	@PostMapping("/user/search")

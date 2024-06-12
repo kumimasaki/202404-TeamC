@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.servlet.http.HttpSession;
 import rp.com.services.AdminService;
 import rp.com.services.UserService;
 import rp.com.models.entity.Admin;
@@ -29,54 +30,48 @@ public class UserCreateController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private HttpSession session;
+
 	// ユーザー登録画面を表示するメソッド
 	@GetMapping("/admin/user/create")
 	public String showCreateUserForm(Model model) {
-		// ユーザーオブジェクトをモデルに追加してフォームにバインドします
-		model.addAttribute("user", new Users());
-		return "user_create.html";
+	    Admin admin = (Admin) session.getAttribute("loginAdminInfo");
+	    if (admin != null) {
+	        model.addAttribute("adminId", admin.getAdminId());
+	        return "user_create.html";
+	    } else {
+	        return "redirect:/admin/login";
+	    }
 	}
+
 
 	// ユーザー登録処理を行うメソッド
 	@PostMapping("/admin/user/create/process")
-	public String createUser(@RequestParam("username") String userName, @RequestParam("email") String userEmail,
-			@RequestParam("password") String userPassword, @RequestParam("confirmPassword") String confirmPassword,
-			@RequestParam("userIcon") MultipartFile userIcon, @RequestParam("adminId") Long adminId, Model model) {
-		// アイコンを保存する
-		String fileName = null;
-		if (!userIcon.isEmpty()) {
-			try {
-				String originalFilename = userIcon.getOriginalFilename();
-				fileName = new SimpleDateFormat("yyyy-MM-dd-HH-").format(new Date()) + originalFilename;
-				Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		// admin情報を取得する
-		Admin admin = adminService.getAdminById(adminId);
-		// adminが存在しない場合
-		if (admin == null) {
-			model.addAttribute("error", "管理者が存在しません");
-			return "user_create.html";
-		}
-		// パスワード確認
-		if (!userPassword.equals(confirmPassword)) {
-			model.addAttribute("error", "パスワードが一致しません");
-			return "user_create.html";
-		}
-		
-		// 新しいユーザー作成
-		Users newUser = new Users(userEmail, userName, userPassword, admin);
-		newUser.setUserIcon(fileName);
-
-		// 新しいユーザー保存
-		if (userService.createUser(newUser)) {
-			return "redirect:/user_list";
-		} else {
-			model.addAttribute("error", "ユーザー追加が失敗しました。");
-			return "user_create.html";
-		}
+	public String createUser(
+	    @RequestParam String userName,
+	    @RequestParam String userEmail,
+	    @RequestParam String userPassword, 
+	    @RequestParam("userIcon") MultipartFile userIcon,
+	    @RequestParam("adminId") Long adminId,
+	    Model model) {
+	    
+		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
+        if (admin != null) {
+            try {
+            	
+                userService.saveUserWithIcon(userName, userEmail, userPassword, userIcon, admin.getAdminId());
+                return "redirect:/user/list";
+            } catch (IOException e) {
+                e.printStackTrace();
+                return "error";
+            }
+        } else {
+            // 处理 admin 对象未初始化的情况
+            return "redirect:/admin/login";
+	    }
 	}
-}
+
+	
+	
+	} 

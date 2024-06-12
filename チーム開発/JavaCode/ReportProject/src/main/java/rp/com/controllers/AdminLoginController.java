@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpSession;
 import rp.com.models.entity.Admin;
 import rp.com.services.AdminService;
 
@@ -19,7 +20,10 @@ public class AdminLoginController {
     // AdminServiceを使うための設定です
     @Autowired
     private AdminService adminService;
-
+	// Sessionが使えるように宣言
+	@Autowired
+	private HttpSession session;
+	
     // 管理者ログイン画面を表示するメソッドです
     @GetMapping("/login")
     public String showLoginForm(Model model) {
@@ -34,6 +38,7 @@ public class AdminLoginController {
     public String processLogin(@RequestParam String adminEmail, @RequestParam String adminPassword, Model model) {
         Admin admin = adminService.loginAdmin(adminEmail, adminPassword);
         if (admin != null) {
+        	session.setAttribute("loginAdminInfo", admin);
             // ログインが成功した場合、レポート画面を表示します
             return "admin_reports.html";
         } else {

@@ -34,12 +34,12 @@
 		</div>
 		<div class="user-list">
 			<div th:if="${usersList != null}">
-				<div th:each="user : ${usersList}" class="user-card">
+				<div th:each="user:${usersList}" class="user-card">
 					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"> 
-					<img th:src="@{user-img/{imagePath}(imagePath=${user.userImage})}" alt=" " class="user-image">
+						<img th:src="@{'/' + ${user.userIcon}}" style="width: 100px; height: 100px;">						               
 					</a>
 					<div class="user-info">
-						<h3 th:text="${user.username}">ユーザー名</h3>
+						<h3 th:text="${user.userName}">ユーザー名</h3>
 						<p th:text="'メールアドレス：' + ${user.userEmail}">メールアドレス：</p>
 						<p th:text="'パスワード：' + ${user.userPassword}">パスワード：</p>
 						<form th:action="@{/user/delete}" method="post">

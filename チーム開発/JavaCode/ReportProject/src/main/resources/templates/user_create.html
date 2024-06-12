@@ -34,7 +34,7 @@
 
             <div class="container">
                 <h1>ユーザー追加</h1>
-                <form id="adminForm" th:action="@{/admin/user/create/process}" method="post" enctype="multipart/form-data">
+                <form id="userForm" th:action="@{/admin/user/create/process}" method="post" enctype="multipart/form-data">
                     <div class="form-content">
                         <div class="icon-container">
                             <div class="icon-circle">
@@ -46,29 +46,27 @@
                         <div class="input-fields">
                             <div class="input-group">
                                 <label for="username">ユーザー名:</label>
-                                <input type="text" id="username" name="username">
+                                <input type="text" id="username" name="userName">
                             </div>
                             <div class="input-group">
                                 <label for="email">ユーザーメール:</label>
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="userEmail">
                             </div>
                             <div class="input-group" id="input-button">
                                 <label for="password">パスワード:</label>
-                                <input type="password" id="password" name="password">
+                                <input type="password" id="password" name="userPassword">
                                 <button type="button" class="toggle-password">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
-                            <div class="input-group">
-                                <label for="confirmPassword">パスワード確認:</label>
-                                <input type="password" id="confirmPassword" name="confirmPassword">
-                            </div>
+                         
                         </div>
                     </div>
 					<div class="error-message" th:if="${error != null}">
 					    <p th:text="${error}"></p>
 					</div>
                     <div class="button-group">
+						<input type="hidden" id="adminId" name="adminId" th:value="${adminId}">
                         <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
                         <button type="submit" class="submit-button">追加</button>
                     </div>

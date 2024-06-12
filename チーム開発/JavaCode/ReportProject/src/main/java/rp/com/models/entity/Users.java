@@ -73,11 +73,14 @@ public class Users {
 	@JoinColumn(name = "admin_id", nullable = false)
 	private Admin admin;
 
-	public Users(String userEmail, String userName, String userPassword) {
-		this.userEmail = userEmail;
-		this.userName = userName;
-		this.userPassword = userPassword;
-		this.createdAt = LocalDateTime.now();
-		this.deleteFlg = 0;
+
+	public Users(String userName, String userEmail, String userPassword, LocalDateTime createdAt, String userIcon, Admin admin) {
+	    this.userName = userName;
+	    this.userEmail = userEmail;
+	    this.userPassword = userPassword;
+	    this.createdAt = createdAt;
+	    this.userIcon = userIcon;
+	    this.admin = admin;
 	}
+
 }

@@ -2,75 +2,102 @@ package rp.com.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import rp.com.models.dao.UsersDao;
+import rp.com.models.entity.Admin;
 import rp.com.models.entity.Users;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
 
-    @Autowired
-    private UsersDao usersDao;
-    
-    // すべてのユーザーを取得するメソッド
-    public List<Users> getAllUserList() {
-		if(usersDao == null) {
-    		return null;
-    	}else {
-        return usersDao.findAll();
-        }
+	@Autowired
+	private UsersDao usersDao;
+	@Autowired
+	private AdminService adminService;
+
+	// すべてのユーザーを取得するメソッド
+	public List<Users> getAllUserList() {
+		if (usersDao == null) {
+			return null;
+		} else {
+			return usersDao.findAll();
+		}
+	}
+
+	// ユーザー名またはメールアドレスでユーザーを検索するメソッド
+	public List<Users> searchUsersByNameOrEmail(String search) {
+		return usersDao.findByUserNameContainingOrUserEmailContaining(search, search);
+	}
+
+	// ユーザーを削除するメソッド
+	public void deleteUser(Long userId) {
+		usersDao.deleteById(userId);
+	}
+
+	// ユーザーの作成処理
+	// 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
+	public void saveUserWithIcon(String userName, String userEmail, String userPassword, MultipartFile userIcon, Long adminId) throws IOException {
+	    // ユーザーが存在しない場合のみ保存を行う
+	    if (!emailExists(userEmail)) {
+	        String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + userIcon.getOriginalFilename();
+	        Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
+
+	        String iconPath = "upload/" + fileName;
+	        Admin admin = adminService.getAdminById(adminId); // 获取管理员对象
+	        usersDao.save(new Users(userName, userEmail, userPassword, LocalDateTime.now(), iconPath, admin));
+	    } else {
+	        throw new RuntimeException("このメールアドレスは既に登録されています。");
+	    }
+	}
+
+	public String getIconPathForUser(Long userId) {
+	    Optional<Users> optionalUser = usersDao.findById(userId);
+	    if (optionalUser.isPresent()) {
+	        Users user = optionalUser.get();
+	        return user.getUserIcon();
+	    } else {
+	        return null;
+	    }
+	}
+
+	
+    // メールアドレスの存在確認
+    public boolean emailExists(String userEmail) {
+        // 指定されたメールアドレスの管理者が存在するかどうかを返します
+        return usersDao.findByUserEmail(userEmail) != null;
     }
 
-    // ユーザー名またはメールアドレスでユーザーを検索するメソッド
-    public List<Users> searchUsersByNameOrEmail(String search) {
-        return usersDao.findByUserNameContainingOrUserEmailContaining(search, search);
-    }
+	// ログイン処理
+	// もし、emailとpasswordがfindByUserAndPasswordを使用して存在しなかった場合==nullの場合、
+	// 存在しないnullであることをコントローラークラスに知らせる
+	// そうでない場合、ログインしている人の情報をコントローラークラスに渡す
+	public Users loginCheck(String userEmail, String userPassword) {
+		Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
+		if (users == null) {
+			return null;
+		} else {
+			return users;
+		}
+	}
 
-    // ユーザーを削除するメソッド
-    public void deleteUser(Long userId) {
-        usersDao.deleteById(userId);
-    }
+	// ユーザーIDでユーザーを取得するメソッド
+	public Users getUserById(Long userId) {
+	    return usersDao.findByUserId(userId);
+	}
+	
+	// ユーザーを更新するメソッド
+	public void updateUser(Users user) {
+		usersDao.save(user);
 
-    // ユーザーの作成処理
-    // もし、findByUserEmail == nullだったら登録処理を行う
-    // 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
-    public boolean createUser(String userName,String userEmail,String userPassword) {
-        if (usersDao.findByUserEmail(userEmail) == null) {
-            usersDao.save(new Users(userName,userEmail,userPassword));
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // ログイン処理
-    // もし、emailとpasswordがfindByUserAndPasswordを使用して存在しなかった場合==nullの場合、
-    // 存在しないnullであることをコントローラークラスに知らせる
-    // そうでない場合、ログインしている人の情報をコントローラークラスに渡す
-    public Users loginCheck(String userEmail, String userPassword) {
-        Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
-       if(users==null) {
-    	   return null;
-       }else {
-        return users;
-    }
-    }
+	}
 }
-
-//	public List<Users> searchByUserName(String userName) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	public List<Users> searchByUserEmail(String userEmail) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//	public Users getUserById(Long userId) {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-//
-//}

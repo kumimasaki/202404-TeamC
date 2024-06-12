@@ -26,6 +26,11 @@ public class ReportsService {
 		return reportsDao.findById(id);
 	}
 
+	// 管理员ID获取报告列表
+	public List<Reports> getReportsByAdminId(Long adminId) {
+	    return reportsDao.findByAdminId(adminId);
+	}
+	
 	// 新しいレポートを作成し、@param report レポートエンティティ、@return 作成されたレポート
 	public Reports createReport(Reports report) {
 		return reportsDao.save(report);
