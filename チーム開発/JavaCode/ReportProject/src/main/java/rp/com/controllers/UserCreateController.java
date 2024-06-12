@@ -66,7 +66,7 @@ public class UserCreateController {
 			model.addAttribute("error", "パスワードが一致しません");
 			return "user_create.html";
 		}
-		
+
 		// 新しいユーザー作成
 		Users newUser = new Users(userEmail, userName, userPassword, admin);
 		newUser.setUserIcon(fileName);
