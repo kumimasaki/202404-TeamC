@@ -15,8 +15,8 @@ import rp.com.services.ReportsService;
 @RequestMapping
 public class UserReportCreateController {
 
-	@Autowired
-	private ReportsService reportsService;
+    @Autowired
+    private ReportsService reportsService;
 
 	// 報告登録画面を表示し、@return 報告登録画面のテンプレート名
 	@GetMapping("/user/report/create")
@@ -47,5 +47,4 @@ public class UserReportCreateController {
 		return "redirect:/user/report"; // 登録後に報告一覧画面にリダイレクト
     }
 
-   
 }

@@ -21,6 +21,7 @@ public class UserListController {
 	@Autowired
 	private HttpSession session;
 	// ユーザー一覧ページを表示するメソッド
+
 	 @GetMapping("/user/list")
 	    public String showUserList(Model model) {
 		 
@@ -34,7 +35,7 @@ public class UserListController {
 		        return "user_list";			
 			     
 	 }
-	
+
 
 	// ユーザー検索を処理するメソッド
 	@PostMapping("/search")
