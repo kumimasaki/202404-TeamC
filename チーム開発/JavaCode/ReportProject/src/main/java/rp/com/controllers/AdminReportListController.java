@@ -13,7 +13,7 @@ import rp.com.models.entity.Reports;
 import rp.com.services.ReportsService;
 
 @Controller
-public class ReportListController {
+public class AdminReportListController {
 
 	@Autowired
 	private ReportsService reportsService;

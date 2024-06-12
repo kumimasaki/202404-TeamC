@@ -13,7 +13,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin/reports")
-public class ReportDetailsController {
+public class AdminReportDetailsController {
 
 	@Autowired
 	private ReportsService reportsService;
@@ -55,7 +55,7 @@ public class ReportDetailsController {
 	// レポートを受領し
 	@PostMapping("/{id}/receive")
 	public String receiveReport(@PathVariable Long id) {
-		Optional<Reports> reportOptional = reportsService.acceptReport(id);
+		reportsService.acceptReport(id);
 		return "redirect:/admin/reports";
 	}
 }
