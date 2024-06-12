@@ -3,8 +3,7 @@ package rp.com.services;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.nio.file.StandardCopyOption;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,33 +19,34 @@ public class AdminService {
     @Autowired
     private AdminDao adminDao;
 
-    // 管理者の登録処理
-    public void saveAdminWithIcon(String adminName, String adminEmail, String adminPassword, MultipartFile adminIcon, String confirmPassword) throws IOException {
-        // 管理者が存在しない場合のみ保存を行う
-        if (!emailExists(adminEmail)) {
-            String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminIcon.getOriginalFilename();
-            Files.copy(adminIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
-
-            String iconPath = "upload/" + fileName; // 这里保存的是文件路径，而不是 MultipartFile 对象
-            adminDao.save(new Admin(adminName, adminEmail, adminPassword, iconPath, confirmPassword));
+    // 保存処理(登録処理)
+    // もし、findByAdminEmail == null だったら、登録処理をします
+    // saveメソッドを使用して登録処理をする
+    // 保存できたら true
+    // そうでない場合は、保存処理失敗 false
+    @Transactional
+    public boolean createAdmin(String adminName, String adminEmail, String adminPassword, MultipartFile adminIcon) {
+        if (adminDao.findByAdminEmail(adminEmail) == null) {
+            adminDao.save(new Admin());
+            return true;
         } else {
-            throw new RuntimeException("このメールアドレスは既に登録されています。");
+            return false;
         }
     }
- 
-
-    // 管理者のログイン処理
-    public Admin loginAdmin(String adminEmail, String adminPassword) {
-        // 指定されたメールアドレスで管理者を検索し、パスワードが一致する場合はその管理者を返します
-        Admin admin = adminDao.findByAdminEmail(adminEmail);
-        if (admin != null && admin.getAdminPassword().equals(adminPassword)) {
-            return admin;
-        } else {
-            // 認証に失敗した場合は null を返します
-            return null;
-        }
+    
+    //ログイン処理
+    //もし、findByAdminEmailAndPasswordを使用して存在しなかった場合==nullの場合、
+    //その場合は、存在しないnullであることをコンストローラークラスに知らせる
+    //そうでない場合は、ログインしている人の情報をコンストローラークラスに渡す
+    public Admin loginCheck(String adminEmail,String password) {
+    	Admin admin = adminDao.findByAdminEmailAndAdminPassword(adminEmail,password);
+    	if(admin == null) {
+    		return null;
+    	}else {
+    		return admin;
+    	}
+    	
     }
-
     // メールアドレスの存在確認
     public boolean emailExists(String adminEmail) {
         // 指定されたメールアドレスの管理者が存在するかどうかを返します
@@ -75,33 +75,27 @@ public class AdminService {
     public Admin findByAdminEmail(String adminEmail) {
         return adminDao.findByAdminEmail(adminEmail);
     }
- // 管理者の情報とアイコンを更新するメソッド
-    @Transactional
-    public void updateAdminInfoWithIcon(Admin admin, MultipartFile adminIcon) throws IOException {
-        // 判断管理员是否存在
-    	Admin existingAdmin = adminDao.findById(admin.getAdminId()).orElse(null);
-         if (existingAdmin != null) {
-            // 更新管理员信息
-            existingAdmin.setAdminName(admin.getAdminName());
-            existingAdmin.setAdminEmail(admin.getAdminEmail());
-            existingAdmin.setConfirmPassword(admin.getConfirmPassword());
-            
-            // 更新管理员头像
-            if (adminIcon != null && !adminIcon.isEmpty()) {
-                // 生成文件名
-                String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + adminIcon.getOriginalFilename();
-                // 将头像文件保存到指定路径
-                Files.copy(adminIcon.getInputStream(), Path.of("src/main/resources/static/upload/" + fileName));
-                // 设置管理员头像路径
-                existingAdmin.setAdminIcon("upload/" + fileName);
-            }
-            
-            // 保存更新后的管理员信息
-            adminDao.save(existingAdmin);
-        } else {
-            throw new RuntimeException("指定的管理员不存在");
-        }
-    }
-  
-    
+
+    // iconを保存するメソッド
+    public void saveAdminIcon(Admin admin, MultipartFile adminIconFile) {
+        try {
+            // 创建临时文件并复制头像文件
+            Path tempFile = Files.createTempFile("temp", adminIconFile.getOriginalFilename());
+            Files.copy(adminIconFile.getInputStream(), tempFile, StandardCopyOption.REPLACE_EXISTING);
+
+//            // 设置管理员的头像
+//            admin.setAdminIcon(adminIconFile);
+
+            // 保存管理员信息
+            adminDao.save(admin);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("アイコン保存が失敗しました。", e);
+        }		
+	}
+
+	public boolean createAdmin(String adminName, String adminEmail, String adminPassword) {
+		// TODO Auto-generated method stub
+		return true;
+	}
 }

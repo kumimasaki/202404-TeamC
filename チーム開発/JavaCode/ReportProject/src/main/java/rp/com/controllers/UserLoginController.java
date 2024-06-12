@@ -32,10 +32,10 @@ public class UserLoginController {
             @RequestParam String userEmail,
             @RequestParam String userPassword,
             Model model) {
-//    	model.addAttribute("loginForm", new Users());
-//    	
+   	
     	// loginCheckメソッドを呼び出してその結果をaccountという変数に格納
     	Users users = userService.loginCheck(userEmail, userPassword);
+    	
         // もし、user==nu11口グイン画面にとどまります
     	// そうでない場合は、sessionにログイン情報に保存
     	// user一覧画面にリダイレクトする/user/list
@@ -45,7 +45,7 @@ public class UserLoginController {
         } else {
             // ログイン成功の場合、ユーザー情報をモデルに追加してダッシュボードにリダイレクトします
            session.setAttribute("loginUserInfo",users);
-           return "redirect:/user/list";
+           return "redirect:user/report_list";
         }
     }
 }

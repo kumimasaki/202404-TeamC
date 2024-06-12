@@ -22,7 +22,7 @@ public class UserListController {
 	@GetMapping("/user/list")
 	public String showUserList(Model model) {
 		// すべてのユーザーを取得
-		List<Users> usersList = userService.getAllUsers();
+		List<Users> usersList = userService.getAllUserList();
 		// 取得したユーザーリストをモデルに追加
 		model.addAttribute("usersList", usersList);
 		// user_list.htmlテンプレートを返す
@@ -30,7 +30,7 @@ public class UserListController {
 	}
 
 	// ユーザー検索を処理するメソッド
-	@PostMapping("/user/search")
+	@PostMapping("/search")
 	public String searchUsers(@RequestParam("search") String search, Model model) {
 		// 名前またはメールアドレスでユーザーを検索
 		List<Users> usersList = userService.searchUsersByNameOrEmail(search);
@@ -41,7 +41,7 @@ public class UserListController {
 	}
 
 	// ユーザーを削除するメソッド
-	@PostMapping("/user/delete")
+	@PostMapping("/delete")
 	public String deleteUser(@RequestParam("userId") Long userId) {
 		// 指定されたIDのユーザーを削除
 		userService.deleteUser(userId);
