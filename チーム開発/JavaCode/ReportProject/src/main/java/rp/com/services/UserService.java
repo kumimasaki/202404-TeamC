@@ -20,84 +20,91 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-	@Autowired
-	private UsersDao usersDao;
-	@Autowired
-	private AdminService adminService;
+    @Autowired
+    private UsersDao usersDao;
 
-	// すべてのユーザーを取得するメソッド
-	public List<Users> getAllUserList() {
-		if (usersDao == null) {
-			return null;
-		} else {
-			return usersDao.findAll();
-		}
-	}
+    @Autowired
+    private AdminService adminService;
 
-	// ユーザー名またはメールアドレスでユーザーを検索するメソッド
-	public List<Users> searchUsersByNameOrEmail(String search) {
-		return usersDao.findByUserNameContainingOrUserEmailContaining(search, search);
-	}
+    // すべてのユーザーを取得するメソッド
+    public List<Users> getAllUserList() {
+        return usersDao.findAll();
+    }
 
-	// ユーザーを削除するメソッド
-	public void deleteUser(Long userId) {
-		usersDao.deleteById(userId);
-	}
+    // ユーザー名またはメールアドレスでユーザーを検索するメソッド
+    public List<Users> searchUsersByNameOrEmail(String search) {
+        return usersDao.findByUserNameContainingOrUserEmailContaining(search, search);
+    }
 
-	// ユーザーの作成処理
-	// 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
-	public void saveUserWithIcon(String userName, String userEmail, String userPassword, MultipartFile userIcon, Long adminId) throws IOException {
-	    // ユーザーが存在しない場合のみ保存を行う
-	    if (!emailExists(userEmail)) {
-	        String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + userIcon.getOriginalFilename();
-	        Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
+    // ユーザーを削除するメソッド
+    public void deleteUser(Long userId) {
+        usersDao.deleteById(userId);
+    }
 
-	        String iconPath = "upload/" + fileName;
-	        Admin admin = adminService.getAdminById(adminId); // 获取管理员对象
-	        usersDao.save(new Users(userName, userEmail, userPassword, LocalDateTime.now(), iconPath, admin));
-	    } else {
-	        throw new RuntimeException("このメールアドレスは既に登録されています。");
-	    }
-	}
+    // ユーザーの作成処理
+    // 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
+    public void saveUserWithIcon(String userName, String userEmail, String userPassword, MultipartFile userIcon, Long adminId) throws IOException {
+        // ユーザーが存在しない場合のみ保存を行う
+        if (!emailExists(userEmail)) {
+            String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + userIcon.getOriginalFilename();
+            Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
 
-	public String getIconPathForUser(Long userId) {
-	    Optional<Users> optionalUser = usersDao.findById(userId);
-	    if (optionalUser.isPresent()) {
-	        Users user = optionalUser.get();
-	        return user.getUserIcon();
-	    } else {
-	        return null;
-	    }
-	}
+            String iconPath = "upload/" + fileName;
+            Admin admin = adminService.getAdminById(adminId); // 获取管理员对象
+            usersDao.save(new Users(userName, userEmail, userPassword, LocalDateTime.now(), iconPath, admin));
+        } else {
+            throw new RuntimeException("このメールアドレスは既に登録されています。");
+        }
+    }
 
-	
+    // ユーザーの作成処理（不带图标）
+    public boolean createUser(String userName, String userEmail, String userPassword, Admin admin) {
+        if (usersDao.findByUserEmail(userEmail) == null) {
+            usersDao.save(new Users(userName, userEmail, userPassword, admin));
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // メールアドレスの存在確認
     public boolean emailExists(String userEmail) {
-        // 指定されたメールアドレスの管理者が存在するかどうかを返します
+        // 指定されたメールアドレスのユーザーが存在するかどうかを返します
         return usersDao.findByUserEmail(userEmail) != null;
     }
 
-	// ログイン処理
-	// もし、emailとpasswordがfindByUserAndPasswordを使用して存在しなかった場合==nullの場合、
-	// 存在しないnullであることをコントローラークラスに知らせる
-	// そうでない場合、ログインしている人の情報をコントローラークラスに渡す
-	public Users loginCheck(String userEmail, String userPassword) {
-		Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
-		if (users == null) {
-			return null;
-		} else {
-			return users;
-		}
-	}
+    // ログイン処理
+    // もし、emailとpasswordがfindByUserAndPasswordを使用して存在しなかった場合==nullの場合、
+    // 存在しないnullであることをコントローラークラスに知らせる
+    // そうでない場合、ログインしている人の情報をコントローラークラスに渡す
+    public Users loginCheck(String userEmail, String userPassword) {
+        Users users = usersDao.findByUserEmailAndUserPassword(userEmail, userPassword);
+        if (users == null) {
+            return null;
+        } else {
+            return users;
+        }
+    }
 
-	// ユーザーIDでユーザーを取得するメソッド
-	public Users getUserById(Long userId) {
-	    return usersDao.findByUserId(userId);
-	}
-	
-	// ユーザーを更新するメソッド
-	public void updateUser(Users user) {
-		usersDao.save(user);
+    // ユーザーIDでユーザーを取得するメソッド
+    public Users getUserById(Long userId) {
+        Optional<Users> user = usersDao.findById(userId);
+        return user.orElse(null);
+    }
 
-	}
+    // ユーザーを更新するメソッド
+    public void updateUser(Users user) {
+        usersDao.save(user);
+    }
+
+    // ユーザーのアイコンパスを取得するメソッド
+    public String getIconPathForUser(Long userId) {
+        Optional<Users> optionalUser = usersDao.findById(userId);
+        if (optionalUser.isPresent()) {
+            Users user = optionalUser.get();
+            return user.getUserIcon();
+        } else {
+            return null;
+        }
+    }
 }

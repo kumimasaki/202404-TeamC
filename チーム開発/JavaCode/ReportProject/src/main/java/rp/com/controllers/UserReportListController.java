@@ -14,11 +14,14 @@ import rp.com.models.entity.Reports;
 import rp.com.services.ReportsService;
 
 @Controller
+
 @RequestMapping("/user/reports")
+
+
 public class UserReportListController {
 
-	@Autowired
-	private ReportsService reportsService;
+    @Autowired
+    private ReportsService reportsService;
 
 	// レポート一覧画面を表示するメソッド
 	@GetMapping("/user/report/view-list")
@@ -29,25 +32,16 @@ public class UserReportListController {
 		return "user_reports.html";
 	}
 
-	// レポート検索を処理するメソッド
-	@PostMapping("/user/search_reports")
-	public String serchReports(@RequestParam("search") String search, Model model) {
-		// キーワードでレポートを検索
-		List<Reports> reportList = reportsService.searchReportsByContent(search);
-		// 検索結果をモデルに追加
-		model.addAttribute("reportList", reportList);
-		// レポート一覧画面のテンプレートを返す
-		return "user_reports.html";
-	}
-
-	// レポートを削除するメソッド
-	@PostMapping("/user/delete_repotrt")
-	public String deleteReport(@RequestParam("reportId") Long reportId) {
-		// 指定されたIDのレポートを削除する
-		reportsService.deleteReport(reportId);
-		// レポート一覧画面にリダイレクトする
-		return "redirect:user/report_list";
-	}
+    // レポート検索を処理するメソッド
+    @PostMapping("/search_reports")
+    public String searchReports(@RequestParam("search") String search, Model model) {
+        // キーワードでレポートを検索
+        List<Reports> reportList = reportsService.searchReportsByContent(search);
+        // 検索結果をモデルに追加
+        model.addAttribute("reportList", reportList);
+        // レポート一覧画面のテンプレートを返す
+        return "user_reports.html";
+    }
 
 	@GetMapping
 	public String listReports(Model model) {
@@ -55,5 +49,6 @@ public class UserReportListController {
 		model.addAttribute("reports", reports);
 		return "user_reports";
 	}
+
 
 }
