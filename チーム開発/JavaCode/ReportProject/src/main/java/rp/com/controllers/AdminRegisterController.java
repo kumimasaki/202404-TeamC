@@ -1,17 +1,11 @@
+
 package rp.com.controllers;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -59,9 +53,8 @@ public class AdminRegisterController {
             
             // 使用 saveAdminWithIcon 方法保存管理员信息和头像
             adminService.saveAdminWithIcon(adminName, adminEmail, adminPassword, adminIcon, confirmPassword);
-            
             // 注册成功，重定向到登录页面
-            return "admin_login.html";
+            return "redirect:/admin/login";
         } catch (IOException e) {
             e.printStackTrace();
             // 注册失败，返回注册页面并显示错误消息

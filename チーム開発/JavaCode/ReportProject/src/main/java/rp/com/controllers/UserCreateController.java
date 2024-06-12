@@ -1,3 +1,4 @@
+
 package rp.com.controllers;
 
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class UserCreateController {
 	private UserService userService;
 
 	// ユーザー登録画面を表示するメソッド
-	@GetMapping("/admin/user/create")
+	@GetMapping("/user/create")
 	public String showCreateUserForm(Model model) {
 		// ユーザーオブジェクトをモデルに追加してフォームにバインドします
 		model.addAttribute("user", new Users());
@@ -38,7 +39,7 @@ public class UserCreateController {
 	}
 
 	// ユーザー登録処理を行うメソッド
-	@PostMapping("/admin/user/create/process")
+	@PostMapping("/user/create/process")
 	public String createUser(@RequestParam("username") String userName, @RequestParam("email") String userEmail,
 			@RequestParam("password") String userPassword, @RequestParam("confirmPassword") String confirmPassword,
 			@RequestParam("userIcon") MultipartFile userIcon, @RequestParam("adminId") Long adminId, Model model) {
@@ -66,13 +67,12 @@ public class UserCreateController {
 			model.addAttribute("error", "パスワードが一致しません");
 			return "user_create.html";
 		}
-
 		// 新しいユーザー作成
-		Users newUser = new Users(userEmail, userName, userPassword, admin);
+		Users newUser = new Users( userName,userEmail, userPassword, admin);
 		newUser.setUserIcon(fileName);
 
 		// 新しいユーザー保存
-		if (userService.createUser(newUser)) {
+		if (userService.createUser(userName,userEmail,userPassword)) {
 			return "redirect:/user_list";
 		} else {
 			model.addAttribute("error", "ユーザー追加が失敗しました。");

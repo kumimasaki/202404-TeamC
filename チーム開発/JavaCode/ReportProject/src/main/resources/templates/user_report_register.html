@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ユーザ報告事項登録</title>
-    <link rel="stylesheet" href="admin_report_details.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="header.css">
+    <title>ユーザー報告事項登録</title>
+    <link rel="stylesheet" th:href="@{/css/admin_report_details.css}">
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                 <div class="title">
                     <h1>報告事項登録</h1>
                 </div>
-
+               <form th:action="@{/user/report/create/process}" method="POST" enctype="multipart/form-data">
                 <div class="report-title" >
                     <label for="report-title">報告名</label>
                     <input type="text" id="report-title" name="reportTitle" placeholder="報告タイトルを入力してください">
