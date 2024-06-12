@@ -1,7 +1,6 @@
 package rp.com.models.entity;
 
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -38,12 +37,15 @@ public class Reports {
 	// user_idの設定
 	private Long userId;
 
+	// user_nameの設定
+	private String userName;
+
 	// 空のコンストラクタ
 	public Reports() {
 	}
 
 	public Reports(Long reportId, String reportTitle, String reportFileName, String contentsOfReport,
-			LocalDateTime createdAt, int deleteFlg, int receiptFlg, Long adminId, Long userId) {
+			LocalDateTime createdAt, int deleteFlg, int receiptFlg, Long adminId, Long userId, String userName) {
 		this.reportId = reportId;
 		this.reportTitle = reportTitle;
 		this.reportFileName = reportFileName;
@@ -53,6 +55,7 @@ public class Reports {
 		this.receiptFlg = receiptFlg;
 		this.adminId = adminId;
 		this.userId = userId;
+		this.userName = userName;
 	}
 
 	public Long getReportId() {
@@ -125,5 +128,13 @@ public class Reports {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 }
