@@ -1,3 +1,4 @@
+
 package rp.com.controllers;
 
 import java.io.IOException;
@@ -34,7 +35,7 @@ public class UserCreateController {
 	private HttpSession session;
 
 	// ユーザー登録画面を表示するメソッド
-	@GetMapping("/admin/user/create")
+	@GetMapping("/user/create")
 	public String showCreateUserForm(Model model) {
 	    Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 	    if (admin != null) {

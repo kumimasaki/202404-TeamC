@@ -37,7 +37,7 @@ public class UserListController {
 	
 
 	// ユーザー検索を処理するメソッド
-	@PostMapping("/user/search")
+	@PostMapping("/search")
 	public String searchUsers(@RequestParam("search") String search, Model model) {
 		// 名前またはメールアドレスでユーザーを検索
 		List<Users> usersList = userService.searchUsersByNameOrEmail(search);
@@ -48,7 +48,7 @@ public class UserListController {
 	}
 
 	// ユーザーを削除するメソッド
-	@PostMapping("/user/delete")
+	@PostMapping("/delete")
 	public String deleteUser(@RequestParam("userId") Long userId) {
 		// 指定されたIDのユーザーを削除
 		userService.deleteUser(userId);

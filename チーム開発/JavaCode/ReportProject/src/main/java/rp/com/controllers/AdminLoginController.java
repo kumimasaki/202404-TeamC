@@ -1,3 +1,4 @@
+
 package rp.com.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,7 +41,7 @@ public class AdminLoginController {
         if (admin != null) {
         	session.setAttribute("loginAdminInfo", admin);
             // ログインが成功した場合、レポート画面を表示します
-            return "admin_reports.html";
+            return "redirect:/admin/reports";
         } else {
             // ログインに失敗した場合、エラーメッセージを追加してログイン画面を再表示
             model.addAttribute("errorMessage", "メールアドレスまたはパスワードが間違っています");

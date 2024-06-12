@@ -1,3 +1,4 @@
+
 package rp.com.controllers;
 
 import java.io.IOException;
@@ -56,7 +57,6 @@ public class AdminRegisterController {
         try {
             // 使用 saveAdminWithIcon 方法保存管理员信息和头像
             adminService.saveAdminWithIcon(adminName, adminEmail, adminPassword, adminIcon, confirmPassword);
-            
             // 注册成功，重定向到登录页面
             return "redirect:/admin/login";
         } catch (IOException e) {

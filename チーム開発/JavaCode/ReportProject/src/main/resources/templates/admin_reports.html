@@ -11,8 +11,9 @@
    <header>
       <div class="header-content">
          <div class="site-name">
-            <h1>業務報告システム </h1>
+            <h1>業務報告システム</h1>
          </div>
+<<<<<<< HEAD
 
 		 <ul class="header-item">
 		     <li class="item-list" id="item-icon"><img th:src="@{${iconPath}}" alt="アイコン"></li>
@@ -23,15 +24,30 @@
 		     <li class="item-list"><a th:href="@{/admin/reports/list}">報告事項一覧</a></li>
 		     <li class="item-list"><a th:href="@{/logout}">ログアウト</a></li>
 		 </ul>
+=======
+         <ul class="header-item">
+           <li class="item-list" id="item-icon"><a href="#">アイコン</a></li>
+            <li class="item-list" th:text="${adminName}"></li>
+            <li class="pc-list__item" th:text="${accountName}"></li>
+            <li class="item-list"><a th:href="@{/admin/info/change}">管理者情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+            <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+            <li class="item-list"><a th:href="@{/user/reports}">報告事項一覧</a></li>
+            <li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+         </ul>
+>>>>>>> 9d0c16cbb89a55ed95188b7e7427a7a7fa957dd2
       </div>
    </header>
    <main>
       <div class="search-container">
+         <form th:action="@{/search_reports}" method="POST">
             <label>報告事項一覧（検索結果）</label>
-            <input type="text" placeholder="検索内容．．．">
-            <button type="button" class="search-button" onclick="searchFunction()">検索</button>
+            <input type="text" name="search" placeholder="検索内容．．．">
+            <button type="submit" class="search-button">検索</button>
+         </form>
       </div>
       <div class="report-list">
+<<<<<<< HEAD
             <div class="report-card">
                <img th:src="${iconPath}" alt="ユーザー画像" class="report-image">
                <div class="report-info">
@@ -47,9 +63,29 @@
                   <div class="detail-button-content">
                      <a th:href="@{/reports//{id}}" class="detail-button">報告詳細</a>
                      <button type="button" class="delete-button" onclick="deleteFunction()">削除</button>                 
+=======
+         <div th:each="report : ${reports}">
+            <form th:action="@{/delete_report}" method="POST">
+               <div class="report-card">
+                  <img src="user.png" alt="ユーザー画像" class="report-image">
+                  <div class="report-info">
+                     <h3 th:text="${report.title}">報告事項</h3>
+                     <p th:text="${report.content}">コンテンツ</p>
                   </div>
-
+                  <div class="report-actions">
+                     <div class="reporter-received">
+                        <p class="reporter" th:text="${report.userName}">ユーザー名</p>
+                        <span th:class="${report.status == '受信済み' ? 'received' : (report.status == '未確認' ? 'unconfirmed' : 'correction')}">ステータス</span>
+                     </div>
+                     <div class="detail-button-content">
+                        <a th:href="@{/reports/details(id=${report.id})}" class="detail-button">報告詳細</a>
+                        <input type="hidden" name="reportId" th:value="${report.id}">
+                        <button type="submit" class="delete-button">削除</button>
+                     </div>
+>>>>>>> 9d0c16cbb89a55ed95188b7e7427a7a7fa957dd2
+                  </div>
                </div>
+<<<<<<< HEAD
             </div>
             <div class="report-card">
                <img th:src="${iconPath}" alt="ユーザー画像" class="report-image">
@@ -90,18 +126,29 @@
                </div>
             </div>
    </div>
+=======
+            </form>
+         </div>
+      </div>
+>>>>>>> 9d0c16cbb89a55ed95188b7e7427a7a7fa957dd2
    </main>
    <footer>
       <div class="footer-content" id="footer-report">
          <div>
             <ul class="footer-item" id="footer-item-report">
+<<<<<<< HEAD
                   <li><a th:href="@{/info/edit/{adminId}}">情報変更</a></li>
                   <li>|</li>
                   <li><a th:href="@{/logout}">ログアウト</a></li>
+=======
+               <li><a href="">情報変更</a></li>
+               <li>|</li>
+               <li><a href="">ログアウト</a></li>
+>>>>>>> 9d0c16cbb89a55ed95188b7e7427a7a7fa957dd2
             </ul>
          </div>
          <div>
-            <p> Copyright &copy; 2024</p>
+            <p>Copyright &copy; 2024</p>
          </div>
       </div>
    </footer>

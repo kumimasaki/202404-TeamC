@@ -12,24 +12,25 @@ import rp.com.models.entity.Reports;
 import rp.com.services.ReportsService;
 
 @Controller
-@RequestMapping("/user/report")
+@RequestMapping
 public class UserReportCreateController {
 
 	@Autowired
 	private ReportsService reportsService;
 
 	// 報告登録画面を表示し、@return 報告登録画面のテンプレート名
-	@GetMapping("/create")
+	@GetMapping("/user/report/create")
 	public String showReportCreateForm() {
 		return "user_report_register";
 	}
 
-	// 報告登録処理を行う、@param reportTitle報告のタイトル
+	// 報告登録処理を行う、
+	// @param reportTitle報告のタイトル
 	// @param reportFileName報告ファイルの名前
 	// @param contentsOfReport 報告内容
 	// @param modelモデル
 	// @return 登録結果画面のテンプレート名
-	@PostMapping("/create/process")
+	@PostMapping("/user/report/create/process")
 	public String processReportCreate(@RequestParam("reportTitle") String reportTitle,
 			@RequestParam("reportFileName") String reportFileName,
 			@RequestParam("contentsOfReport") String contentsOfReport, Model model) {

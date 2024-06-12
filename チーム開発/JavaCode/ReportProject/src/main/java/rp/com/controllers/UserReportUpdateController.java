@@ -25,12 +25,14 @@ public class UserReportUpdateController {
 	@PostMapping("/process")
 	public String processReportUpdate(@RequestParam("reportId") Long reportId, @RequestParam("title") String title,
 			@RequestParam("contentsOfReport") String contentsOfReport,
-			@RequestParam("reportFileName") MultipartFile file) throws IOException {
+			@RequestParam("reportFileName") MultipartFile file, @RequestParam("userName") String userName)
+			throws IOException {
 		Optional<Reports> reportOptional = reportsService.getReportById(reportId);
 		if (reportOptional.isPresent()) {
 			Reports report = reportOptional.get();
 			report.setReportTitle(title);
 			report.setContentsOfReport(contentsOfReport);
+			report.setUserName(userName);
 
 			if (!file.isEmpty()) {
 				// ファイルをファイルシステムに保存
@@ -41,9 +43,10 @@ public class UserReportUpdateController {
 			}
 
 			reportsService.saveReport(report);
-			return "redirect:/user/report/details?reportId=" + reportId;
+			// 成功時に報告一览ページにリダイレクト
+			return "redirect:/user/reports";
 		} else {
-			return "redirect:/user/report/list";
+			return "redirect:/user/reports"; // レポートが存在しない場合もレポート一覧ページにリダイレクトする
 		}
 	}
 }
