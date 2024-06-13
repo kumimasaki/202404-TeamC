@@ -9641,3 +9641,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [user_
 2024-06-13T19:01:27.782+09:00  INFO 17560 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-06-13T19:01:27.782+09:00  INFO 17560 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-06-13T19:01:27.783+09:00  INFO 17560 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-13T19:10:21.938+09:00  INFO 17560 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-13T19:10:21.953+09:00  INFO 17560 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13T19:10:21.955+09:00  INFO 17560 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-13T19:10:21.958+09:00  INFO 17560 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
