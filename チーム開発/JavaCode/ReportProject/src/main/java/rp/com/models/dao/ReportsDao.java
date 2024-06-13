@@ -37,13 +37,7 @@ public interface ReportsDao extends JpaRepository<Reports, Long> {
 	@Override
 	void deleteById(Long reportId);
 
-	// タイトルにキーワードが含まれるレポートを検索
-	List<Reports> findByReportTitleContaining(String title);
-	
-	// コンテンツにキーワードが含まれるレポートを検索
-	List<Reports> findByContentsOfReportContaining(String content);
-	
-	 // タイトルまたはコンテンツでレポートを検索
+	// タイトルまたはコンテンツでレポートを検索
 	List<Reports> findByReportTitleContainingOrContentsOfReportContaining(String title, String content);
 
 	// receipt_flgでレポートを検索

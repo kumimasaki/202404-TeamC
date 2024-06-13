@@ -25,8 +25,10 @@
    <main>
       <div class="search-container">
          <label>報告事項一覧（検索結果）</label>
-         <input type="text" placeholder="検索内容．．．">
-         <button>検索</button>
+         <form th:action="@{/user/reports/search}" method="post">
+            <input type="text" name="keyword" placeholder="検索内容．．．">
+            <button type="submit" class="search-button">検索</button>
+         </form>
       </div>
 
       <div class="report-button-content">
@@ -48,9 +50,9 @@
                </div>
                <div class="detail-button-content">
                   <button class="detail-button" 
-                          th:onclick="'window.location.href=\'/user/report/details/' + ' + ${report.reportId} + ' + '\''">報告詳細</button>
+                          th:onclick="'window.location.href=\'/user/report/details/' + ${report.reportId} + '\''">報告詳細</button>
                   <button class="delete-button" 
-                          th:onclick="'window.location.href=\'/user/report/delete/' + ' + ${report.reportId} + ' + '\''">削除</button>
+                          th:onclick="'window.location.href=\'/user/report/delete/' + ${report.reportId} + '\''">削除</button>
                </div>
             </div>
          </div>

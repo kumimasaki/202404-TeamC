@@ -49,16 +49,6 @@ public class ReportsService {
 		}
 	}
 
-	// タイトルでレポートを検索し、@param title レポートのタイトル、@return 検索結果のレポートリスト
-	public List<Reports> searchReportsByTitle(String title) {
-		return reportsDao.findByReportTitleContaining(title);
-	}
-
-	// コンテンツでレポートを検索し、@param content レポートの内容、@return 検索結果のレポートリスト
-	public List<Reports> searchReportsByContent(String content) {
-		return reportsDao.findByContentsOfReportContaining(content);
-	}
-
 	// レポートを保存し、@param report レポートエンティティ、@return 保存されたレポート
 	public Reports saveReport(Reports report) {
 		return reportsDao.save(report);
@@ -74,8 +64,7 @@ public class ReportsService {
 		});
 	}
 
-	// タイトルまたはコンテンツでレポートを検索するメソッドを追加
-	public List<Reports> searchReportsByTitleOrContent(String query) {
-		return reportsDao.findByReportTitleContainingOrContentsOfReportContaining(query, query);
+	public List<Reports> searchReportsByKeyword(String keyword) {
+		return reportsDao.findByReportTitleContainingOrContentsOfReportContaining(keyword, keyword);
 	}
 }

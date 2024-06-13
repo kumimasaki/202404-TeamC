@@ -19,6 +19,6 @@ public class UserReportHideController {
 	@PostMapping("/{reportId}")
 	public String hideReport(@PathVariable Long reportId) {
 		reportsService.hideReportById(reportId);
-		return "redirect:/user/report/list";
+		return "redirect:/user/reports";
 	}
 }

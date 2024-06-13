@@ -29,17 +29,6 @@ public class UserReportListController {
 		return "user_reports.html";
 	}
 
-	// レポート検索を処理するメソッド
-	@PostMapping("/user/search_reports")
-	public String serchReports(@RequestParam("search") String search, Model model) {
-		// キーワードでレポートを検索
-		List<Reports> reportList = reportsService.searchReportsByContent(search);
-		// 検索結果をモデルに追加
-		model.addAttribute("reportList", reportList);
-		// レポート一覧画面のテンプレートを返す
-		return "user_reports.html";
-	}
-
 	// レポートを削除するメソッド
 	@PostMapping("/user/delete_repotrt")
 	public String deleteReport(@RequestParam("reportId") Long reportId) {
@@ -52,6 +41,13 @@ public class UserReportListController {
 	@GetMapping
 	public String listReports(Model model) {
 		List<Reports> reports = reportsService.getAllReports();
+		model.addAttribute("reports", reports);
+		return "user_reports";
+	}
+
+	@PostMapping("/search")
+	public String searchReports(@RequestParam("keyword") String keyword, Model model) {
+		List<Reports> reports = reportsService.searchReportsByKeyword(keyword);
 		model.addAttribute("reports", reports);
 		return "user_reports";
 	}
