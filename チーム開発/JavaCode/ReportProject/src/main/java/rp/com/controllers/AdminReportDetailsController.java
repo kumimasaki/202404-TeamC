@@ -18,13 +18,6 @@ public class AdminReportDetailsController {
 	@Autowired
 	private ReportsService reportsService;
 
-	// すべてのレポートを取得し
-	@GetMapping
-	public String getAllReports(Model model) {
-		List<Reports> reports = reportsService.getAllReports();
-		model.addAttribute("reports", reports);
-		return "admin_reports";
-	}
 
 	// IDでレポートを取得し
 	@GetMapping("/{id}")
