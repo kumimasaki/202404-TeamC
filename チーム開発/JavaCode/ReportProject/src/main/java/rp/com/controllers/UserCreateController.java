@@ -48,7 +48,7 @@ public class UserCreateController {
     // ユーザー登録処理を行うメソッド
     @PostMapping("/admin/user/create/process")
     public String createUser(@RequestParam String userName, @RequestParam String userEmail,
-                             @RequestParam String userPassword, @RequestParam String confirmPassword,
+                             @RequestParam String userPassword, 
                              @RequestParam("userIcon") MultipartFile userIcon,
                              @RequestParam("adminId") Long adminId, Model model) {
 
@@ -57,11 +57,7 @@ public class UserCreateController {
             return "redirect:/admin/login";
         }
 
-        // パスワード確認
-        if (!userPassword.equals(confirmPassword)) {
-            model.addAttribute("error", "パスワードが一致しません");
-            return "user_create.html";
-        }
+       
 
         // アイコンを保存する
         String fileName = null;

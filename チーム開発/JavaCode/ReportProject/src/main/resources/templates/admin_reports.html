@@ -36,22 +36,23 @@
          </form>
       </div>
 
-         <div th:each="report : ${reports}">
+         <div th:each="report : ${reports}" class="report-list">
             <form th:action="@{/delete_report}" method="POST">
                <div class="report-card">
                  <img th:src="${iconPath}" alt="ユーザー画像" class="report-image">
                   <div class="report-info">
-                     <h3 th:text="${report.title}">報告事項</h3>
-                     <p th:text="${report.content}">コンテンツ</p>
+                     <h3 th:text="${report.reportTitle}">報告事項</h3>
+                     <p th:text="${report.contentsOfReport}">コンテンツ</p>
                   </div>
                   <div class="report-actions">
                      <div class="reporter-received">
                         <p class="reporter" th:text="${report.userName}">ユーザー名</p>
-                        <span th:class="${report.status == '受信済み' ? 'received' : (report.status == '未確認' ? 'unconfirmed' : 'correction')}">ステータス</span>
-                     </div>
+						<span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+						<span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+					</div>
                      <div class="detail-button-content">
-                        <a th:href="@{/reports/details(id=${report.id})}" class="detail-button">報告詳細</a>
-                        <input type="hidden" name="reportId" th:value="${report.id}">
+                        <a th:href="@{'/user/report/details/'}" class="detail-button">報告詳細</a>
+                        <input type="hidden" name="reportId" th:value="${report.reportId}">
                         <button type="submit" class="delete-button">削除</button>
                      </div>
                   </div>
@@ -74,5 +75,7 @@
          </div>
       </div>
    </footer>
+   
+   
 </body>
 </html>

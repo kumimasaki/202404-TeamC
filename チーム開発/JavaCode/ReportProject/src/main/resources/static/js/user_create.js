@@ -39,4 +39,3 @@ document.getElementById('userIcon').addEventListener('change', function(event) {
     reader.readAsDataURL(file);
 });
 
-
