@@ -21,22 +21,12 @@ public class AdminReportListController {
     // レポート一覧画面を表示するメソッド
     @GetMapping("/admin/reports")
     public String showReportList(Model model) {
-        // すべてのレポートを取得してモデルに追加
-        model.addAttribute("reports", reportsService.getAllReports());
-        // レポート一覧画面のテンプレートを返す
-        return "admin_reports";
+    	List<Reports> reports = reportsService.getAllReports();
+		model.addAttribute("reports", reports);
+		return "admin_reports";
     }
 
-    // レポート検索を処理するメソッド
-    @PostMapping("/search_reports")
-    public String searchReports(@RequestParam("search") String search, Model model) {
-        // キーワードでレポートを検索
-        List<Reports> reportList = reportsService.searchReportsByContent(search);
-        // 検索結果をモデルに追加
-        model.addAttribute("reportList", reportList);
-        // レポート一覧画面のテンプレートを返す
-        return "admin/reports";
-    }
+  
 
     // レポートを削除するメソッド
     @PostMapping("/delete_report")

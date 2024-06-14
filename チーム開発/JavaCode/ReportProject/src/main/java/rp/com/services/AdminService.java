@@ -5,9 +5,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -67,6 +70,22 @@ public class AdminService {
         return adminDao.save(admin);
     }
 
+ // 管理者の名前リストを取得するメソッド
+    public List<String> getAllAdminNames() {
+        List<Admin> admins = adminDao.findAll();
+        List<String> adminNames = new ArrayList<>();
+        for (Admin admin : admins) {
+            adminNames.add(admin.getAdminName());
+        }
+        return adminNames;
+    }
+    
+    public Admin getAdminByName(String adminName) {
+        // 根据管理员名字查询管理员对象
+        return adminDao.findByAdminName(adminName);
+    }
+    
+    
     // パスワード更新メソッド
     @Transactional
     public void updatePassword(Admin admin, String newPassword) {
@@ -79,6 +98,7 @@ public class AdminService {
         return adminDao.findByAdminEmail(adminEmail);
     }
 
+   
     // iconを保存するメソッド
     public void saveAdminIcon(Admin admin, MultipartFile adminIconFile) {
         try {

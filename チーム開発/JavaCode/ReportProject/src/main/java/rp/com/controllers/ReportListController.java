@@ -51,7 +51,7 @@ public class ReportListController {
 	}
 
 	// レポート検索を処理するメソッド
-	@PostMapping("/search_reports")
+	@PostMapping("/admin/search_reports")
 	public String serchReports(@RequestParam("search") String search, Model model) {
 		// キーワードでレポートを検索
 		List<Reports> reportList = reportsService.searchReportsByContent(search);

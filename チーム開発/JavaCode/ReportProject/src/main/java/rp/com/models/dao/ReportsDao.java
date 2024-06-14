@@ -57,4 +57,8 @@ public interface ReportsDao extends JpaRepository<Reports, Long> {
 	@Modifying
 	@Transactional
 	void markReportAsDeleted(@Param("reportId") Long reportId);
+	
+	 // 通过 adminId 查找 adminName
+    @Query("SELECT r.adminName FROM Reports r WHERE r.adminId = :adminId")
+    String findAdminNameByAdminId(@Param("adminId") Long adminId);
 }

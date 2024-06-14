@@ -15,7 +15,7 @@ import rp.com.services.ReportsService;
 
 @Controller
 
-@RequestMapping("/user/reports")
+
 
 
 public class UserReportListController {
@@ -24,13 +24,13 @@ public class UserReportListController {
     private ReportsService reportsService;
 
 	// レポート一覧画面を表示するメソッド
-	@GetMapping("/user/report/view-list")
-	public String showReportList(Model model) {
-		// すべてのレポートを取得してモデルに追加
-		model.addAttribute("reports", reportsService.getAllReports());
-		// レポート一覧画面のテンプレートを返す
-		return "user_reports.html";
-	}
+    @GetMapping("/user/report_list")
+    public String showReportList(Model model) {
+        // 在这里获取报告列表数据并添加到模型中
+        List<Reports> reports = reportsService.getAllReports();
+        model.addAttribute("reports", reports);
+        return "user_reports.html";
+    }
 
     // レポート検索を処理するメソッド
     @PostMapping("/search_reports")

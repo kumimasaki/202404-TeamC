@@ -4,8 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>ユーザー報告一覧</title>
-   <link rel="stylesheet" href="/css/style.css">
-   <link rel="stylesheet" href="/css/header.css">
+   <link rel="stylesheet" th:href="@{/css/style.css}">
+   <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <body>
    <header id="header-user">
@@ -22,6 +22,7 @@
         </ul>
       </div>
    </header>
+   
    <main>
       <div class="search-container">
          <label>報告事項一覧（検索結果）</label>
@@ -30,12 +31,12 @@
       </div>
 
       <div class="report-button-content">
-         <button class="report-button">報告登録</button>
+           <button id="report-create-button" class="report-button">報告登録</button>
       </div>
       
       <div class="report-list">
          <div th:each="report : ${reports}" class="report-card">
-            <img src="/images/user.png" alt="ユーザー画像" class="report-image">
+            <img src="" alt="ユーザー画像" class="report-image">
             <div class="report-info">
                <h3 th:text="${report.reportTitle}">報告事項</h3>
                <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
@@ -47,8 +48,9 @@
                   <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
                </div>
                <div class="detail-button-content">
-                  <button class="detail-button" 
-                          th:onclick="'window.location.href=\'/user/report/details/' + ' + ${report.reportId} + ' + '\''">報告詳細</button>
+				<a th:href="@{'/user/report/details/'}" >
+				    <button class="detail-button">報告詳細</button>
+				</a>
                   <button class="delete-button" 
                           th:onclick="'window.location.href=\'/user/report/delete/' + ' + ${report.reportId} + ' + '\''">削除</button>
                </div>
@@ -56,6 +58,7 @@
          </div>
       </div>
    </main>
+   
    <footer id="footer-user">
       <div class="footer-content" id="footer-report">
          <div>
@@ -70,5 +73,8 @@
          </div>
       </div>
    </footer>
+   
+   <script src="/js/user_report_create.js"></script>
+   
 </body>
 </html>

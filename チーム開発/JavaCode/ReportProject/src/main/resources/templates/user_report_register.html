@@ -50,20 +50,22 @@
 
 				<div class="report-summary">
 				    <label for="summary">報告事項</label>
-				    <input type="text" id="summary" name="summary" placeholder="ご指摘いただいた内容を修正いたしました。">
+				    <textarea type="text" id="summary" name="contentsOfReport" placeholder="内容を入力してください。"></textarea>
 				</div>
 
-                <div class="reporter">
-                    <label for="reporter">報告者</label>
-                    <select id="reporter">
-                        <option value="manager1">
-                            <span>管理者1 </span>
-                        </option>
-                    </select>
-                </div>
+				<div class="reporter">
+								    <label for="reporter">管理者</label>
+									<select id="reporter" name="adminName">
+									    <option th:each="admin : ${adminNames}" 
+									            th:value="${admin}" 
+									        <span th:text="${admin}"></span>
+									    </option>
+									</select>
+								</div>
 
                 <div class="submit-container">
-                    <a href="#" class="submit-button">報告</a>
+                    <a th:href="@{/user/report_list}"> 
+						<button type="submit" class="submit-button">報告</button></a>
                 </div>
             </div>
         </div>
