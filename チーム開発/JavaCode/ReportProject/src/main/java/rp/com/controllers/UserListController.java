@@ -49,7 +49,7 @@ public class UserListController {
 	}
 
 	// ユーザーを削除するメソッド
-	@PostMapping("/delete")
+	@PostMapping("/user/delete")
 	public String deleteUser(@RequestParam("userId") Long userId) {
 		// 指定されたIDのユーザーを削除
 		userService.deleteUser(userId);

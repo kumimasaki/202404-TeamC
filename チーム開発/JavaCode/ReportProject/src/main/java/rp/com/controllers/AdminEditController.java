@@ -1,5 +1,7 @@
 package rp.com.controllers;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,21 +48,32 @@ public class AdminEditController {
 	// 管理者の情報を更新するためのメソッドです
 	// URLは /admin/info/update です
 	@PostMapping("/info/update")
-	public String updateAdminInfo(@ModelAttribute("admin") Admin admin,
-			@RequestParam("adminIcon") MultipartFile adminIcon, Model model) {
-		try {
-// 管理者情報を更新します
-			adminService.updateAdminInfoWithIcon(admin, adminIcon);
+	 public String updateAdminInfo(
+	            @RequestParam Long adminId,
+	            @RequestParam String adminName,
+	            @RequestParam String adminEmail,
+	            @RequestParam String adminPassword,
+	            @RequestParam("adminIcon") MultipartFile adminIcon,
+	            Model model) {
 
-// 成功メッセージをモデルに追加します
-			model.addAttribute("successMessage", "管理者情報が更新されました");
-// admin_pw_changed.htmlという画面を表示します
-			return "admin_pw_changed.html";
-		} catch (Exception e) {
-// 更新中にエラーが発生した場合
-			model.addAttribute("errorMessage", "管理者情報の更新中にエラーが発生しました");
-// admin_info_change.htmlという編集画面を再度表示します
-			return "admin_info_change.html";
+	        try {
+	            Admin admin = adminService.getAdminById(adminId);
+	            if (admin != null) {
+	                admin.setAdminName(adminName);
+	                admin.setAdminEmail(adminEmail);
+	                admin.setAdminPassword(adminPassword);
+
+	                adminService.updateAdminInfoWithIcon(admin, adminIcon); // 更新管理员信息和头像
+
+	                model.addAttribute("successMessage", "管理者情報が更新されました");
+	                return "admin_pw_changed.html"; // 更新成功后跳转到密码修改成功页面
+	            } else {
+	                throw new RuntimeException("指定の管理者は存在しません");
+	            }
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	            model.addAttribute("errorMessage", "管理者情報の更新中にエラーが発生しました");
+	            return "admin_info_change.html";
 		}
 
 	}

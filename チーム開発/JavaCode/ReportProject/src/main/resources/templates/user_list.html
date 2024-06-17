@@ -36,7 +36,7 @@
 			<div th:if="${usersList != null}">
 				<div th:each="user:${usersList}" class="user-card">
 					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"> 
-						<img th:src="@{'/' + ${user.userIcon}}" style="width: 100px; height: 100px;">						               
+						<img th:src="@{'/' + ${user.userIcon}}" >						               
 					</a>
 					<div class="user-info">
 						<h3 th:text="${user.userName}">ユーザー名</h3>

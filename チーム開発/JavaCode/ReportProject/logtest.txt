@@ -2009,3 +2009,992 @@ org.springframework.expression.spel.SpelEvaluationException: EL1008E: Property o
 2024-06-14T14:01:31.444+09:00  INFO 22672 --- [ReportProject] [RMI TCP Connection(22)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-06-14T14:01:31.446+09:00  INFO 22672 --- [ReportProject] [RMI TCP Connection(22)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-06-14T14:01:31.449+09:00  INFO 22672 --- [ReportProject] [RMI TCP Connection(22)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:15:19.625+09:00  INFO 17972 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 17972 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:15:19.628+09:00  INFO 17972 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:15:20.177+09:00  INFO 17972 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:15:20.233+09:00  INFO 17972 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:15:20.664+09:00  INFO 17972 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:15:20.677+09:00  INFO 17972 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:15:20.677+09:00  INFO 17972 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:15:20.731+09:00  INFO 17972 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:15:20.732+09:00  INFO 17972 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1068 ms
+2024-06-14T14:15:20.862+09:00  INFO 17972 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:15:20.911+09:00  INFO 17972 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:15:20.941+09:00  INFO 17972 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:15:21.197+09:00  INFO 17972 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:15:21.225+09:00  INFO 17972 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:15:21.410+09:00  INFO 17972 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T14:15:21.412+09:00  INFO 17972 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:15:21.446+09:00  WARN 17972 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:15:22.284+09:00  INFO 17972 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:15:22.355+09:00  INFO 17972 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:15:22.644+09:00  INFO 17972 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:15:22.955+09:00  WARN 17972 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:15:23.321+09:00  INFO 17972 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:15:23.329+09:00  INFO 17972 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.043 seconds (process running for 4.647)
+2024-06-14T14:15:39.731+09:00  INFO 17972 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:15:39.731+09:00  INFO 17972 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:15:39.732+09:00  INFO 17972 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T14:16:36.528+09:00  INFO 17972 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:16:36.547+09:00  INFO 17972 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:16:36.549+09:00  INFO 17972 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:16:36.553+09:00  INFO 17972 --- [ReportProject] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:16:38.581+09:00  INFO 19172 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 19172 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:16:38.583+09:00  INFO 19172 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:16:39.135+09:00  INFO 19172 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:16:39.190+09:00  INFO 19172 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:16:39.627+09:00  INFO 19172 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:16:39.639+09:00  INFO 19172 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:16:39.639+09:00  INFO 19172 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:16:39.690+09:00  INFO 19172 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:16:39.691+09:00  INFO 19172 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1069 ms
+2024-06-14T14:16:39.826+09:00  INFO 19172 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:16:39.873+09:00  INFO 19172 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:16:39.904+09:00  INFO 19172 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:16:40.163+09:00  INFO 19172 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:16:40.186+09:00  INFO 19172 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:16:40.359+09:00  INFO 19172 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a7e799e
+2024-06-14T14:16:40.361+09:00  INFO 19172 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:16:40.393+09:00  WARN 19172 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:16:41.199+09:00  INFO 19172 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:16:41.264+09:00  INFO 19172 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:16:41.568+09:00  INFO 19172 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:16:41.932+09:00  WARN 19172 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:16:42.300+09:00  INFO 19172 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:16:42.308+09:00  INFO 19172 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.067 seconds (process running for 4.709)
+2024-06-14T14:16:45.683+09:00  INFO 19172 --- [ReportProject] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:16:45.684+09:00  INFO 19172 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:16:45.685+09:00  INFO 19172 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T14:28:31.837+09:00  INFO 19172 --- [ReportProject] [RMI TCP Connection(20)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:28:31.863+09:00  INFO 19172 --- [ReportProject] [RMI TCP Connection(20)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:28:31.865+09:00  INFO 19172 --- [ReportProject] [RMI TCP Connection(20)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:28:31.868+09:00  INFO 19172 --- [ReportProject] [RMI TCP Connection(20)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:28:34.994+09:00  INFO 24472 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 24472 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:28:34.997+09:00  INFO 24472 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:28:35.644+09:00  INFO 24472 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:28:35.701+09:00  INFO 24472 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:28:36.156+09:00  INFO 24472 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:28:36.168+09:00  INFO 24472 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:28:36.168+09:00  INFO 24472 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:28:36.225+09:00  INFO 24472 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:28:36.226+09:00  INFO 24472 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1191 ms
+2024-06-14T14:28:36.359+09:00  INFO 24472 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:28:36.406+09:00  INFO 24472 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:28:36.438+09:00  INFO 24472 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:28:36.704+09:00  INFO 24472 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:28:36.729+09:00  INFO 24472 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:28:36.909+09:00  INFO 24472 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2830315f
+2024-06-14T14:28:36.910+09:00  INFO 24472 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:28:36.943+09:00  WARN 24472 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:28:37.780+09:00  INFO 24472 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:28:37.849+09:00  INFO 24472 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:28:38.133+09:00  INFO 24472 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:28:38.460+09:00  WARN 24472 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:28:38.816+09:00  INFO 24472 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:28:38.826+09:00  INFO 24472 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.181 seconds (process running for 4.774)
+2024-06-14T14:29:12.682+09:00  INFO 24472 --- [ReportProject] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:29:12.682+09:00  INFO 24472 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:29:12.683+09:00  INFO 24472 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T14:33:37.694+09:00  INFO 24472 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:33:37.710+09:00  INFO 24472 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:33:37.712+09:00  INFO 24472 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:33:37.714+09:00  INFO 24472 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:33:39.860+09:00  INFO 8232 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 8232 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:33:39.863+09:00  INFO 8232 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:33:40.461+09:00  INFO 8232 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:33:40.520+09:00  INFO 8232 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:33:40.961+09:00  INFO 8232 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:33:40.975+09:00  INFO 8232 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:33:40.975+09:00  INFO 8232 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:33:41.033+09:00  INFO 8232 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:33:41.033+09:00  INFO 8232 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1130 ms
+2024-06-14T14:33:41.168+09:00  INFO 8232 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:33:41.216+09:00  INFO 8232 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:33:41.249+09:00  INFO 8232 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:33:41.502+09:00  INFO 8232 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:33:41.528+09:00  INFO 8232 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:33:41.709+09:00  INFO 8232 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@338d47b
+2024-06-14T14:33:41.711+09:00  INFO 8232 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:33:41.747+09:00  WARN 8232 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:33:42.579+09:00  INFO 8232 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:33:42.650+09:00  INFO 8232 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:33:42.948+09:00  INFO 8232 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:33:43.283+09:00  WARN 8232 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:33:43.648+09:00  INFO 8232 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:33:43.657+09:00  INFO 8232 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.16 seconds (process running for 4.893)
+2024-06-14T14:34:21.520+09:00  INFO 8232 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:34:21.520+09:00  INFO 8232 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:34:21.521+09:00  INFO 8232 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T14:37:10.580+09:00  INFO 8232 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:37:10.597+09:00  INFO 8232 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:37:10.599+09:00  INFO 8232 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:37:10.601+09:00  INFO 8232 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:37:12.873+09:00  INFO 15060 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 15060 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:37:12.876+09:00  INFO 15060 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:37:13.485+09:00  INFO 15060 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:37:13.557+09:00  INFO 15060 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:37:14.016+09:00  INFO 15060 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:37:14.028+09:00  INFO 15060 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:37:14.028+09:00  INFO 15060 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:37:14.088+09:00  INFO 15060 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:37:14.089+09:00  INFO 15060 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1174 ms
+2024-06-14T14:37:14.223+09:00  INFO 15060 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:37:14.272+09:00  INFO 15060 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:37:14.305+09:00  INFO 15060 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:37:14.572+09:00  INFO 15060 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:37:14.598+09:00  INFO 15060 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:37:14.784+09:00  INFO 15060 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2729bb71
+2024-06-14T14:37:14.785+09:00  INFO 15060 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:37:14.821+09:00  WARN 15060 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:37:15.782+09:00  INFO 15060 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:37:15.849+09:00  INFO 15060 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:37:16.139+09:00  INFO 15060 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:37:16.455+09:00  WARN 15060 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:37:16.803+09:00  INFO 15060 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:37:16.812+09:00  INFO 15060 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.317 seconds (process running for 5.037)
+2024-06-14T14:37:16.871+09:00  INFO 15060 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:37:16.871+09:00  INFO 15060 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:37:16.872+09:00  INFO 15060 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T14:44:33.922+09:00  INFO 15060 --- [ReportProject] [RMI TCP Connection(18)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:44:33.939+09:00  INFO 15060 --- [ReportProject] [RMI TCP Connection(18)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:44:33.941+09:00  INFO 15060 --- [ReportProject] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:44:33.943+09:00  INFO 15060 --- [ReportProject] [RMI TCP Connection(18)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:44:36.040+09:00  INFO 11592 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 11592 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:44:36.043+09:00  INFO 11592 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:44:36.622+09:00  INFO 11592 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:44:36.679+09:00  INFO 11592 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:44:37.122+09:00  INFO 11592 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:44:37.135+09:00  INFO 11592 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:44:37.136+09:00  INFO 11592 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:44:37.188+09:00  INFO 11592 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:44:37.189+09:00  INFO 11592 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1106 ms
+2024-06-14T14:44:37.328+09:00  INFO 11592 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:44:37.378+09:00  INFO 11592 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:44:37.411+09:00  INFO 11592 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:44:37.690+09:00  INFO 11592 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:44:37.718+09:00  INFO 11592 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:44:37.908+09:00  INFO 11592 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a51336a
+2024-06-14T14:44:37.909+09:00  INFO 11592 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:44:37.943+09:00  WARN 11592 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:44:38.803+09:00  INFO 11592 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:44:38.883+09:00  INFO 11592 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:44:39.237+09:00  INFO 11592 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:44:39.568+09:00  WARN 11592 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:44:39.947+09:00  INFO 11592 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:44:39.957+09:00  INFO 11592 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.293 seconds (process running for 4.908)
+2024-06-14T14:44:42.485+09:00  INFO 11592 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:44:42.485+09:00  INFO 11592 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:44:42.486+09:00  INFO 11592 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T14:52:19.723+09:00  INFO 11592 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:52:19.741+09:00  INFO 11592 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:52:19.743+09:00  INFO 11592 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:52:19.745+09:00  INFO 11592 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:53:24.162+09:00  INFO 23940 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 23940 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:53:24.165+09:00  INFO 23940 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:53:24.766+09:00  INFO 23940 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:53:24.828+09:00  INFO 23940 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:53:25.340+09:00  INFO 23940 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:53:25.353+09:00  INFO 23940 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:53:25.353+09:00  INFO 23940 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:53:25.408+09:00  INFO 23940 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:53:25.409+09:00  INFO 23940 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1203 ms
+2024-06-14T14:53:25.562+09:00  INFO 23940 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:53:25.611+09:00  INFO 23940 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:53:25.646+09:00  INFO 23940 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:53:25.947+09:00  INFO 23940 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:53:25.972+09:00  INFO 23940 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:53:26.156+09:00  INFO 23940 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a7e799e
+2024-06-14T14:53:26.157+09:00  INFO 23940 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:53:26.197+09:00  WARN 23940 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:53:27.046+09:00  INFO 23940 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:53:27.130+09:00  INFO 23940 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:53:27.430+09:00  INFO 23940 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:53:27.762+09:00  WARN 23940 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:53:28.144+09:00  INFO 23940 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:53:28.153+09:00  INFO 23940 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.364 seconds (process running for 5.096)
+2024-06-14T14:54:19.666+09:00  INFO 23940 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:54:19.667+09:00  INFO 23940 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:54:19.668+09:00  INFO 23940 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T14:56:27.221+09:00  INFO 23940 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T14:56:27.249+09:00  INFO 23940 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:56:27.253+09:00  INFO 23940 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T14:56:27.258+09:00  INFO 23940 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T14:56:30.725+09:00  INFO 2304 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 2304 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T14:56:30.728+09:00  INFO 2304 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T14:56:31.302+09:00  INFO 2304 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T14:56:31.377+09:00  INFO 2304 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2024-06-14T14:56:31.891+09:00  INFO 2304 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T14:56:31.903+09:00  INFO 2304 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T14:56:31.904+09:00  INFO 2304 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T14:56:31.963+09:00  INFO 2304 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T14:56:31.964+09:00  INFO 2304 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1200 ms
+2024-06-14T14:56:32.099+09:00  INFO 2304 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T14:56:32.146+09:00  INFO 2304 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T14:56:32.175+09:00  INFO 2304 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T14:56:32.425+09:00  INFO 2304 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T14:56:32.448+09:00  INFO 2304 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T14:56:32.637+09:00  INFO 2304 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T14:56:32.640+09:00  INFO 2304 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T14:56:32.673+09:00  WARN 2304 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T14:56:33.452+09:00  INFO 2304 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T14:56:33.534+09:00  INFO 2304 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T14:56:33.813+09:00  INFO 2304 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T14:56:34.116+09:00  WARN 2304 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T14:56:34.448+09:00  INFO 2304 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T14:56:34.456+09:00  INFO 2304 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.094 seconds (process running for 4.66)
+2024-06-14T14:56:38.674+09:00  INFO 2304 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T14:56:38.674+09:00  INFO 2304 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T14:56:38.676+09:00  INFO 2304 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T15:16:40.609+09:00  INFO 2304 --- [ReportProject] [RMI TCP Connection(28)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T15:16:40.631+09:00  INFO 2304 --- [ReportProject] [RMI TCP Connection(28)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T15:16:40.633+09:00  INFO 2304 --- [ReportProject] [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T15:16:40.636+09:00  INFO 2304 --- [ReportProject] [RMI TCP Connection(28)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T15:16:43.459+09:00  INFO 24204 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 24204 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T15:16:43.463+09:00  INFO 24204 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T15:16:44.202+09:00  INFO 24204 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T15:16:44.274+09:00  INFO 24204 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2024-06-14T15:16:44.886+09:00  INFO 24204 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T15:16:44.905+09:00  INFO 24204 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T15:16:44.905+09:00  INFO 24204 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T15:16:44.978+09:00  INFO 24204 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T15:16:44.979+09:00  INFO 24204 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1460 ms
+2024-06-14T15:16:45.169+09:00  INFO 24204 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T15:16:45.221+09:00  INFO 24204 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T15:16:45.263+09:00  INFO 24204 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T15:16:45.566+09:00  INFO 24204 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T15:16:45.595+09:00  INFO 24204 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T15:16:45.793+09:00  INFO 24204 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2f471037
+2024-06-14T15:16:45.795+09:00  INFO 24204 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T15:16:45.832+09:00  WARN 24204 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T15:16:46.866+09:00  INFO 24204 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T15:16:46.965+09:00  INFO 24204 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T15:16:47.390+09:00  INFO 24204 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T15:16:47.865+09:00  WARN 24204 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T15:16:48.266+09:00  INFO 24204 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T15:16:48.279+09:00  INFO 24204 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 5.231 seconds (process running for 5.961)
+2024-06-14T15:16:48.607+09:00  INFO 24204 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T15:16:48.607+09:00  INFO 24204 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T15:16:48.608+09:00  INFO 24204 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T15:41:15.967+09:00  INFO 24204 --- [ReportProject] [RMI TCP Connection(34)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T15:41:15.983+09:00  INFO 24204 --- [ReportProject] [RMI TCP Connection(34)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T15:41:15.985+09:00  INFO 24204 --- [ReportProject] [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T15:41:15.988+09:00  INFO 24204 --- [ReportProject] [RMI TCP Connection(34)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T16:51:36.032+09:00  INFO 23144 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 23144 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T16:51:36.035+09:00  INFO 23144 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T16:51:36.592+09:00  INFO 23144 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T16:51:36.652+09:00  INFO 23144 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2024-06-14T16:51:37.090+09:00  INFO 23144 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T16:51:37.102+09:00  INFO 23144 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T16:51:37.102+09:00  INFO 23144 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T16:51:37.164+09:00  INFO 23144 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T16:51:37.164+09:00  INFO 23144 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1090 ms
+2024-06-14T16:51:37.315+09:00  INFO 23144 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T16:51:37.360+09:00  INFO 23144 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T16:51:37.389+09:00  INFO 23144 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T16:51:37.658+09:00  INFO 23144 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T16:51:37.682+09:00  INFO 23144 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T16:51:37.853+09:00  INFO 23144 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@338d47b
+2024-06-14T16:51:37.854+09:00  INFO 23144 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T16:51:37.886+09:00  WARN 23144 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T16:51:38.633+09:00  INFO 23144 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T16:51:38.707+09:00  INFO 23144 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T16:51:38.975+09:00  INFO 23144 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T16:51:39.290+09:00  WARN 23144 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T16:51:39.620+09:00  INFO 23144 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T16:51:39.628+09:00  INFO 23144 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.926 seconds (process running for 4.471)
+2024-06-14T16:51:50.797+09:00  INFO 23144 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T16:51:50.798+09:00  INFO 23144 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T16:51:50.799+09:00  INFO 23144 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T16:57:20.568+09:00  INFO 23144 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T16:57:20.584+09:00  INFO 23144 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T16:57:20.586+09:00  INFO 23144 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T16:57:20.589+09:00  INFO 23144 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T16:57:22.707+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 8308 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T16:57:22.710+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T16:57:23.235+09:00  INFO 8308 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T16:57:23.291+09:00  INFO 8308 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T16:57:23.733+09:00  INFO 8308 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T16:57:23.744+09:00  INFO 8308 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T16:57:23.745+09:00  INFO 8308 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T16:57:23.796+09:00  INFO 8308 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T16:57:23.797+09:00  INFO 8308 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1050 ms
+2024-06-14T16:57:23.934+09:00  INFO 8308 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T16:57:23.991+09:00  INFO 8308 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T16:57:24.020+09:00  INFO 8308 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T16:57:24.272+09:00  INFO 8308 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T16:57:24.296+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T16:57:24.465+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@365bfc5f
+2024-06-14T16:57:24.467+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T16:57:24.499+09:00  WARN 8308 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T16:57:25.256+09:00  INFO 8308 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T16:57:25.329+09:00  INFO 8308 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T16:57:25.602+09:00  INFO 8308 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T16:57:25.903+09:00  WARN 8308 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T16:57:26.229+09:00  INFO 8308 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T16:57:26.236+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.864 seconds (process running for 4.469)
+2024-06-14T16:57:29.867+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T16:57:29.867+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T16:57:29.868+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T16:57:30.197+09:00 ERROR 8308 --- [ReportProject] [http-nio-8080-exec-2] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-2] Exception processing template "admin_reports": Exception evaluating SpringEL expression: "admin.adminIcon" (template: "admin_reports" - line 18, col 54)
+
+org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "admin.adminIcon" (template: "admin_reports" - line 18, col 54)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1431) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'adminIcon' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	... 62 common frames omitted
+
+2024-06-14T16:57:30.201+09:00 ERROR 8308 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "admin.adminIcon" (template: "admin_reports" - line 18, col 54)] with root cause
+
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'adminIcon' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:417) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:114) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338) ~[spring-expression-6.1.8.jar:6.1.8]
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.LinkExpression.executeLinkExpression(LinkExpression.java:264) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:85) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleStandaloneElement(ProcessorTemplateHandler.java:918) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.StandaloneElementTag.beHandled(StandaloneElementTag.java:228) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateModel.process(TemplateModel.java:136) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:661) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192) ~[thymeleaf-spring6-3.1.2.RELEASE.jar:3.1.2.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1431) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.8.jar:6.1.8]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.24.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.8.jar:6.1.8]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.24.jar:10.1.24]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-06-14T17:03:08.654+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:03:08.674+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:03:08.676+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:03:08.679+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:03:11.146+09:00  INFO 13052 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 13052 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:03:11.149+09:00  INFO 13052 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:03:11.746+09:00  INFO 13052 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:03:11.803+09:00  INFO 13052 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:03:12.283+09:00  INFO 13052 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:03:12.299+09:00  INFO 13052 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:03:12.299+09:00  INFO 13052 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:03:12.357+09:00  INFO 13052 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:03:12.357+09:00  INFO 13052 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1173 ms
+2024-06-14T17:03:12.488+09:00  INFO 13052 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:03:12.534+09:00  INFO 13052 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:03:12.563+09:00  INFO 13052 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:03:12.812+09:00  INFO 13052 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:03:12.835+09:00  INFO 13052 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:03:13.004+09:00  INFO 13052 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T17:03:13.005+09:00  INFO 13052 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:03:13.036+09:00  WARN 13052 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:03:13.869+09:00  INFO 13052 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:03:13.947+09:00  INFO 13052 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:03:14.249+09:00  INFO 13052 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:03:14.564+09:00  WARN 13052 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:03:14.924+09:00  INFO 13052 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:03:14.932+09:00  INFO 13052 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.136 seconds (process running for 4.703)
+2024-06-14T17:03:21.984+09:00  INFO 13052 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:03:21.985+09:00  INFO 13052 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:03:21.986+09:00  INFO 13052 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T17:04:41.682+09:00  INFO 13052 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:04:41.697+09:00  INFO 13052 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:04:41.699+09:00  INFO 13052 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:04:41.702+09:00  INFO 13052 --- [ReportProject] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:04:43.381+09:00  INFO 7196 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 7196 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:04:43.384+09:00  INFO 7196 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:04:43.976+09:00  INFO 7196 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:04:44.035+09:00  INFO 7196 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:04:44.464+09:00  INFO 7196 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:04:44.476+09:00  INFO 7196 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:04:44.476+09:00  INFO 7196 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:04:44.527+09:00  INFO 7196 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:04:44.528+09:00  INFO 7196 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1102 ms
+2024-06-14T17:04:44.656+09:00  INFO 7196 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:04:44.705+09:00  INFO 7196 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:04:44.732+09:00  INFO 7196 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:04:44.988+09:00  INFO 7196 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:04:45.010+09:00  INFO 7196 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:04:45.180+09:00  INFO 7196 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@75452aea
+2024-06-14T17:04:45.182+09:00  INFO 7196 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:04:45.213+09:00  WARN 7196 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:04:45.981+09:00  INFO 7196 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:04:46.053+09:00  INFO 7196 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:04:46.332+09:00  INFO 7196 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:04:46.639+09:00  WARN 7196 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:04:46.975+09:00  INFO 7196 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:04:46.983+09:00  INFO 7196 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.934 seconds (process running for 4.513)
+2024-06-14T17:04:50.312+09:00  INFO 7196 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:04:50.313+09:00  INFO 7196 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:04:50.314+09:00  INFO 7196 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T17:10:29.608+09:00  INFO 7196 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:10:29.627+09:00  INFO 7196 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:10:29.629+09:00  INFO 7196 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:10:29.632+09:00  INFO 7196 --- [ReportProject] [RMI TCP Connection(15)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:10:31.734+09:00  INFO 6272 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 6272 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:10:31.736+09:00  INFO 6272 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:10:32.301+09:00  INFO 6272 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:10:32.360+09:00  INFO 6272 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:10:32.825+09:00  INFO 6272 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:10:32.839+09:00  INFO 6272 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:10:32.839+09:00  INFO 6272 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:10:32.904+09:00  INFO 6272 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:10:32.905+09:00  INFO 6272 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1129 ms
+2024-06-14T17:10:33.046+09:00  INFO 6272 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:10:33.093+09:00  INFO 6272 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:10:33.124+09:00  INFO 6272 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:10:33.386+09:00  INFO 6272 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:10:33.411+09:00  INFO 6272 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:10:33.594+09:00  INFO 6272 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d8056bf
+2024-06-14T17:10:33.596+09:00  INFO 6272 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:10:33.629+09:00  WARN 6272 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:10:34.443+09:00  INFO 6272 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:10:34.521+09:00  INFO 6272 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:10:34.816+09:00  INFO 6272 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:10:35.133+09:00  WARN 6272 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:10:35.510+09:00  INFO 6272 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:10:35.520+09:00  INFO 6272 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.153 seconds (process running for 4.783)
+2024-06-14T17:10:49.847+09:00  INFO 6272 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:10:49.847+09:00  INFO 6272 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:10:49.847+09:00  INFO 6272 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T17:15:38.446+09:00  INFO 6272 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:15:38.463+09:00  INFO 6272 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:15:38.465+09:00  INFO 6272 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:15:38.468+09:00  INFO 6272 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:15:40.706+09:00  INFO 16704 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 16704 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:15:40.710+09:00  INFO 16704 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:15:41.340+09:00  INFO 16704 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:15:41.406+09:00  INFO 16704 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:15:41.932+09:00  INFO 16704 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:15:41.947+09:00  INFO 16704 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:15:41.948+09:00  INFO 16704 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:15:42.010+09:00  INFO 16704 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:15:42.011+09:00  INFO 16704 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1257 ms
+2024-06-14T17:15:42.162+09:00  INFO 16704 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:15:42.210+09:00  INFO 16704 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:15:42.244+09:00  INFO 16704 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:15:42.515+09:00  INFO 16704 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:15:42.543+09:00  INFO 16704 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:15:42.725+09:00  INFO 16704 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2830315f
+2024-06-14T17:15:42.727+09:00  INFO 16704 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:15:42.763+09:00  WARN 16704 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:15:43.679+09:00  INFO 16704 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:15:43.764+09:00  INFO 16704 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:15:44.096+09:00  INFO 16704 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:15:44.430+09:00  WARN 16704 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:15:44.809+09:00  INFO 16704 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:15:44.818+09:00  INFO 16704 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.463 seconds (process running for 5.097)
+2024-06-14T17:15:47.218+09:00  INFO 16704 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:15:47.219+09:00  INFO 16704 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:15:47.220+09:00  INFO 16704 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T17:18:25.710+09:00  INFO 16704 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:18:25.727+09:00  INFO 16704 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:18:25.729+09:00  INFO 16704 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:18:25.732+09:00  INFO 16704 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:18:27.657+09:00  INFO 16496 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 16496 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:18:27.659+09:00  INFO 16496 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:18:28.218+09:00  INFO 16496 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:18:28.281+09:00  INFO 16496 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 55 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:18:28.760+09:00  INFO 16496 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:18:28.776+09:00  INFO 16496 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:18:28.777+09:00  INFO 16496 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:18:28.836+09:00  INFO 16496 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:18:28.836+09:00  INFO 16496 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1141 ms
+2024-06-14T17:18:28.981+09:00  INFO 16496 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:18:29.033+09:00  INFO 16496 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:18:29.069+09:00  INFO 16496 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:18:29.348+09:00  INFO 16496 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:18:29.376+09:00  INFO 16496 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:18:29.558+09:00  INFO 16496 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T17:18:29.561+09:00  INFO 16496 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:18:29.602+09:00  WARN 16496 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:18:30.471+09:00  INFO 16496 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:18:30.549+09:00  INFO 16496 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:18:30.849+09:00  INFO 16496 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:18:31.174+09:00  WARN 16496 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:18:31.528+09:00  INFO 16496 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:18:31.537+09:00  INFO 16496 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.226 seconds (process running for 4.818)
+2024-06-14T17:18:37.800+09:00  INFO 16496 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:18:37.800+09:00  INFO 16496 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:18:37.801+09:00  INFO 16496 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T17:23:45.006+09:00  INFO 16496 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:23:45.023+09:00  INFO 16496 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:23:45.025+09:00  INFO 16496 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:23:45.027+09:00  INFO 16496 --- [ReportProject] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:23:47.120+09:00  INFO 21076 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 21076 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:23:47.123+09:00  INFO 21076 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:23:47.681+09:00  INFO 21076 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:23:47.737+09:00  INFO 21076 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:23:48.180+09:00  INFO 21076 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:23:48.193+09:00  INFO 21076 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:23:48.193+09:00  INFO 21076 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:23:48.245+09:00  INFO 21076 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:23:48.245+09:00  INFO 21076 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1085 ms
+2024-06-14T17:23:48.380+09:00  INFO 21076 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:23:48.425+09:00  INFO 21076 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:23:48.452+09:00  INFO 21076 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:23:48.714+09:00  INFO 21076 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:23:48.738+09:00  INFO 21076 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:23:48.934+09:00  INFO 21076 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4a4b288a
+2024-06-14T17:23:48.936+09:00  INFO 21076 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:23:48.969+09:00  WARN 21076 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:23:49.783+09:00  INFO 21076 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:23:49.859+09:00  INFO 21076 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:23:50.130+09:00  INFO 21076 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:23:50.436+09:00  WARN 21076 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:23:50.764+09:00  INFO 21076 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:23:50.773+09:00  INFO 21076 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.998 seconds (process running for 4.645)
+2024-06-14T17:23:53.840+09:00  INFO 21076 --- [ReportProject] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:23:53.841+09:00  INFO 21076 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:23:53.843+09:00  INFO 21076 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-06-14T17:29:15.880+09:00  INFO 21076 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:29:15.896+09:00  INFO 21076 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:29:15.898+09:00  INFO 21076 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:29:15.902+09:00  INFO 21076 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:29:18.183+09:00  INFO 6480 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 6480 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:29:18.185+09:00  INFO 6480 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:29:18.769+09:00  INFO 6480 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:29:18.830+09:00  INFO 6480 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:29:19.296+09:00  INFO 6480 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:29:19.310+09:00  INFO 6480 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:29:19.310+09:00  INFO 6480 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:29:19.369+09:00  INFO 6480 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:29:19.370+09:00  INFO 6480 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1148 ms
+2024-06-14T17:29:19.515+09:00  INFO 6480 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:29:19.564+09:00  INFO 6480 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:29:19.598+09:00  INFO 6480 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:29:19.871+09:00  INFO 6480 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:29:19.896+09:00  INFO 6480 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:29:20.084+09:00  INFO 6480 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@365bfc5f
+2024-06-14T17:29:20.086+09:00  INFO 6480 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:29:20.120+09:00  WARN 6480 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:29:20.959+09:00  INFO 6480 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:29:21.041+09:00  INFO 6480 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:29:21.337+09:00  INFO 6480 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:29:21.655+09:00  WARN 6480 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:29:21.999+09:00  INFO 6480 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:29:22.008+09:00  INFO 6480 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.209 seconds (process running for 4.836)
+2024-06-14T17:29:22.095+09:00  INFO 6480 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T17:29:22.095+09:00  INFO 6480 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T17:29:22.096+09:00  INFO 6480 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T17:33:06.699+09:00  INFO 6480 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:33:06.715+09:00  INFO 6480 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:33:06.717+09:00  INFO 6480 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:33:06.721+09:00  INFO 6480 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:33:10.254+09:00  INFO 22560 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 22560 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:33:10.257+09:00  INFO 22560 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:33:10.803+09:00  INFO 22560 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:33:10.857+09:00  INFO 22560 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:33:11.294+09:00  INFO 22560 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:33:11.305+09:00  INFO 22560 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:33:11.306+09:00  INFO 22560 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:33:11.361+09:00  INFO 22560 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:33:11.362+09:00  INFO 22560 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1067 ms
+2024-06-14T17:33:11.495+09:00  INFO 22560 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:33:11.540+09:00  INFO 22560 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:33:11.569+09:00  INFO 22560 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:33:11.824+09:00  INFO 22560 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:33:11.847+09:00  INFO 22560 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:33:12.018+09:00  INFO 22560 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@14292d71
+2024-06-14T17:33:12.019+09:00  INFO 22560 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:33:12.054+09:00  WARN 22560 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:33:12.847+09:00  INFO 22560 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:33:12.922+09:00  INFO 22560 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:33:13.200+09:00  INFO 22560 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:33:13.506+09:00  WARN 22560 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:33:13.846+09:00  INFO 22560 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:33:13.854+09:00  INFO 22560 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.955 seconds (process running for 4.519)
+2024-06-14T17:34:32.183+09:00  INFO 22560 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T17:34:32.203+09:00  INFO 22560 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:34:32.205+09:00  INFO 22560 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T17:34:32.208+09:00  INFO 22560 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T17:34:34.082+09:00  INFO 13660 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 13660 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T17:34:34.085+09:00  INFO 13660 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T17:34:34.635+09:00  INFO 13660 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T17:34:34.692+09:00  INFO 13660 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T17:34:35.126+09:00  INFO 13660 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T17:34:35.140+09:00  INFO 13660 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T17:34:35.141+09:00  INFO 13660 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T17:34:35.197+09:00  INFO 13660 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T17:34:35.198+09:00  INFO 13660 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1078 ms
+2024-06-14T17:34:35.347+09:00  INFO 13660 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T17:34:35.393+09:00  INFO 13660 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T17:34:35.422+09:00  INFO 13660 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T17:34:35.674+09:00  INFO 13660 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T17:34:35.699+09:00  INFO 13660 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T17:34:35.878+09:00  INFO 13660 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42211e04
+2024-06-14T17:34:35.879+09:00  INFO 13660 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T17:34:35.911+09:00  WARN 13660 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T17:34:36.869+09:00  INFO 13660 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T17:34:36.953+09:00  INFO 13660 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T17:34:37.272+09:00  INFO 13660 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T17:34:37.613+09:00  WARN 13660 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T17:34:38.027+09:00  INFO 13660 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T17:34:38.035+09:00  INFO 13660 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.29 seconds (process running for 4.866)
+2024-06-14T18:01:22.993+09:00  INFO 13660 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:01:22.993+09:00  INFO 13660 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:01:22.994+09:00  INFO 13660 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:14:13.278+09:00  INFO 13660 --- [ReportProject] [RMI TCP Connection(49)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:14:13.295+09:00  INFO 13660 --- [ReportProject] [RMI TCP Connection(49)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:14:13.297+09:00  INFO 13660 --- [ReportProject] [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:14:13.301+09:00  INFO 13660 --- [ReportProject] [RMI TCP Connection(49)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:17:43.848+09:00  INFO 21780 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 21780 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:17:43.851+09:00  INFO 21780 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:17:44.397+09:00  INFO 21780 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:17:44.449+09:00  INFO 21780 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 45 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:17:44.856+09:00  INFO 21780 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:17:44.868+09:00  INFO 21780 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:17:44.869+09:00  INFO 21780 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:17:44.925+09:00  INFO 21780 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:17:44.926+09:00  INFO 21780 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1035 ms
+2024-06-14T18:17:45.064+09:00  INFO 21780 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:17:45.111+09:00  INFO 21780 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:17:45.138+09:00  INFO 21780 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:17:45.398+09:00  INFO 21780 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:17:45.422+09:00  INFO 21780 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:17:45.716+09:00  INFO 21780 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5a51336a
+2024-06-14T18:17:45.718+09:00  INFO 21780 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:17:45.754+09:00  WARN 21780 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:17:46.547+09:00  INFO 21780 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:17:46.620+09:00  INFO 21780 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:17:46.907+09:00  INFO 21780 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:17:47.220+09:00  WARN 21780 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:17:47.573+09:00  INFO 21780 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:17:47.581+09:00  INFO 21780 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.096 seconds (process running for 4.672)
+2024-06-14T18:17:52.758+09:00  INFO 21780 --- [ReportProject] [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:17:52.758+09:00  INFO 21780 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:17:52.759+09:00  INFO 21780 --- [ReportProject] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:28:56.989+09:00  INFO 21780 --- [ReportProject] [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:28:57.007+09:00  INFO 21780 --- [ReportProject] [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:28:57.009+09:00  INFO 21780 --- [ReportProject] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:28:57.012+09:00  INFO 21780 --- [ReportProject] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:30:46.378+09:00  INFO 21696 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 21696 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:30:46.380+09:00  INFO 21696 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:30:46.916+09:00  INFO 21696 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:30:46.985+09:00  INFO 21696 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:30:47.451+09:00  INFO 21696 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:30:47.463+09:00  INFO 21696 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:30:47.464+09:00  INFO 21696 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:30:47.522+09:00  INFO 21696 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:30:47.523+09:00  INFO 21696 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1105 ms
+2024-06-14T18:30:47.668+09:00  INFO 21696 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:30:47.717+09:00  INFO 21696 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:30:47.754+09:00  INFO 21696 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:30:48.008+09:00  INFO 21696 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:30:48.033+09:00  INFO 21696 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:30:48.202+09:00  INFO 21696 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T18:30:48.204+09:00  INFO 21696 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:30:48.237+09:00  WARN 21696 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:30:49.073+09:00  INFO 21696 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:30:49.146+09:00  INFO 21696 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:30:49.446+09:00  INFO 21696 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:30:49.766+09:00  WARN 21696 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:30:50.148+09:00  INFO 21696 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:30:50.156+09:00  INFO 21696 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.123 seconds (process running for 4.761)
+2024-06-14T18:30:54.732+09:00  INFO 21696 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:30:54.732+09:00  INFO 21696 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:30:54.733+09:00  INFO 21696 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:34:29.075+09:00  INFO 21696 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:34:29.091+09:00  INFO 21696 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:34:29.093+09:00  INFO 21696 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:34:29.101+09:00  INFO 21696 --- [ReportProject] [RMI TCP Connection(13)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:34:30.983+09:00  INFO 16784 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 16784 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:34:30.985+09:00  INFO 16784 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:34:31.499+09:00  INFO 16784 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:34:31.552+09:00  INFO 16784 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:34:31.963+09:00  INFO 16784 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:34:31.976+09:00  INFO 16784 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:34:31.977+09:00  INFO 16784 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:34:32.027+09:00  INFO 16784 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:34:32.027+09:00  INFO 16784 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1008 ms
+2024-06-14T18:34:32.159+09:00  INFO 16784 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:34:32.202+09:00  INFO 16784 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:34:32.230+09:00  INFO 16784 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:34:32.466+09:00  INFO 16784 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:34:32.486+09:00  INFO 16784 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:34:32.648+09:00  INFO 16784 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@32a033b6
+2024-06-14T18:34:32.649+09:00  INFO 16784 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:34:32.687+09:00  WARN 16784 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:34:33.425+09:00  INFO 16784 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:34:33.501+09:00  INFO 16784 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:34:33.783+09:00  INFO 16784 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:34:34.084+09:00  WARN 16784 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:34:34.443+09:00  INFO 16784 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:34:34.451+09:00  INFO 16784 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.801 seconds (process running for 4.384)
+2024-06-14T18:34:38.738+09:00  INFO 16784 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:34:38.738+09:00  INFO 16784 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:34:38.739+09:00  INFO 16784 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:42:17.562+09:00  INFO 16784 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:42:17.580+09:00  INFO 16784 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:42:17.582+09:00  INFO 16784 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:42:17.585+09:00  INFO 16784 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:42:24.159+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 8308 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:42:24.161+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:42:24.687+09:00  INFO 8308 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:42:24.741+09:00  INFO 8308 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:42:25.154+09:00  INFO 8308 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:42:25.166+09:00  INFO 8308 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:42:25.167+09:00  INFO 8308 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:42:25.218+09:00  INFO 8308 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:42:25.218+09:00  INFO 8308 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1022 ms
+2024-06-14T18:42:25.343+09:00  INFO 8308 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:42:25.388+09:00  INFO 8308 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:42:25.418+09:00  INFO 8308 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:42:25.670+09:00  INFO 8308 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:42:25.693+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:42:25.858+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5f6e2ad9
+2024-06-14T18:42:25.860+09:00  INFO 8308 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:42:25.891+09:00  WARN 8308 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:42:26.638+09:00  INFO 8308 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:42:26.713+09:00  INFO 8308 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:42:27.004+09:00  INFO 8308 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:42:27.297+09:00  WARN 8308 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:42:27.622+09:00  INFO 8308 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:42:27.630+09:00  INFO 8308 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.795 seconds (process running for 4.338)
+2024-06-14T18:42:44.044+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:42:44.045+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:42:44.046+09:00  INFO 8308 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T18:47:57.616+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(16)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:47:57.631+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(16)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:47:57.633+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:47:57.636+09:00  INFO 8308 --- [ReportProject] [RMI TCP Connection(16)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:47:59.661+09:00  INFO 14836 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 14836 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:47:59.664+09:00  INFO 14836 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:48:00.231+09:00  INFO 14836 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:48:00.287+09:00  INFO 14836 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:48:00.708+09:00  INFO 14836 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:48:00.720+09:00  INFO 14836 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:48:00.721+09:00  INFO 14836 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:48:00.772+09:00  INFO 14836 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:48:00.772+09:00  INFO 14836 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1070 ms
+2024-06-14T18:48:00.903+09:00  INFO 14836 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:48:00.951+09:00  INFO 14836 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:48:00.980+09:00  INFO 14836 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:48:01.234+09:00  INFO 14836 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:48:01.257+09:00  INFO 14836 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:48:01.427+09:00  INFO 14836 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48e74764
+2024-06-14T18:48:01.429+09:00  INFO 14836 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:48:01.467+09:00  WARN 14836 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:48:02.205+09:00  INFO 14836 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:48:02.284+09:00  INFO 14836 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:48:02.575+09:00  INFO 14836 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:48:02.888+09:00  WARN 14836 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:48:03.209+09:00  INFO 14836 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:48:03.218+09:00  INFO 14836 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.896 seconds (process running for 4.492)
+2024-06-14T18:48:10.865+09:00  INFO 14836 --- [ReportProject] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:48:10.865+09:00  INFO 14836 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:48:10.866+09:00  INFO 14836 --- [ReportProject] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:58:01.081+09:00  INFO 14836 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:58:01.097+09:00  INFO 14836 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:58:01.099+09:00  INFO 14836 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:58:01.102+09:00  INFO 14836 --- [ReportProject] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:58:03.423+09:00  INFO 24416 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 24416 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:58:03.425+09:00  INFO 24416 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:58:03.958+09:00  INFO 24416 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:58:04.015+09:00  INFO 24416 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:58:04.436+09:00  INFO 24416 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:58:04.448+09:00  INFO 24416 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:58:04.448+09:00  INFO 24416 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:58:04.499+09:00  INFO 24416 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:58:04.499+09:00  INFO 24416 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1038 ms
+2024-06-14T18:58:04.626+09:00  INFO 24416 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:58:04.668+09:00  INFO 24416 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:58:04.695+09:00  INFO 24416 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:58:04.942+09:00  INFO 24416 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:58:04.964+09:00  INFO 24416 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:58:05.146+09:00  INFO 24416 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1cc9bd9b
+2024-06-14T18:58:05.147+09:00  INFO 24416 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:58:05.180+09:00  WARN 24416 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:58:05.917+09:00  INFO 24416 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:58:05.998+09:00  INFO 24416 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:58:06.305+09:00  INFO 24416 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:58:06.616+09:00  WARN 24416 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:58:06.933+09:00  INFO 24416 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:58:06.941+09:00  INFO 24416 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.855 seconds (process running for 4.421)
+2024-06-14T18:58:10.382+09:00  INFO 24416 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:58:10.383+09:00  INFO 24416 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:58:10.384+09:00  INFO 24416 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T18:58:49.340+09:00  INFO 24416 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T18:58:49.354+09:00  INFO 24416 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:58:49.356+09:00  INFO 24416 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T18:58:49.359+09:00  INFO 24416 --- [ReportProject] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T18:58:51.275+09:00  INFO 20032 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 20032 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T18:58:51.277+09:00  INFO 20032 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T18:58:51.876+09:00  INFO 20032 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T18:58:51.933+09:00  INFO 20032 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 3 JPA repository interfaces.
+2024-06-14T18:58:52.376+09:00  INFO 20032 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T18:58:52.387+09:00  INFO 20032 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T18:58:52.388+09:00  INFO 20032 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T18:58:52.442+09:00  INFO 20032 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T18:58:52.442+09:00  INFO 20032 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1131 ms
+2024-06-14T18:58:52.592+09:00  INFO 20032 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T18:58:52.646+09:00  INFO 20032 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T18:58:52.674+09:00  INFO 20032 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T18:58:52.938+09:00  INFO 20032 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T18:58:52.964+09:00  INFO 20032 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T18:58:53.144+09:00  INFO 20032 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@48e74764
+2024-06-14T18:58:53.145+09:00  INFO 20032 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T18:58:53.178+09:00  WARN 20032 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T18:58:53.982+09:00  INFO 20032 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T18:58:54.057+09:00  INFO 20032 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T18:58:54.327+09:00  INFO 20032 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T18:58:54.629+09:00  WARN 20032 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T18:58:54.960+09:00  INFO 20032 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T18:58:54.969+09:00  INFO 20032 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 4.031 seconds (process running for 4.6)
+2024-06-14T18:58:55.879+09:00  INFO 20032 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T18:58:55.879+09:00  INFO 20032 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T18:58:55.880+09:00  INFO 20032 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-06-14T19:04:59.125+09:00  INFO 20032 --- [ReportProject] [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T19:04:59.141+09:00  INFO 20032 --- [ReportProject] [RMI TCP Connection(14)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T19:04:59.143+09:00  INFO 20032 --- [ReportProject] [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T19:04:59.146+09:00  INFO 20032 --- [ReportProject] [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-14T19:05:01.184+09:00  INFO 16168 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Starting ReportProjectApplication using Java 17.0.11 with PID 16168 (C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject\target\classes started by liu in C:\Users\ly198811z\Desktop\Team\202404-TeamC\チーム開発\JavaCode\ReportProject)
+2024-06-14T19:05:01.186+09:00  INFO 16168 --- [ReportProject] [main] rp.com.ReportProjectApplication          : No active profile set, falling back to 1 default profile: "default"
+2024-06-14T19:05:01.714+09:00  INFO 16168 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-14T19:05:01.766+09:00  INFO 16168 --- [ReportProject] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 46 ms. Found 3 JPA repository interfaces.
+2024-06-14T19:05:02.173+09:00  INFO 16168 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-14T19:05:02.184+09:00  INFO 16168 --- [ReportProject] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-14T19:05:02.185+09:00  INFO 16168 --- [ReportProject] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-14T19:05:02.235+09:00  INFO 16168 --- [ReportProject] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-14T19:05:02.235+09:00  INFO 16168 --- [ReportProject] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1010 ms
+2024-06-14T19:05:02.379+09:00  INFO 16168 --- [ReportProject] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-14T19:05:02.435+09:00  INFO 16168 --- [ReportProject] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-14T19:05:02.467+09:00  INFO 16168 --- [ReportProject] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-14T19:05:02.718+09:00  INFO 16168 --- [ReportProject] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-14T19:05:02.740+09:00  INFO 16168 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-14T19:05:02.908+09:00  INFO 16168 --- [ReportProject] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7a3643e3
+2024-06-14T19:05:02.909+09:00  INFO 16168 --- [ReportProject] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-14T19:05:02.940+09:00  WARN 16168 --- [ReportProject] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-14T19:05:03.696+09:00  INFO 16168 --- [ReportProject] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-14T19:05:03.769+09:00  INFO 16168 --- [ReportProject] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T19:05:04.034+09:00  INFO 16168 --- [ReportProject] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-06-14T19:05:04.334+09:00  WARN 16168 --- [ReportProject] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-14T19:05:04.658+09:00  INFO 16168 --- [ReportProject] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-14T19:05:04.666+09:00  INFO 16168 --- [ReportProject] [main] rp.com.ReportProjectApplication          : Started ReportProjectApplication in 3.817 seconds (process running for 4.427)
+2024-06-14T19:05:07.463+09:00  INFO 16168 --- [ReportProject] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-14T19:05:07.463+09:00  INFO 16168 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-14T19:05:07.464+09:00  INFO 16168 --- [ReportProject] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-14T19:05:11.702+09:00  WARN 16168 --- [ReportProject] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23503
+2024-06-14T19:05:11.702+09:00 ERROR 16168 --- [ReportProject] [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : 错误: 在 "users" 上的更新或删除操作违反了在 "reports" 上的外键约束 "user_fk_key"
+  详细：键值对(user_id)=(5)仍然是从表"reports"引用的.
+2024-06-14T19:18:26.135+09:00  INFO 16168 --- [ReportProject] [RMI TCP Connection(23)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-14T19:18:26.151+09:00  INFO 16168 --- [ReportProject] [RMI TCP Connection(23)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-14T19:18:26.152+09:00  INFO 16168 --- [ReportProject] [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-14T19:18:26.155+09:00  INFO 16168 --- [ReportProject] [RMI TCP Connection(23)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

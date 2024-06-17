@@ -15,6 +15,8 @@ public interface AdminDao extends JpaRepository<Admin, Long>{
     // 用途：管理者の登録処理をするときに、同じメールアドレスはあってはならない
 	Admin findByAdminEmail(String adminEmail);
 
+	Admin save(Admin admin);
+	
 	Admin findByAdminName(String adminName);
     // 指定されたメールアドレスとパスワードに基づいて管理者情報を検索するメソッド
     // SQL: SELECT * FROM admin WHERE admin_email = ? AND admin_password = ?

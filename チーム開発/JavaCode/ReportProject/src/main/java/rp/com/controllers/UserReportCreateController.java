@@ -40,11 +40,7 @@ public class UserReportCreateController {
     @GetMapping("/user/report/create")
     public String showReportCreateForm(Model model) {
         // ログインしているユーザーの情報を取得
-        Users users = (Users) session.getAttribute("loginUsersInfo");
-
-        if (users == null) {
-            return "redirect:/user/login";
-        }
+        Users users = (Users) session.getAttribute("loginUserInfo");
 
         List<Reports> reportList = reportsService.getAllReports();
         model.addAttribute("reportList", reportList);
@@ -66,7 +62,7 @@ public class UserReportCreateController {
             @RequestParam("adminName") String adminName,
             Model model) {
 
-        Users currentUser = (Users) session.getAttribute("loginUsersInfo");
+        Users currentUser = (Users) session.getAttribute("loginUserInfo");
         if (currentUser == null) {
             return "redirect:/user/login";
         }
