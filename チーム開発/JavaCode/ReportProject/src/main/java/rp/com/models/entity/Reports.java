@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Reports {
 	// report_idの設定
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long reportId;
 
 	// report_titleの設定

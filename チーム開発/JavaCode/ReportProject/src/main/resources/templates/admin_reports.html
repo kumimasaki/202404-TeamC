@@ -15,9 +15,9 @@
          </div>
 
          <ul class="header-item">
-           <li class="item-list" id="item-icon"><img th:src="@{${iconPath}}" alt="アイコン"></li>
-            <li class="item-list" th:text="${adminName}"></li>
-            <li class="pc-list__item" th:text="${accountName}"></li>
+           <li class="item-list" >
+			<img  id="item-icon" th:src="@{${adminIconPath}}" alt="管理员头像">
+            <li class="item-list" th:text="${admin.adminName}"></li>
             <li class="item-list"><a th:href="@{/admin/info/change}">管理者情報変更</a></li>
             <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
             <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
@@ -39,7 +39,7 @@
          <div th:each="report : ${reports}" class="report-list">
             <form th:action="@{/delete_report}" method="POST">
                <div class="report-card">
-                 <img th:src="${iconPath}" alt="ユーザー画像" class="report-image">
+                 <img th:src="${admin.adminIcon}" alt="ユーザー画像" class="report-image">
                   <div class="report-info">
                      <h3 th:text="${report.reportTitle}">報告事項</h3>
                      <p th:text="${report.contentsOfReport}">コンテンツ</p>

@@ -25,13 +25,10 @@ public class AdminRegisterController {
 
     @GetMapping("/register")
     public String showRegisterForm(Model model) {
-        Admin admin = (Admin) session.getAttribute("loginAdminInfo");
-        if (admin == null) {
-            model.addAttribute("admin", new Admin());
+  
             return "admin_register.html";
-        } else {
-            return "redirect:/admin/login";
-        }
+    
+        
     }
 
     @PostMapping("/register/process")
@@ -42,13 +39,17 @@ public class AdminRegisterController {
             @RequestParam("adminIcon") MultipartFile adminIcon,
             @RequestParam String confirmPassword,
             Model model) {
-        
+
         try {
-            adminService.saveAdminWithIcon(adminName, adminEmail, adminPassword, adminIcon, confirmPassword);
+            adminService.createAdmin(adminName, adminEmail, adminPassword, adminIcon, confirmPassword);
             return "redirect:/admin/login";
         } catch (IOException e) {
             e.printStackTrace();
-            model.addAttribute("errorMessage", "アイコン保存中にエラーが発生しました。");
+            model.addAttribute("errorMessage", "アアイコン保存中にエラーが発生しました。");
+            return "admin_register.html";
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+            model.addAttribute("errorMessage", e.getMessage());
             return "admin_register.html";
         }
     }

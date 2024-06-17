@@ -56,9 +56,7 @@ public class UserCreateController {
         if (admin == null) {
             return "redirect:/admin/login";
         }
-
-       
-
+     
         // アイコンを保存する
         String fileName = null;
         if (!userIcon.isEmpty()) {
