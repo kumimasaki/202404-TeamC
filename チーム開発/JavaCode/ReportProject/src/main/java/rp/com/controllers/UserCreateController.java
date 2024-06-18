@@ -36,11 +36,15 @@ public class UserCreateController {
     // ユーザー登録画面を表示するメソッド
     @GetMapping("/user/create")
     public String showCreateUserForm(Model model) {
+    	// 管理者情報をセッションから取得
         Admin admin = (Admin) session.getAttribute("loginAdminInfo");
         if (admin != null) {
+        	// 管理者IDをモデルに追加
             model.addAttribute("adminId", admin.getAdminId());
+         // ユーザー登録画面を表示
             return "user_create.html";
         } else {
+        	// 管理者がログインしていない場合、ログイン画面にリダイレクト
             return "redirect:/admin/login";
         }
     }
@@ -51,36 +55,24 @@ public class UserCreateController {
                              @RequestParam String userPassword, 
                              @RequestParam("userIcon") MultipartFile userIcon,
                              @RequestParam("adminId") Long adminId, Model model) {
+    	// 管理者情報をセッションから取得
+    	  Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 
-        Admin admin = (Admin) session.getAttribute("loginAdminInfo");
-        if (admin == null) {
-            return "redirect:/admin/login";
-        }
-     
-        // アイコンを保存する
-        String fileName = null;
-        if (!userIcon.isEmpty()) {
-            try {
-                String originalFilename = userIcon.getOriginalFilename();
-                fileName = new SimpleDateFormat("yyyy-MM-dd-HH-").format(new Date()) + originalFilename;
-                Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
-            } catch (IOException e) {
-                e.printStackTrace();
-                model.addAttribute("error", "アイコンの保存に失敗しました");
-                return "user_create.html";
-            }
-        }
+          if (admin == null) {
+              return "redirect:/admin/login";
+          }
 
-        // 新しいユーザー作成
-        Users newUser = new Users(userName, userEmail, userPassword, admin);
-        newUser.setUserIcon(fileName);
-
-        // 新しいユーザー保存
-        if (userService.createUser(userName, userEmail, userPassword, admin)) {
-            return "redirect:/user/list";
-        } else {
-            model.addAttribute("error", "ユーザー追加が失敗しました。");
-            return "user_create.html";
+          try {
+              // ユーザーを保存（アイコンを含む）
+              userService.saveUserWithIcon(userName, userEmail, userPassword, userIcon, adminId);
+              // ユーザーリスト画面にリダイレクト
+              return "redirect:/user/list";
+          } catch (IOException e) {
+              e.printStackTrace();
+              // エラーメッセージをモデルに追加
+              model.addAttribute("error", "ユーザーの作成に失敗しました");
+              // エラーが発生した場合、ユーザー登録画面に戻る
+              return "user_create.html";
         }
     }
 }

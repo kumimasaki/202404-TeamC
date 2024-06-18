@@ -13,10 +13,13 @@ public class UserLogoutController {
     // ログアウト処理を行うメソッド
     @PostMapping("/user/logout")
     public String logoutUser(HttpServletRequest request) {
-        HttpSession session = request.getSession(false); // 現在のセッションを取得
+    	// 現在のセッションを取得
+        HttpSession session = request.getSession(false); 
         if (session != null) {
-            session.invalidate(); // セッションを無効化
+        	// セッションを無効化
+            session.invalidate(); 
         }
-        return "redirect:/logout"; // ログインページにリダイレクト
+     // ログインページにリダイレクト
+        return "redirect:/user/login"; 
     }
 }

@@ -123,15 +123,15 @@ public class AdminService {
         }
     }
 
-    // 保存管理员头像的方法
+    // アイコンを保存する
     private void saveAdminIcon(Admin admin, MultipartFile adminIcon) {
     	 if (adminIcon != null && !adminIcon.isEmpty()) {
     	        String fileName = null;
     	        try {
-    	            // 生成唯一的文件名，可以考虑使用UUID
+    	           
     	            String originalFilename = adminIcon.getOriginalFilename();
     	            fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + originalFilename;
-    	            // 将文件保存到指定目录
+    	            
     	            Path uploadPath = Paths.get("src/main/resources/static/uploads/" + fileName);
     	            Files.copy(adminIcon.getInputStream(), uploadPath, StandardCopyOption.REPLACE_EXISTING);
     	            

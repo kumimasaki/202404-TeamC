@@ -1,7 +1,6 @@
 package rp.com.controllers;
 
 import java.util.List;
-import java.util.logging.Logger; // 导入Logger类
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,38 +12,58 @@ import org.springframework.web.bind.annotation.RequestParam;
 import jakarta.servlet.http.HttpSession;
 import rp.com.models.entity.Admin;
 import rp.com.models.entity.Reports;
+import rp.com.services.AdminService;
 import rp.com.services.ReportsService;
 
 @Controller
 public class AdminReportListController {
 
-    @Autowired
-    private ReportsService reportsService;
+	@Autowired
+	private ReportsService reportsService;
 
-    @Autowired
-    private HttpSession session;
-   
-    
-    @GetMapping("/admin/reports")
-    public String showReportList(Model model) {
-        Admin admin = (Admin) session.getAttribute("loginAdminInfo");
-        
-        if (admin == null) {
-            return "redirect:/admin/login";
-        } else {
-            List<Reports> reports = reportsService.getAllReports();
-            model.addAttribute("reports", reports);
-            model.addAttribute("admin", admin);
-            
-            String adminIconPath = "/uploads/" + admin.getAdminIcon(); // 确保路径格式正确
-            model.addAttribute("adminIconPath", adminIconPath);
-            return "admin_reports";
-        }
-    }
-    
-    @PostMapping("/delete_report")
-    public String deleteReport(@RequestParam("reportId") Long reportId) {
-        reportsService.deleteReport(reportId);
-        return "redirect:/admin/reports";
-    }
+	@Autowired
+	private AdminService adminService;
+
+	@Autowired
+	private HttpSession session;
+
+	// レポート一覧画面を表示するメソッド
+	@GetMapping("/admin/report/list")
+	public String showReportList(Model model) {
+		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
+
+		// 管理者がログインしていない場合、ログインページにリダイレクト
+		if (admin == null) {
+			return "redirect:/admin/login";
+		} else {
+			// 管理者IDに基づいてレポートリストを取得し、モデルに追加
+			List<Reports> reports = reportsService.getReportsByAdminId(admin.getAdminId());
+			model.addAttribute("reports", reports);
+			model.addAttribute("admin", admin);
+			// 管理者のアイコンパスと名前をモデルに追加
+			String adminIconPath = "/uploads/" + admin.getAdminIcon();
+			model.addAttribute("adminIconPath", adminIconPath);
+			return "admin_reports";
+		}
+	}
+
+	// レポート検索を処理するメソッド
+	@PostMapping("/admin/report/search")
+	public String searchReports(@RequestParam("keyword") String keyword, Model model) {
+		// キーワードでレポートを検索
+		List<Reports> reportList = reportsService.searchReportsByTitleOrContent(keyword);
+		// 検索結果をモデルに追加
+		model.addAttribute("reports", reportList);
+		// admin_reportsテンプレートを返す
+		return "admin_reports";
+	}
+
+	// レポートを削除するメソッド
+	@PostMapping("/delete/report/{reportId}")
+	public String deleteReport(@RequestParam("reportId") Long reportId) {
+		// 指定されたIDのレポートを削除
+		reportsService.deleteReport(reportId);
+		return "redirect:/admin/report/list";
+	}
+
 }
