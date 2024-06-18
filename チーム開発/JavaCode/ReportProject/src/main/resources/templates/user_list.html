@@ -27,8 +27,8 @@
 	<main>
 		<div class="search-container">
 			<label>ユーザー一覧（検索結果）</label>
-			<form th:action="@{/user/search}" method="post">
-				<input type="text" name="search" placeholder="検索内容．．．">
+			<form th:action="@{/user/report/search}" method="post">
+				<input type="text" name="keyword" placeholder="検索内容．．．">
 				<button type="submit" class="search-button">検索</button>
 			</form>
 		</div>
@@ -36,7 +36,7 @@
 			<div th:if="${usersList != null}">
 				<div th:each="user:${usersList}" class="user-card">
 					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"> 
-						<img th:src="@{'/' + ${user.userIcon}}" >						               
+						<img th:src="@{'/' + ${users.userIcon}}" >						               
 					</a>
 					<div class="user-info">
 						<h3 th:text="${user.userName}">ユーザー名</h3>
@@ -68,5 +68,7 @@
 			</div>
 		</div>
 	</footer>
+	
+	
 </body>
 </html>

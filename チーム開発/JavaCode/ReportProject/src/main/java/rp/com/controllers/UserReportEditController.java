@@ -26,7 +26,7 @@ public class UserReportEditController {
 			model.addAttribute("report", report.get());
 			return "user_report_edit"; // レポート編集ページに遷移する
 		} else {
-			return "redirect:/user/reports"; // レポートが存在しない場合、レポート一覧ページにリダイレクトする
+			return "/user/report/list"; // レポートが存在しない場合、レポート一覧ページにリダイレクトする
 		}
 	}
 }

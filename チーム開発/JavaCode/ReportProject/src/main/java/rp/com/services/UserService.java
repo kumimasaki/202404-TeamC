@@ -42,30 +42,22 @@ public class UserService {
     }
 
     // ユーザーの作成処理
-    // 保存ができたらtrue、そうでない場合、保存処理失敗falseを返す
     public void saveUserWithIcon(String userName, String userEmail, String userPassword, MultipartFile userIcon, Long adminId) throws IOException {
         // ユーザーが存在しない場合のみ保存を行う
         if (!emailExists(userEmail)) {
             String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date()) + userIcon.getOriginalFilename();
             Files.copy(userIcon.getInputStream(), Path.of("src/main/resources/static/uploads/" + fileName));
 
-            String iconPath = "upload/" + fileName;
-            Admin admin = adminService.getAdminById(adminId); // 获取管理员对象
-            usersDao.save(new Users(userName, userEmail, userPassword, LocalDateTime.now(), iconPath, admin));
+            String userIconPath  = "uploads/" + fileName;
+            
+            Admin admin = adminService.getAdminById(adminId); 
+            usersDao.save(new Users(userName, userEmail, userPassword, LocalDateTime.now(), userIconPath , admin));
         } else {
             throw new RuntimeException("このメールアドレスは既に登録されています。");
         }
     }
 
-    // ユーザーの作成処理（不带图标）
-    public boolean createUser(String userName, String userEmail, String userPassword, Admin admin) {
-        if (usersDao.findByUserEmail(userEmail) == null) {
-            usersDao.save(new Users(userName, userEmail, userPassword, admin));
-            return true;
-        } else {
-            return false;
-        }
-    }
+
 
     // メールアドレスの存在確認
     public boolean emailExists(String userEmail) {

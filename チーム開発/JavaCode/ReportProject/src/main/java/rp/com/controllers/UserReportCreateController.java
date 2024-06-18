@@ -100,6 +100,6 @@ public class UserReportCreateController {
             model.addAttribute("message", "ファイルが存在しません。");
         }
 
-        return "redirect:/user/report_list";
+        return "redirect:/user/report/list";
     }
 }

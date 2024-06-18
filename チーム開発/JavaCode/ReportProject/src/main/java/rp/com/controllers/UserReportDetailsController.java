@@ -29,7 +29,7 @@ public class UserReportDetailsController {
 		if (reportOptional.isPresent()) {
 			Reports report = reportOptional.get();
 			model.addAttribute("report", report);
-			return "/user/report_details"; // ビュー名を返す
+			return "user_report_detail.html"; // ビュー名を返す
 		} else {
 			// レポートが見つからない場合、レポート一覧ページにリダイレクト
 			return "redirect:/user/report/list";

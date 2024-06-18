@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import rp.com.models.entity.Admin;
@@ -25,16 +28,23 @@ public class AdminEditController {
 	@Autowired
 	private AdminService adminService;
 
+	@Autowired
+	private HttpSession session;
+	
 	// 管理者の情報変更画面を表示するためのメソッドです
 	// URLは /admin/info/edit/{adminId} です
 	@GetMapping("/info/edit/{adminId}")
 	public String showEditForm(@PathVariable("adminId") Long adminId, Model model) {
-		// 管理者IDを使って管理者の情報を探します
-		Admin admin = adminService.getAdminById(adminId);
+		
+		Admin admin = (Admin) session.getAttribute("loginAdminInfo");		
+		
 		// 管理者が見つかった場合
 		if (admin != null) {
 			// 管理者の情報をモデルに追加します
 			model.addAttribute("admin", admin);
+			 model.addAttribute("adminId", adminId); 
+			 String adminIconPath = "/uploads/" + admin.getAdminIcon();
+			 model.addAttribute("adminIconPath", adminIconPath);
 			// admin_info_change.htmlという画面を見せます
 			return "admin_info_change.html";
 		} else {

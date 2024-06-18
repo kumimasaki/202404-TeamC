@@ -45,7 +45,7 @@ public class UserLoginController {
         } else {
             // ログイン成功の場合、ユーザー情報をモデルに追加してダッシュボードにリダイレクトします
            session.setAttribute("loginUserInfo",users);
-           return "redirect:/user/report_list";
+           return "redirect:/user/report/list";
 
         }
     }

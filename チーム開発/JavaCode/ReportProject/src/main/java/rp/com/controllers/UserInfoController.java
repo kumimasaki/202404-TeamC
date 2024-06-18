@@ -20,41 +20,45 @@ public class UserInfoController {
 	// 情報変更画面を表示するメソッド
 	@GetMapping("/user/info/edit/{userId}")
 	public String showEditUserInfoForm(@PathVariable Long userId, Model model) {
-		Users user = userService.getUserById(userId); // ユーザーIDに基づいてユーザー情報を取得
+		// ユーザーIDに基づいてユーザー情報を取得
+		Users user = userService.getUserById(userId); 
 		if (user != null) {
-			model.addAttribute("user", user); // ユーザー情報をモデルに追加
-			return "user_edit"; // 情報変更画面を返す
+			// ユーザー情報をモデルに追加
+			model.addAttribute("user", user); 
+			return "user_edit"; 
 		} else {
-			model.addAttribute("error", "ユーザーが見つかりません"); // エラーメッセージをモデルに追加
-			return "error"; // エラーページを返す
+			// エラーメッセージをモデルに追加
+			model.addAttribute("error", "ユーザーが見つかりません"); 
+			return "error"; 
 		}
 	}
 
 	// 情報変更処理を行うメソッド
 	@PostMapping("/user/info/update")
-	public String updateUserInfo(@RequestParam("userId") Long userId, // ユーザーIDをリクエストパラメータから取得
-			@RequestParam("username") String userName, // ユーザー名をリクエストパラメータから取得
-			@RequestParam("email") String userEmail, // ユーザーメールをリクエストパラメータから取得
-			@RequestParam("password") String userPassword, // パスワードをリクエストパラメータから取得
-			@RequestParam("confirmPassword") String confirmPassword, // パスワード確認をリクエストパラメータから取得
+	public String updateUserInfo(@RequestParam("userId") Long userId, 
+			@RequestParam("username") String userName, 
+			@RequestParam("email") String userEmail, 
+			@RequestParam("password") String userPassword, 
+			@RequestParam("confirmPassword") String confirmPassword, 
 			Model model) {
 
 		// パスワード確認
 		if (!userPassword.equals(confirmPassword)) {
-			model.addAttribute("error", "パスワードが一致しません"); // エラーメッセージをモデルに追加
-			return "user_edit"; // 情報変更画面を再表示
+			model.addAttribute("error", "パスワードが一致しません"); 
+			return "user_edit"; 
 		}
-
-		Users user = userService.getUserById(userId); // ユーザーIDに基づいてユーザー情報を取得
+		// ユーザーIDに基づいてユーザー情報を取得
+		Users user = userService.getUserById(userId); 
 		if (user != null) {
-			user.setUserName(userName); // ユーザー名を更新
-			user.setUserEmail(userEmail); // ユーザーメールを更新
-			user.setUserPassword(userPassword); // パスワードを更新
-			userService.updateUser(user); // ユーザー情報を更新
-			return "redirect:/user/info/edit/" + userId + "?success"; // 情報変更画面にリダイレクト
+			user.setUserName(userName); 
+			user.setUserEmail(userEmail); 
+			user.setUserPassword(userPassword); 
+			userService.updateUser(user); 
+			// 情報変更画面にリダイレクト
+			return "redirect:/user/info/edit/" + userId + "?success"; 
 		} else {
-			model.addAttribute("error", "ユーザーが見つかりません"); // エラーメッセージをモデルに追加
-			return "error"; // エラーページを返す
+			model.addAttribute("error", "ユーザーが見つかりません");
+			return "error"; 
 		}
 	}
 }

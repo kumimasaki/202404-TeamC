@@ -44,9 +44,9 @@ public class UserReportUpdateController {
 
 			reportsService.saveReport(report);
 			// 成功時に報告一览ページにリダイレクト
-			return "redirect:/user/reports";
+			return "redirect:/user/report/list";
 		} else {
-			return "redirect:/user/reports"; // レポートが存在しない場合もレポート一覧ページにリダイレクトする
+			return "redirect:/user/report/list"; // レポートが存在しない場合もレポート一覧ページにリダイレクトする
 		}
 	}
 }

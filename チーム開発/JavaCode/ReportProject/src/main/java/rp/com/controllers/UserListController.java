@@ -18,27 +18,26 @@ public class UserListController {
 
 	@Autowired
 	private UserService userService;
-	@Autowired
-	private HttpSession session;
-	// ユーザー一覧ページを表示するメソッド
 
-	 @GetMapping("/user/list")
-	    public String showUserList(Model model) {
-		 
-		 Users users = (Users) session.getAttribute("loginUsersInfo");
-		 		
-			  // 获取所有用户列表
-		        List<Users> usersList = userService.getAllUserList();
-		        // 将用户列表添加到模型中
-		        model.addAttribute("usersList", usersList);
-		       
-		        return "user_list";			
-			     
-	 }
 
+
+	@GetMapping("/user/list")
+	public String showUserList(Model model) {
+    	
+	    // すべてのユーザーリストを取得
+	    List<Users> usersList = userService.getAllUserList();
+	    // ユーザーリストをモデルに追加
+	    model.addAttribute("usersList", usersList);
+	    
+	    model.addAttribute("users", new Users());
+	    
+
+	    return "user_list";
+	
+	}
 
 	// ユーザー検索を処理するメソッド
-	@PostMapping("/search")
+	@PostMapping("/user/search")
 	public String searchUsers(@RequestParam("search") String search, Model model) {
 		// 名前またはメールアドレスでユーザーを検索
 		List<Users> usersList = userService.searchUsersByNameOrEmail(search);
