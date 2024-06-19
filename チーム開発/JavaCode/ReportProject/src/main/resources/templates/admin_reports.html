@@ -15,10 +15,9 @@
          </div>
 
          <ul class="header-item">
-           <li class="item-list" >
-			<img  id="item-icon" th:src="@{${adminIconPath}}" alt="">
-		   </li>
-			
+           <li class="item-list">
+              <img id="item-icon" th:src="@{${adminIconPath}}" alt="">
+           </li>
             <li class="item-list" th:text="${admin.adminName}"></li>
             <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
             <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
@@ -38,38 +37,38 @@
          </form>
       </div>
 
-         <div th:each="report : ${reports}" class="report-list">
-            <form th:action="@{/delete_report}" method="POST">
-               <div class="report-card">
-                 <img th:src="@{${adminIconPath}}" alt="ユーザー画像" class="report-image">
-                  <div class="report-info">
-                     <h3 th:text="${report.reportTitle}">報告事項</h3>
-                     <p th:text="${report.contentsOfReport}">コンテンツ</p>
+      <div th:each="report : ${reports}" class="report-list">
+         <form th:action="@{/delete_report}" method="POST">
+            <div class="report-card">
+               <img th:src="@{${adminIconPath}}" alt="ユーザー画像" class="report-image">
+               <div class="report-info">
+                  <h3 th:text="${report.reportTitle}">報告事項</h3>
+                  <p th:text="${report.contentsOfReport}">コンテンツ</p>
+               </div>
+               <div class="report-actions">
+                  <div class="reporter-received">
+                     <p class="reporter" th:text="${report.userName}">ユーザー名</p>
+                     <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+                     <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
                   </div>
-                  <div class="report-actions">
-                     <div class="reporter-received">
-                        <p class="reporter" th:text="${report.userName}">ユーザー名</p>
-						<span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
-						<span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
-					</div>
-                     <div class="detail-button-content">
-                        <a th:href="@{'/admin/report/details/'}" class="detail-button">報告詳細</a>
-                        <input type="hidden" name="reportId" th:value="${report.reportId}">
-                        <button type="submit" class="delete-button">削除</button>
-                     </div>
+                  <div class="detail-button-content">
+                     <a th:href="@{'/admin/report/details?reportId=' + ${report.reportId}}" class="detail-button">報告詳細</a>
+                     <input type="hidden" name="reportId" th:value="${report.reportId}">
+                     <button type="submit" class="delete-button">削除</button>
                   </div>
                </div>
-			   
-			   </form>
             </div>
+         </form>
+      </div>
+   </main>
 
    <footer>
       <div class="footer-content" id="footer-report">
          <div>
             <ul class="footer-item" id="footer-item-report">
-                  <li><a th:href="@{/admin/info/change}">情報変更</a></li>
-                  <li>|</li>
-                  <li><a th:href="@{/admin/logout}">ログアウト</a></li>
+               <li><a th:href="@{/admin/info/change}">情報変更</a></li>
+               <li>|</li>
+               <li><a th:href="@{/admin/logout}">ログアウト</a></li>
             </ul>
          </div>
          <div>
@@ -77,7 +76,5 @@
          </div>
       </div>
    </footer>
-   
-   
 </body>
 </html>

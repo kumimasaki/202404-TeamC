@@ -18,7 +18,6 @@ public class AdminReportDetailsController {
 	@Autowired
 	private ReportsService reportsService;
 
-
 	// IDでレポートを取得し
 	@GetMapping("/{id}")
 	public String getReportById(@PathVariable Long id, Model model) {
@@ -50,5 +49,20 @@ public class AdminReportDetailsController {
 	public String receiveReport(@PathVariable Long id) {
 		reportsService.acceptReport(id);
 		return "redirect:/admin/reports";
+	}
+
+	// レポート詳細ページを表示するメソッド
+	@GetMapping("/admin/report/details")
+	public String showReportDetails(@RequestParam("reportId") Long reportId, Model model) {
+		// IDに基づいてレポートを取得
+		Optional<Reports> reportOptional = reportsService.getReportById(reportId);
+		if (reportOptional.isPresent()) {
+			Reports report = reportOptional.get();
+			model.addAttribute("report", report);
+			return "admin_report_detail"; // ビュー名を返す
+		} else {
+			// レポートが見つからない場合、レポート一覧ページにリダイレクト
+			return "redirect:/admin/report/list";
+		}
 	}
 }
