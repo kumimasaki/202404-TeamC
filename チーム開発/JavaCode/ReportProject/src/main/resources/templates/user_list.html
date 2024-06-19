@@ -13,15 +13,15 @@
 			<div class="site-name">
 				<h1>業務報告システム</h1>
 			</div>
-            <ul class="header-item">
-                <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
+			<ul class="header-item">
+			    <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
                 <li class="item-list"><a href="">管理者名前</a></li>
-                <li class="item-list"><a href="">管理者情報変更</a></li>
-                <li class="item-list"> <a href="">ユーザー追加</a></li>
-                <li class="item-list"><a href="">ユーザー一覧</a> </li>
-                <li class="item-list"><a href="">報告事項一覧</a></li>
-                <li class="item-list"><a href="">ログアウト</a></li>
-            </ul>
+			    <li class="item-list"><a href="/admin/info/edit/{adminId}">管理者情報変更</a></li>
+			    <li class="item-list"> <a href="/user/create">ユーザー追加</a></li>
+			    <li class="item-list"><a href="/admin/user/list">ユーザー一覧</a> </li>
+			    <li class="item-list"><a href="/admin/report/list">報告事項一覧</a></li>
+			    <li class="item-list"><a href="/user/logout">ログアウト</a></li>
+			</ul>
 		</div>
 	</header>
 	<main>
@@ -36,7 +36,7 @@
 			<div th:if="${usersList != null}">
 				<div th:each="user:${usersList}" class="user-card">
 					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"> 
-						<img th:src="@{'/' + ${users.userIcon}}" >						               
+						<img th:src="@{'/' + ${user.userIcon}}" >						               
 					</a>
 					<div class="user-info">
 						<h3 th:text="${user.userName}">ユーザー名</h3>
