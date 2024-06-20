@@ -12,16 +12,16 @@
     <header>
         <div class="header-content">
             <div class="site-name">
-                <h1>業務報告システム </h1>
+                <h1>業務報告システム</h1>
             </div>
             <ul class="header-item">
-                <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
-                <li class="item-list"><a href="">管理者名前</a></li>
-                <li class="item-list"><a href="">管理者情報変更</a></li>
-                <li class="item-list"><a href="">ユーザー追加</a></li>
-                <li class="item-list"><a href="">ユーザー一覧</a></li>
-                <li class="item-list"><a href="">報告事項一覧</a></li>
-                <li class="item-list"><a href="">ログアウト</a></li>
+                <li class="item-list" id="item-icon"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">アイコン</a></li>
+                <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者名前</a></li>
+                <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
+                <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+                <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+                <li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+                <li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
             </ul>
         </div>
     </header>
@@ -34,14 +34,13 @@
                 <h1>管理者情報変更</h1>
                 <form id="adminForm" th:action="@{/admin/info/update}" method="post" enctype="multipart/form-data">
                     <div class="form-content">
-                        <input type="hidden" id="adminId" name="adminId" th:value="${adminId}">                     
+                        <input type="hidden" id="adminId" name="adminId" th:value="${admin.adminId}">
                         <div class="icon-container">
-						
-                            <div >
-								<img  class="icon-circle" th:src="@{${adminIconPath}}" alt="">
+                            <div>
+                                <img class="icon-circle" th:src="@{${admin.adminIconPath}}" alt="">
                             </div>
                             <input type="file" id="adminIcon" name="adminIcon" class="file-input">
-                            <label for="iconUpload" class="file-label">ファイル選択</label>
+                            <label for="adminIcon" class="file-label">ファイル選択</label>
                         </div>
                         <div class="input-fields">
                             <div class="input-group">
@@ -54,17 +53,16 @@
                             </div>
                             <div class="input-group" id="input-button">
                                 <label for="newPassword">新しいパスワード:</label>
-                                <input type="password" id="newPassword" name="newPassword">
+                                <input type="password" id="newPassword" name="adminPassword">
                                 <button type="button" class="toggle-password">
                                     <i class="fas fa-eye"></i>
                                 </button>
                             </div>
- 
                         </div>
                     </div>
                     <div class="button-group">
                         <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
-                        <button type="button" class="submit-button"  onclick="updateAdmin()">更新</button>
+                        <button type="submit" class="submit-button">更新</button>
                     </div>
                 </form>
             </div>
@@ -82,6 +80,6 @@
         </div>
     </footer>
     <script th:src="@{/js/admin_info_change.js}"></script>
-    <script th:src="@{/js/user_create.js}"></script>
 </body>
 </html>
+

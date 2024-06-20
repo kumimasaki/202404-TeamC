@@ -45,9 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function cancelChanges() {
     if (confirm('変更を保存せずに戻りますか？')) {
-        window.location.href = 'admin_reports.html'; 
+        window.location.href = '/admin/report/list'; // Change this to the correct URL
     }
 }
+
 
 function validateForm() {
     const username = document.getElementById('username').value;
