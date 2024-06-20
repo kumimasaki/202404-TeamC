@@ -17,19 +17,17 @@
         </div> 
     </header>
 
-
     <div class="container">
         <main>
             <div class="register-form">
                 <h1>新規登録</h1>
 				<form th:action="@{/admin/register/process}" method="POST" enctype="multipart/form-data">
-                <div class="icon-upload">
-                    <div class="icon-placeholder" id="icon-placeholder">
-                        <label for="adminIcon" class="icon-label"></label>
-                       <input type="file" id="adminIcon" name="adminIcon" accept="image/*" >
+                    <div class="icon-upload">
+                        <div class="icon-placeholder" id="icon-placeholder">
+                            <label for="adminIcon" class="icon-label"></label>
+                            <input type="file" id="adminIcon" name="adminIcon" accept="image/*" >
+                        </div>
                     </div>
-                </div>
-              
                     <input class="form-text" type="text" name="adminName" placeholder="ユーザー名前" required>
                     <input class="form-text" type="email" name="adminEmail" placeholder="ユーザーメール" required>
                     <div class="password-field">
@@ -41,7 +39,7 @@
                     <input class="form-text" type="password" name="confirmPassword" placeholder="パスワード確認" required>
                     <button type="submit">登録</button>
                 </form>
-                <a href="#" class="login-link">ログインに戻る</a>
+                <a th:href="@{/admin/login}" class="login-link">ログインに戻る</a>
             </div>
         </main>
     </div>

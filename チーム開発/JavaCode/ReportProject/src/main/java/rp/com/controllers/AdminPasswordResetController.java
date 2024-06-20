@@ -41,5 +41,7 @@ public class AdminPasswordResetController {
 	        model.addAttribute("successMessage", "パスワードが変更されました。");
 	        return "admin_pw_changed.html"; 
 	    }
+	 
+	 
 
 }

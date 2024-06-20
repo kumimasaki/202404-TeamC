@@ -14,8 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 import rp.com.models.entity.Admin;
 import rp.com.services.AdminService;
 
@@ -24,67 +22,67 @@ import rp.com.services.AdminService;
 @RequestMapping("/admin")
 public class AdminEditController {
 
-	// AdminServiceを使うための準備をします
-	@Autowired
-	private AdminService adminService;
+    // AdminServiceを使うための準備をします
+    @Autowired
+    private AdminService adminService;
 
-	@Autowired
-	private HttpSession session;
-	
-	// 管理者の情報変更画面を表示するためのメソッドです
-	// URLは /admin/info/edit/{adminId} です
-	@GetMapping("/info/edit/{adminId}")
-	public String showEditForm(@PathVariable("adminId") Long adminId, Model model) {
-		
-		Admin admin = (Admin) session.getAttribute("loginAdminInfo");		
-		
-		// 管理者が見つかった場合
-		if (admin != null) {
-			// 管理者の情報をモデルに追加します
-			model.addAttribute("admin", admin);
-			 model.addAttribute("adminId", adminId); 
-			 String adminIconPath = "/uploads/" + admin.getAdminIcon();
-			 model.addAttribute("adminIconPath", adminIconPath);
-			// admin_info_change.htmlという画面を見せます
-			return "admin_info_change.html";
-		} else {
-			// 管理者が見つからなかった場合
-			model.addAttribute("errorMessage", "管理者が見つかりません");
-			// admin_register.htmlという登録画面を見せます
-			return "admin_register.html";
-		}
-	}
+    @Autowired
+    private HttpSession session;
+    
+    // 管理者の情報変更画面を表示するためのメソッドです
+    // URLは /admin/info/edit/{adminId} です
+    @GetMapping("/info/edit/{adminId}")
+    public String showEditForm(@PathVariable("adminId") Long adminId, Model model) {
+        
+        Admin admin = (Admin) session.getAttribute("loginAdminInfo");        
+        
+        // 管理者が見つかった場合
+        if (admin != null && admin.getAdminId().equals(adminId)) {
+            // 管理者の情報をモデルに追加します
+            model.addAttribute("admin", admin);
+            model.addAttribute("adminId", adminId); 
+            model.addAttribute("adminIconPath", admin.getAdminIconPath());
+            // admin_info_change.htmlという画面を見せます
+            return "admin_info_change";
+        } else {
+            // 管理者が見つからなかった場合
+            model.addAttribute("errorMessage", "管理者が見つかりません");
+            // admin_register.htmlという登録画面を見せます
+            return "redirect:/admin/register";
+        }
+    }
 
-	// 管理者の情報を更新するためのメソッドです
-	// URLは /admin/info/update です
-	@PostMapping("/info/update")
-	 public String updateAdminInfo(
-	            @RequestParam Long adminId,
-	            @RequestParam String adminName,
-	            @RequestParam String adminEmail,
-	            @RequestParam String adminPassword,
-	            @RequestParam("adminIcon") MultipartFile adminIcon,
-	            Model model) {
+    // 管理者の情報を更新するためのメソッドです
+    // URLは /admin/info/update です
+    @PostMapping("/info/update")
+    public String updateAdminInfo(
+            @RequestParam("adminId") Long adminId,
+            @RequestParam("adminName") String adminName,
+            @RequestParam("adminEmail") String adminEmail,
+            @RequestParam("adminPassword") String adminPassword,
+            @RequestParam("adminIcon") MultipartFile adminIcon,
+            Model model) {
 
-	        try {
-	            Admin admin = adminService.getAdminById(adminId);
-	            if (admin != null) {
-	                admin.setAdminName(adminName);
-	                admin.setAdminEmail(adminEmail);
-	                admin.setAdminPassword(adminPassword);
+        try {
+            Admin admin = adminService.getAdminById(adminId);
+            if (admin != null) {
+                admin.setAdminName(adminName);
+                admin.setAdminEmail(adminEmail);
+                admin.setAdminPassword(adminPassword);
 
-	                adminService.updateAdminInfoWithIcon(admin, adminIcon); // 更新管理员信息和头像
+                adminService.updateAdminInfoWithIcon(admin, adminIcon);
 
-	                model.addAttribute("successMessage", "管理者情報が更新されました");
-	                return "admin_pw_changed.html"; // 更新成功后跳转到密码修改成功页面
-	            } else {
-	                throw new RuntimeException("指定の管理者は存在しません");
-	            }
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            model.addAttribute("errorMessage", "管理者情報の更新中にエラーが発生しました");
-	            return "admin_info_change.html";
-		}
+                session.setAttribute("loginAdminInfo", admin);
 
-	}
+                model.addAttribute("successMessage", "管理者情報が更新されました");
+                return "redirect:/admin/login";
+            } else {
+                throw new RuntimeException("指定の管理者は存在しません");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            model.addAttribute("errorMessage", "管理者情報の更新中にエラーが発生しました");
+            return "admin_info_change";
+        }
+    }
 }
