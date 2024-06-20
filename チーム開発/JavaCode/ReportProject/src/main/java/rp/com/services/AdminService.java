@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -25,13 +24,11 @@ public class AdminService {
 	@Autowired
 	private AdminDao adminDao;
 
-	// 保存処理(登録処理)
-	@Transactional
-	public void createAdmin(String adminName, String adminEmail, String adminPassword, MultipartFile adminIcon,
-			String confirmPassword) throws IOException {
-		if (!adminPassword.equals(confirmPassword)) {
-			throw new RuntimeException("パスワードが一致しません。");
-		}
+    @Transactional
+    public void createAdmin(String adminName, String adminEmail, String adminPassword, MultipartFile adminIcon, String confirmPassword) throws IOException {
+        if (!adminPassword.equals(confirmPassword)) {
+            throw new RuntimeException("パスワードが一致しません。");
+        }
 
 		if (adminDao.findByAdminEmail(adminEmail) != null) {
 			throw new RuntimeException("このメールアドレスは既に登録されています。");

@@ -12,39 +12,39 @@ import jakarta.servlet.http.HttpSession;
 import rp.com.models.entity.Admin;
 import rp.com.services.AdminService;
 
-// これは管理者のログインに関するコントローラクラスです
 @Controller
 @RequestMapping("/admin")
 public class AdminLoginController {
 
-    // AdminServiceを使うための設定です
     @Autowired
     private AdminService adminService;
-	// Sessionが使えるように宣言
-	@Autowired
-	private HttpSession session;
-	
-    // 管理者ログイン画面を表示するメソッドです
+
+    @Autowired
+    private HttpSession session;
+
+    // Display login form
     @GetMapping("/login")
     public String showLoginForm(Model model) {
-        // 空のAdminオブジェクトを作ってモデルに追加します
         model.addAttribute("admin", new Admin());
-        // admin_login.htmlという画面を表示します
-        return "admin_login.html";
+        return "admin_login"; // Ensure there is a file named admin_login.html in templates
     }
 
-    // 管理者ログイン処理を行うメソッドです
+    // Process login form submission
     @PostMapping("/login/process")
     public String processLogin(@RequestParam String adminEmail, @RequestParam String adminPassword, Model model) {
         Admin admin = adminService.loginAdmin(adminEmail, adminPassword);
         if (admin != null) {
-        	session.setAttribute("loginAdminInfo", admin);
-            // ログインが成功した場合、レポート画面を表示します
-            return "redirect:/admin/report/list";
+            session.setAttribute("loginAdminInfo", admin);
+            return "redirect:/admin/report/list"; // Correct the redirect here
         } else {
-            // ログインに失敗した場合、エラーメッセージを追加してログイン画面を再表示
             model.addAttribute("errorMessage", "メールアドレスまたはパスワードが間違っています");
-            return "admin_login.html";
+            return "admin_login";
         }
+    }
+
+    // Display forgot password form
+    @GetMapping("/forgot-password")
+    public String showForgotPasswordForm() {
+        return "admin_change_pw";
     }
 }

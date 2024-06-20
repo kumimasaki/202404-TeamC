@@ -14,14 +14,14 @@
             <h1>業務報告システム</h1>
          </div>
          <ul class="header-item">
-			<li class="item-list">
-			   <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" />
-		    </li>
+            <li class="item-list">
+               <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" />
+            </li>
             <li class="item-list"><a href="">ユーザー名前</a></li>
             <li class="item-list"><a href="">報告一覧</a></li>
-            <li class="item-list"><a href="">情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
             <li class="item-list"><a href="">ログアウト</a></li>
-        </ul>
+         </ul>
       </div>
    </header>
    
@@ -39,7 +39,7 @@
        </div>
 
        <div class="report-list">
-           <div th:each="report : ${reports}" class="report-card">
+           <div th:each="report : ${reports}" class="report-card" th:if="${report.deleteFlg == 0}">
                <div>
                    <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
                </div>
@@ -54,9 +54,9 @@
                        <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
                    </div>
                    <div class="detail-button-content">
-					<a th:href="@{/user/report/details(reportId=${report.reportId})}">
-					                         <button class="detail-button">報告詳細</button>
-					                     </a>
+                       <a th:href="@{/user/report/details(reportId=${report.reportId})}">
+                           <button class="detail-button">報告詳細</button>
+                       </a>
                        <form th:action="@{/user/report/delete/{reportId}(reportId=${report.reportId})}" method="post">
                            <input type="hidden" name="reportId" th:value="${report.reportId}">
                            <button type="submit" class="delete-button">削除</button>
@@ -71,7 +71,7 @@
       <div class="footer-content" id="footer-report">
          <div>
             <ul class="footer-item" id="footer-item-report">
-               <li><a href="">情報変更</a></li>
+               <li><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
                <li>|</li>
                <li><a href="">ログアウト</a></li>
             </ul>
@@ -83,6 +83,5 @@
    </footer>
    
    <script src="/js/user_report_create.js"></script>
-   
 </body>
 </html>

@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import jakarta.servlet.http.HttpSession;
-import rp.com.models.entity.Admin;
 import rp.com.services.AdminService;
 
 @Controller
@@ -25,10 +24,7 @@ public class AdminRegisterController {
 
     @GetMapping("/register")
     public String showRegisterForm(Model model) {
-  
-            return "admin_register.html";
-    
-        
+        return "admin_register.html";
     }
 
     @PostMapping("/register/process")
@@ -45,7 +41,7 @@ public class AdminRegisterController {
             return "redirect:/admin/login";
         } catch (IOException e) {
             e.printStackTrace();
-            model.addAttribute("errorMessage", "アアイコン保存中にエラーが発生しました。");
+            model.addAttribute("errorMessage", "アイコン保存中にエラーが発生しました。");
             return "admin_register.html";
         } catch (RuntimeException e) {
             e.printStackTrace();

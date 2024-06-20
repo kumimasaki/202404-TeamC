@@ -14,8 +14,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpSession;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
-
 import rp.com.models.entity.Admin;
 import rp.com.services.AdminService;
 
@@ -24,9 +22,9 @@ import rp.com.services.AdminService;
 @RequestMapping("/admin")
 public class AdminEditController {
 
-	// AdminServiceを使うための準備をします
-	@Autowired
-	private AdminService adminService;
+    // AdminServiceを使うための準備をします
+    @Autowired
+    private AdminService adminService;
 
 	@Autowired
 	private HttpSession session;

@@ -7,142 +7,125 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Table(name = "reports")
 @Entity
 public class Reports {
-	// report_idの設定
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long reportId;
 
-	// report_titleの設定
-	private String reportTitle;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long reportId;
 
-	// report_file_nameの設定
-	private String reportFileName;
+    private String reportTitle;
+    private String reportFileName;
+    private String contentsOfReport;
+    private LocalDateTime createdAt = LocalDateTime.now();
+    private int deleteFlg = 0;
+    private int receiptFlg = 0;
+    private Long adminId;
+    private Long userId;
+    private String userName;
+    private String adminName;
 
-	// contents_of_reportの設定
-	private String contentsOfReport;
+    // コンストラクタ、ゲッター、セッターを含む
+    public Reports() {}
 
-	// created_atの設定
-	private LocalDateTime createdAt = LocalDateTime.now();
+    public Reports(Long reportId, String reportTitle, String reportFileName, String contentsOfReport,
+                   LocalDateTime createdAt, int deleteFlg, int receiptFlg, Long adminId, Long userId, String userName, String adminName) {
+        this.reportId = reportId;
+        this.reportTitle = reportTitle;
+        this.reportFileName = reportFileName;
+        this.contentsOfReport = contentsOfReport;
+        this.createdAt = createdAt;
+        this.deleteFlg = deleteFlg;
+        this.receiptFlg = receiptFlg;
+        this.adminId = adminId;
+        this.userId = userId;
+        this.userName = userName;
+        this.adminName = adminName;
+    }
 
-	// delete_flgの設定
-	private int deleteFlg = 0;
+    // ゲッターとセッター
+    public Long getReportId() {
+        return reportId;
+    }
 
-	// receipt_flgの設定
-	private int receiptFlg = 0;
+    public void setReportId(Long reportId) {
+        this.reportId = reportId;
+    }
 
-	// admin_idの設定
-	private Long adminId;
+    public String getReportTitle() {
+        return reportTitle;
+    }
 
-	// user_idの設定
-	private Long userId;
+    public void setReportTitle(String reportTitle) {
+        this.reportTitle = reportTitle;
+    }
 
-	// user_nameの設定
-	private String userName;
-	
-	private String adminName;
+    public String getReportFileName() {
+        return reportFileName;
+    }
 
-	// 空のコンストラクタ
-	public Reports() {
-	}
+    public void setReportFileName(String reportFileName) {
+        this.reportFileName = reportFileName;
+    }
 
-	public Reports(Long reportId, String reportTitle, String reportFileName, String contentsOfReport,
-			LocalDateTime createdAt, int deleteFlg, int receiptFlg, Long adminId, Long userId, String userName,String adminName) {
-		this.reportId = reportId;
-		this.reportTitle = reportTitle;
-		this.reportFileName = reportFileName;
-		this.contentsOfReport = contentsOfReport;
-		this.createdAt = createdAt;
-		this.deleteFlg = deleteFlg;
-		this.receiptFlg = receiptFlg;
-		this.adminId = adminId;
-		this.userId = userId;
-		this.userName = userName;
-		this.adminName = adminName;
-	}
+    public String getContentsOfReport() {
+        return contentsOfReport;
+    }
 
-	public Long getReportId() {
-		return reportId;
-	}
+    public void setContentsOfReport(String contentsOfReport) {
+        this.contentsOfReport = contentsOfReport;
+    }
 
-	public void setReportId(Long reportId) {
-		this.reportId = reportId;
-	}
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 
-	public String getReportTitle() {
-		return reportTitle;
-	}
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
 
-	public void setReportTitle(String reportTitle) {
-		this.reportTitle = reportTitle;
-	}
+    public int getDeleteFlg() {
+        return deleteFlg;
+    }
 
-	public String getReportFileName() {
-		return reportFileName;
-	}
+    public void setDeleteFlg(int deleteFlg) {
+        this.deleteFlg = deleteFlg;
+    }
 
-	public void setReportFileName(String reportFileName) {
-		this.reportFileName = reportFileName;
-	}
+    public int getReceiptFlg() {
+        return receiptFlg;
+    }
 
-	public String getContentsOfReport() {
-		return contentsOfReport;
-	}
+    public void setReceiptFlg(int receiptFlg) {
+        this.receiptFlg = receiptFlg;
+    }
 
-	public void setContentsOfReport(String contentsOfReport) {
-		this.contentsOfReport = contentsOfReport;
-	}
+    public Long getAdminId() {
+        return adminId;
+    }
 
-	public LocalDateTime getCreatedAt() {
-		return createdAt;
-	}
+    public void setAdminId(Long adminId) {
+        this.adminId = adminId;
+    }
 
-	public void setCreatedAt(LocalDateTime createdAt) {
-		this.createdAt = createdAt;
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public int getDeleteFlg() {
-		return deleteFlg;
-	}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-	public void setDeleteFlg(int deleteFlg) {
-		this.deleteFlg = deleteFlg;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public int getReceiptFlg() {
-		return receiptFlg;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setReceiptFlg(int receiptFlg) {
-		this.receiptFlg = receiptFlg;
-	}
-
-	public Long getAdminId() {
-		return adminId;
-	}
-
-	public void setAdminId(Long adminId) {
-		this.adminId = adminId;
-	}
-
-	public Long getUserId() {
-		return userId;
-	}
-
-	public void setUserId(Long userId) {
-		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-	
     public String getAdminName() {
         return adminName;
     }
@@ -150,5 +133,5 @@ public class Reports {
     public void setAdminName(String adminName) {
         this.adminName = adminName;
     }
-	
 }
+

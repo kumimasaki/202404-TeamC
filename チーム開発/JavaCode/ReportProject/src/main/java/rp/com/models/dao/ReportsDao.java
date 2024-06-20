@@ -15,50 +15,50 @@ import rp.com.models.entity.Reports;
 @Repository
 public interface ReportsDao extends JpaRepository<Reports, Long> {
 
-	// レポートの保存と更新
-	@Override
-	Reports save(Reports reports);
+    // レポートの保存と更新
+    @Override
+    Reports save(Reports reports);
 
-	// report_idでレポートを検索
-	@Override
-	Optional<Reports> findById(Long reportId);
+    // report_idでレポートを検索
+    @Override
+    Optional<Reports> findById(Long reportId);
 
-	// すべてのレポートを検索
-	@Override
-	List<Reports> findAll();
+    // すべてのレポートを検索
+    @Override
+    List<Reports> findAll();
 
-	// user_idでレポートを検索
-	List<Reports> findByUserId(Long userId);
+    // user_idでレポートを検索
+    List<Reports> findByUserId(Long userId);
 
-	// admin_idでレポートを検索
-	List<Reports> findByAdminId(Long adminId);
+    // admin_idでレポートを検索
+    List<Reports> findByAdminId(Long adminId);
 
-	// report_idでレポートを削除
-	@Override
-	void deleteById(Long reportId);
+    // report_idでレポートを削除
+    @Override
+    void deleteById(Long reportId);
 
-	// タイトルにキーワードが含まれるレポートを検索
-	List<Reports> findByReportTitleContaining(String title);
-	
-	// コンテンツにキーワードが含まれるレポートを検索
-	List<Reports> findByContentsOfReportContaining(String content);
-	
-	 // タイトルまたはコンテンツでレポートを検索
-	List<Reports> findByReportTitleContainingOrContentsOfReportContaining(String title, String content);
+    // タイトルにキーワードが含まれるレポートを検索
+    List<Reports> findByReportTitleContaining(String title);
 
-	// receipt_flgでレポートを検索
-	List<Reports> findByReceiptFlg(int receiptFlg);
+    // コンテンツにキーワードが含まれるレポートを検索
+    List<Reports> findByContentsOfReportContaining(String content);
 
-	// delete_flgでレポートを検索
-	List<Reports> findByDeleteFlg(int deleteFlg);
+    // タイトルまたはコンテンツでレポートを検索
+    List<Reports> findByReportTitleContainingOrContentsOfReportContaining(String title, String content);
 
-	// report_idでレポートを削除フラグを設定
-	@Query("UPDATE Reports r SET r.deleteFlg = 1 WHERE r.reportId = :reportId")
-	@Modifying
-	@Transactional
-	void markReportAsDeleted(@Param("reportId") Long reportId);
-	
-	 // 通过 adminId 查找 adminName
+    // receipt_flgでレポートを検索
+    List<Reports> findByReceiptFlg(int receiptFlg);
+
+    // delete_flgでレポートを検索
+    List<Reports> findByDeleteFlg(int deleteFlg);
+
+    // report_idでレポートを削除フラグを設定
+    @Query("UPDATE Reports r SET r.deleteFlg = 1 WHERE r.reportId = :reportId")
+    @Modifying
+    @Transactional
+    void markReportAsDeleted(@Param("reportId") Long reportId);
+
+    // 通过 adminId 查找 adminName
     @Query("SELECT r.adminName FROM Reports r WHERE r.adminId = :adminId")
     String findAdminNameByAdminId(@Param("adminId") Long adminId);
 }
