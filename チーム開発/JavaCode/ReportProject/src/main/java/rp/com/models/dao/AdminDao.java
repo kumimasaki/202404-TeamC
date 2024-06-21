@@ -1,5 +1,7 @@
 package rp.com.models.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -20,4 +22,6 @@ public interface AdminDao extends JpaRepository<Admin, Long>{
     // SQL: SELECT * FROM admin WHERE admin_email = ? AND admin_password = ?
     // 用途：管理者のログイン処理を行う際に、メールアドレスとパスワードが一致するか確認する
     Admin findByAdminEmailAndAdminPassword(String adminEmail, String adminPassword);
+    
+    
 }
