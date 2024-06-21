@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import jakarta.servlet.http.HttpSession;
 import rp.com.models.entity.Reports;
+import rp.com.models.entity.Users;
 import rp.com.services.ReportsService;
 
 import java.io.File;
@@ -20,15 +22,19 @@ public class UserReportDetailsController {
 
 	@Autowired
 	private ReportsService reportsService;
+	@Autowired
+	private HttpSession session;
 
 	// レポート詳細ページを表示するメソッド
 	@GetMapping("/user/report/details")
-	public String showReportDetails(@RequestParam("reportId") Long reportId, Model model) {
+	public String showReportDetails(@RequestParam("reportId") Long reportId, Model model) {		
+		  Users users = (Users) session.getAttribute("loginUserInfo");
 		// IDに基づいてレポートを取得
 		Optional<Reports> reportOptional = reportsService.getReportById(reportId);
 		if (reportOptional.isPresent()) {
 			Reports report = reportOptional.get();
 			model.addAttribute("report", report);
+		    model.addAttribute("users", users);		    
 			return "user_report_detail.html"; // ビュー名を返す
 		} else {
 			// レポートが見つからない場合、レポート一覧ページにリダイレクト

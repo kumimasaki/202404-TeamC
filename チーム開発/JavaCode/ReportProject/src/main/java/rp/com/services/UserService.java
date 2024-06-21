@@ -2,6 +2,7 @@ package rp.com.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import rp.com.models.dao.UsersDao;
@@ -100,3 +101,35 @@ public class UserService {
         }
     }
 }
+    
+// // 分割线0621  15:02//
+//    @Transactional
+//    public void updatePassword(Users users, String newPassword) {
+//    	users.setUserPassword(newPassword);
+//    	usersDao.save(users);
+//    }
+//
+//    public Users findByUserEmail(String userEmail) {
+//        return usersDao.findByUserEmail(userEmail);
+//    }
+//
+//    @Transactional
+//    public void updateUserInfoWithIcon(Users users, MultipartFile userIcon) throws IOException {
+//    	Users existingUsers = usersDao.findById(users.getUserId()).orElse(null);
+//        if (existingUsers != null) {
+//            existingUsers.setUserName(users.getUserName());
+//            existingUsers.setUserEmail(users.getUserEmail());
+//            existingUsers.setUserPassword(users.getUserPassword());
+//
+////            if (userIcon != null && !userIcon.isEmpty()) {
+////            	saveUserWithIcon(existingUsers, userIcon);
+////            }
+//
+//           usersDao.save(existingUsers);
+//        } else {
+//            throw new RuntimeException("指定のuserは存在しません");
+//        }
+//    }
+//
+//	}
+//

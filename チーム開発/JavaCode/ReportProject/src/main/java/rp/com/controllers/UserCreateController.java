@@ -71,6 +71,7 @@ public class UserCreateController {
               e.printStackTrace();
               // エラーメッセージをモデルに追加
               model.addAttribute("error", "ユーザーの作成に失敗しました");
+              model.addAttribute("admin", admin);
               // エラーが発生した場合、ユーザー登録画面に戻る
               return "user_create.html";
         }
