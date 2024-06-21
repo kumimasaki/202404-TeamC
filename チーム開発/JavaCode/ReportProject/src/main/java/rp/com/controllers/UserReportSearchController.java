@@ -16,14 +16,14 @@ import java.util.List;
 @RequestMapping("/user/report/search")
 public class UserReportSearchController {
 
-	@Autowired
-	private ReportsService reportsService;
-
-	// 報告検索機能を行うメソッド
-	@GetMapping
-	public String searchReports(@RequestParam("query") String query, Model model) {
-		List<Reports> reports = reportsService.searchReportsByTitleOrContent(query);
-		model.addAttribute("reports", reports);
-		return "user/report_list";
-	}
+//    @Autowired
+//    private ReportsService reportsService;
+//
+//    // レポート検索の処理
+//    @GetMapping
+//    public String searchReports(@RequestParam("keyword") String keyword, Model model) {
+//        List<Reports> reports = reportsService.searchReportsByTitleOrContent(keyword);
+//        model.addAttribute("reports", reports);
+//        return "user_reports"; // Ensure this matches the template file name without the .html extension
+//    }
 }

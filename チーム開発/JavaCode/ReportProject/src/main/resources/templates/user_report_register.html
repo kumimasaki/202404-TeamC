@@ -2,91 +2,96 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ユーザー報告事項登録</title>
-    <link rel="stylesheet" th:href="@{/css/admin_report_details.css}">
-    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
-    <link rel="stylesheet" th:href="@{/css/header.css}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ユーザー報告事項登録</title>
+<link rel="stylesheet" th:href="@{/css/admin_report_details.css}">
+<link rel="stylesheet"
+	th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+<link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 
 <body>
 
-    <header id="header-user">
-        <div class="header-content">
-            <div class="site-name">
-                <h1>業務報告システム </h1>
-            </div>
+	<header id="header-user">
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
+			<ul class="header-item">
+            <li class="item-list">
+               <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" />
+            </li>
+            <li class="item-list"><a th:text="${users.userName}">ユーザー名前</a></li>
+            <li class="item-list"><a th:href="@{/user/report/list}">報告一覧</a></li>
+            <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/logout}">ログアウト</a></li>
+         </ul>
 
-            <ul class="header-item">
-                <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
-                <li class="item-list"><a href="">ユーザー名前</a></li>
-                <li class="item-list"><a href="">報告一覧</a></li>
-                <li class="item-list"><a href="">情報変更</a></li>
-                <li class="item-list"><a href="">ログアウト</a></li>
-            </ul>
+		</div>
+	</header>
+	<main>
+		<div class="content">
+			<a th:href="@{/user/report/list}" class="back-link"><i class="fas fa-angle-double-left"></i>
+				ホームに戻る</a>
 
-        </div>
-    </header>
-    <main>
-        <div class="content">
-            <a href="#" class="back-link"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+			<div class="content-text">
 
-            <div class="content-text">
-
-                <div class="title">
-                    <h1>報告事項登録</h1>
-                </div>
-               <form th:action="@{/user/report/create/process}" method="POST" enctype="multipart/form-data">
-                <div class="report-title" >
-                    <label for="report-title">報告名</label>
-                    <input type="text" id="report-title" name="reportTitle" placeholder="報告タイトルを入力してください">
-                </div>
-
-                <div class="item" id="item-file">
-                    <label class="add-file">添付ファイル</label>
-                    <input type="file"  name="reportFileName">
-                </div>
-
-				<div class="report-summary">
-				    <label for="summary">報告事項</label>
-				    <textarea type="text" id="summary" name="contentsOfReport" placeholder="内容を入力してください。"></textarea>
+				<div class="title">
+					<h1>報告事項登録</h1>
 				</div>
+				<form th:action="@{/user/report/create/process}" method="POST"
+					enctype="multipart/form-data">
+					<div class="report-title">
+						<label for="report-title">報告名</label> <input type="text"
+							id="report-title" name="reportTitle"
+							placeholder="報告タイトルを入力してください">
+					</div>
 
-				<div class="reporter">
-								    <label for="reporter">管理者</label>
-									<select id="reporter" name="adminName">
-									    <option th:each="admin : ${adminNames}" 
-									            th:value="${admin}" 
-									        <span th:text="${admin}"></span>
-									    </option>
-									</select>
-								</div>
+					<div class="item" id="item-file">
+						<label class="add-file">添付ファイル</label> <input type="file"
+							name="reportFileName">
+					</div>
 
-								<div class="submit-container">
-							       <button type="submit" class="submit-button">報告</button>
-					           </div>
+					<div class="report-summary">
+						<label for="summary">報告事項</label>
+						<textarea type="text" id="summary" name="contentsOfReport"
+							placeholder="内容を入力してください。"></textarea>
+					</div>
+
+					<div class="reporter">
+						<label for="reporter">管理者</label> <select id="reporter"
+							name="adminName">
+							<option th:each="admin : ${adminNames}" th:value="${admin}"<span
+									th:text="${admin}"></span>
+							</option>
+						</select>
+					</div>
+
+					<div class="submit-container">
+						<button type="submit" class="submit-button">報告</button>
+					</div>
 				</form>
-            </div>
-        </div>
-    </main>
+			</div>
+		</div>
+	</main>
 
 
-    <footer id="footer-user">
-        <div class="footer-content">
-            <div>
-                <ul class="footer-item">
-                    <li><a href="">情報変更</a></li>
-                    <li>|</li>
-                    <li><a href="">ログアウト</a></li>
-                </ul>
+	<footer id="footer-user">
+		<div class="footer-content">
+			<div>
+				<ul class="footer-item">
+					<li><a href="">情報変更</a></li>
+					<li>|</li>
+					<li><a href="">ログアウト</a></li>
+				</ul>
 
-            </div>
-            <div>
-                <p> Copyright &copy; 2024</p>
-            </div>
-        </div>
-    </footer>
+			</div>
+			<div>
+				<p>Copyright &copy; 2024</p>
+			</div>
+		</div>
+	</footer>
 </body>
 
 

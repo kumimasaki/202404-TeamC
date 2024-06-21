@@ -40,28 +40,26 @@ public class AdminReportListController {
             model.addAttribute("reports", reports);
             model.addAttribute("admin", admin);
             // 管理者のアイコンパスと名前をモデルに追加
-            model.addAttribute("adminIconPath", admin.getAdminIconPath());
-            return "admin_reports"; // Correct the view name here
+            String adminIconPath = "/uploads/" + admin.getAdminIcon();
+			model.addAttribute("adminIconPath", adminIconPath);
+			return "admin_reports";
         }
     }
 
-    // レポート検索を処理するメソッド
-    @PostMapping("/report/search")
+    // レポート検索の処理
+    @GetMapping("/search")
     public String searchReports(@RequestParam("keyword") String keyword, Model model) {
         Admin admin = (Admin) session.getAttribute("loginAdminInfo");
-
-        // 管理者がログインしていない場合、ログインページにリダイレクト
         if (admin == null) {
             return "redirect:/admin/login";
         } else {
-            // キーワードでレポートを検索
-            List<Reports> reportList = reportsService.searchReportsByTitleOrContent(keyword);
-            // 検索結果をモデルに追加
-            model.addAttribute("reports", reportList);
+            List<Reports> searchResults = reportsService.searchReportsByTitleOrContent(keyword);
+            model.addAttribute("searchResults", searchResults);
+            List<Reports> reports = reportsService.getReportsByAdminId(admin.getAdminId());
+            model.addAttribute("reports", reports);
             model.addAttribute("admin", admin);
             model.addAttribute("adminIconPath", admin.getAdminIconPath());
-            // admin_reportsテンプレートを返す
-            return "admin_reports"; // Correct the view name here
+            return "admin_reports";
         }
     }
 
@@ -73,4 +71,3 @@ public class AdminReportListController {
         return "redirect:/admin/report/list";
     }
 }
-
