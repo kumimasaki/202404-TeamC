@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpSession;
 import rp.com.services.UserService;
 import rp.com.models.entity.Users;
 
@@ -16,15 +17,17 @@ public class UserInfoController {
 
     @Autowired
     private UserService userService;
-
-    // 情報変更画面を表示するメソッド
+    @Autowired
+    private HttpSession session;
+    
+    
+    // user情報画面を表示するメソッド
     @GetMapping("/user/info/edit/{userId}")
     public String showEditUserInfoForm(@PathVariable Long userId, Model model) {
-        // ユーザーIDに基づいてユーザー情報を取得
-        Users user = userService.getUserById(userId); 
-        if (user != null) {
-            // ユーザー情報をモデルに追加
-            model.addAttribute("user", user); 
+        Users users = (Users) session.getAttribute("loginUserInfo");
+        if (users != null) {
+			// ユーザー情報をモデルに追加
+            model.addAttribute("users", users); 
             return "user_info_edit"; 
         } else {
             // エラーメッセージをモデルに追加
@@ -32,6 +35,24 @@ public class UserInfoController {
             return "error"; 
         }
     }
+        
+    
+
+//    // 情報変更画面を表示するメソッド
+//    @GetMapping("/user/info/edit/{userId}")
+//    public String showEditUserInfoForm(@PathVariable Long userId, Model model) {
+//        // ユーザーIDに基づいてユーザー情報を取得
+//        Users user = userService.getUserById(userId); 
+//        if (user != null) {
+//			// ユーザー情報をモデルに追加
+//            model.addAttribute("users", users); 
+//            return "user_info_edit"; 
+//        } else {
+//            // エラーメッセージをモデルに追加
+//            model.addAttribute("error", "ユーザーが見つかりません"); 
+//            return "error"; 
+//        }
+//    }
 
     // 情報変更処理を行うメソッド
     @PostMapping("/user/info/update")

@@ -48,7 +48,7 @@ public class UserReportCreateController {
         // ページに必要なデータを渡す
         List<String> adminNames = adminService.getAllAdminNames();
         model.addAttribute("adminNames", adminNames);
-        model.addAttribute("user", users);
+        model.addAttribute("users", users);
         model.addAttribute("admin", new Admin());
         return "user_report_register";
     }
@@ -100,6 +100,7 @@ public class UserReportCreateController {
             model.addAttribute("message", "ファイルが存在しません。");
         }
 
+        
         return "redirect:/user/report/list";
     }
 }

@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ユーザー情報編集</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-	<link rel="stylesheet" th:href="@{/css/user_create.css}">
-	    <link rel="stylesheet" th:href="@{/css/header.css}">
+    <title>ユーザー情報編集</title>    
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/css/user_create.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
 </head>
 <body>
     <header id="header-user">
@@ -14,23 +15,26 @@
             <div class="site-name">
                 <h1>業務報告システム </h1>
             </div>
-            <ul class="header-item">
-                <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
-                <li class="item-list"><a href="">ユーザー名前</a></li>
-                <li class="item-list"><a href="">報告一覧</a></li>
-                <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${user.userId})}">情報変更</a></li>
-                <li class="item-list"><a href="">ログアウト</a></li>
+
+          <ul class="header-item">
+            <li class="item-list">
+               <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" />
+            </li>
+            <li class="item-list"><a th:text="${users.userName}">ユーザー名前</a></li>
+            <li class="item-list"><a th:href="@{/user/report/list}">報告一覧</a></li>
+            <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/logout}">ログアウト</a></li>
             </ul>
         </div>
     </header>
 
     <main>
         <div class="content">
-            <a href="#" class="back-button"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+            <a th:href="@{/user/report/list}" class="back-button"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+
             <div class="container">
                 <h1>この変更でよろしいでしょうか？</h1>
-                <form id="adminForm" th:action="@{/user/info/update}" method="post">
-                    <input type="hidden" name="userId" th:value="${user.userId}">
+                <form id="adminForm" th:action="@{/user/info/update}" method="post" enctype="multipart/form-data">
                     <div class="form-content">
                         <div class="icon-container">
                             <div class="icon-circle">
@@ -42,15 +46,15 @@
                         <div class="input-fields">
                             <div class="input-group">
                                 <label for="username">ユーザー名:</label>
-                                <input type="text" id="username" name="username" th:value="${user.userName}">
+                                <input type="text" id="username" name="userName">
                             </div>
                             <div class="input-group">
                                 <label for="email">ユーザーメール:</label>
-                                <input type="email" id="email" name="email" th:value="${user.userEmail}">
+                                <input type="email" id="email" name="userEmail">
                             </div>
                             <div class="input-group" id="input-button">
                                 <label for="password">パスワード:</label>
-                                <input type="password" id="password" name="password">
+                                <input type="password" id="password" name="userPassword">
                                 <button type="button" class="toggle-password">
                                     <i class="fas fa-eye"></i>
                                 </button>
@@ -63,19 +67,19 @@
                     </div>
                     <div class="button-group">
                         <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
+                        <input type="hidden" name="userId" th:value="${users.userId}">
                         <button type="submit" class="submit-button">更新</button>
                     </div>
                 </form>
             </div>
         </div>
     </main>
-
     <footer id="footer-user">
         <div class="footer-content">
             <ul class="footer-item">
-                <li><a href="#">情報変更</a></li>
+                <li><a th:href="@{user/info/edit}">情報変更</a></li>
                 <li>|</li>
-                <li><a href="#">ログアウト</a></li>
+                <li><a th:href="@{/user/logout}">ログアウト</a></li>
             </ul>
             <p> Copyright &copy; 2024</p>
         </div>
@@ -83,4 +87,5 @@
     <script src="admin_login_scripts.js"></script>
     <script src="user_add.js"></script>
 </body>
+
 </html>

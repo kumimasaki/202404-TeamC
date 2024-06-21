@@ -2,6 +2,7 @@ package rp.com.services;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,13 @@ public class ReportsService {
         return reportsDao.findByUserId(userId);
     }
 
+    // ユーザーIDとdeleteFlgでレポートを取得するメソッドを追加
+    public List<Reports> getReportsByUserIdAndDeleteFlg(Long userId, int deleteFlg) {
+        return reportsDao.findByUserId(userId).stream()
+                         .filter(report -> report.getDeleteFlg() == deleteFlg)
+                         .collect(Collectors.toList());
+    }
+
     // 新しいレポートを作成し、@param report レポートエンティティ、@return 作成されたレポート
     public Reports createReport(Reports report) {
         return reportsDao.save(report);
@@ -59,16 +67,6 @@ public class ReportsService {
         }
     }
 
-    // タイトルでレポートを検索し、@param title レポートのタイトル、@return 検索結果のレポートリスト
-    public List<Reports> searchReportsByTitle(String title) {
-        return reportsDao.findByReportTitleContaining(title);
-    }
-
-    // コンテンツでレポートを検索し、@param content レポートの内容、@return 検索結果のレポートリスト
-    public List<Reports> searchReportsByContent(String content) {
-        return reportsDao.findByContentsOfReportContaining(content);
-    }
-
     // レポートを保存し、@param report レポートエンティティ、@return 保存されたレポート
     public Reports saveReport(Reports report) {
         return reportsDao.save(report);
@@ -78,18 +76,15 @@ public class ReportsService {
     @Transactional
     public void hideReportById(Long reportId) {
         Optional<Reports> reportOpt = reportsDao.findById(reportId);
-        reportOpt.ifPresent(report -> {
+        if (reportOpt.isPresent()) {
+            Reports report = reportOpt.get();
             report.setDeleteFlg(1); // 非表示フラグを1に設定
             reportsDao.save(report);
-        });
+        }
     }
 
-    // タイトルまたはコンテンツでレポートを検索するメソッドを追加
-    public List<Reports> searchReportsByTitleOrContent(String query) {
-        return reportsDao.findByReportTitleContainingOrContentsOfReportContaining(query, query);
-    }
-
-    public String findAdminNameByAdminId(Long adminId) {
-        return reportsDao.findAdminNameByAdminId(adminId);
+    // reportTitle または contentsOfReport に基づいてレポートを検索
+    public List<Reports> searchReportsByTitleOrContent(String keyword) {
+        return reportsDao.findByReportTitleContainingIgnoreCaseOrContentsOfReportContainingIgnoreCase(keyword, keyword);
     }
 }

@@ -70,7 +70,7 @@ a {
 /*footer全体のスタイル*/
 
 footer {
-	position: absolute;/*サイトの底部に置く*/
+	margin-top: 250px;
 	width: 100%;
 	bottom: 0;
 	background-color: #5475a8b3;

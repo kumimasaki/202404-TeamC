@@ -7,16 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
-public class UserLogoutController {
+public class adminLogoutController {
 
     @Autowired
     private HttpSession session;
     
     //logout処理
-    @GetMapping("/user/logout")
-    public String userLogout() {
+    @GetMapping("/admin/logout")
+    public String adminLogout() {
         //sessionの無効化
         session.invalidate();
-        return "redirect:/user/login";
+        return "redirect:/admin/login";
     }
 }

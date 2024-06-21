@@ -15,20 +15,22 @@
                 <h1>業務報告システム</h1>
             </div>
             <ul class="header-item">
-                <li class="item-list" id="item-icon"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">アイコン</a></li>
-                <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者名前</a></li>
-                <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
-                <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
-                <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
-                <li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
-                <li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
-            </ul>
+           <li class="item-list" >
+			<img  id="item-icon" th:src="@{${adminIconPath}}" alt="">
+		   </li>
+            <li class="item-list" th:text="${admin.adminName}"></li>
+            <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+            <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+            <li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+            <li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+         </ul>
         </div>
     </header>
 
     <main>
         <div class="content">
-            <a href="#" class="back-button"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+            <a th:href="@{/admin/report/list}" class="back-button"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
 
             <div class="container">
                 <h1>管理者情報変更</h1>
@@ -71,10 +73,10 @@
 
     <footer>
         <div class="footer-content">
-            <ul class="footer-item">
-                <li><a href="#">情報変更</a></li>
-                <li>|</li>
-                <li><a href="#">ログアウト</a></li>
+           <ul class="footer-item" id="footer-item-report">
+               <li><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">情報変更</a></li>
+               <li>|</li>
+               <li><a th:href="@{/admin/logout}">ログアウト</a></li>
             </ul>
             <p> Copyright &copy; 2024</p>
         </div>
