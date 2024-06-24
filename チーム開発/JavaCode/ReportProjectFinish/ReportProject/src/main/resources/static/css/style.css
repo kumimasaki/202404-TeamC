@@ -1,0 +1,221 @@
+/************************bodyと＊全体のスタイル********************************/
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+body {
+   font-family: Arial, sans-serif;
+   background-color: #f2f2f2;
+}
+
+/************************bodyと＊全体のスタイルは以上です************************/
+
+
+/**************************報告事項一覧（検索結果）******************************/
+.search-container {
+   margin-bottom: 20px; 
+   display: flex;
+   justify-content: center;
+   padding-top: 150px;
+   align-items: center;
+   gap: 10px;
+  
+}
+.search-container input[type="text"] {
+   width: 300px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   margin-right: 15px;
+   margin-left: 20px;
+   outline-color: #8a9ca5;
+}
+.search-container button {
+   padding: 10px 20px;
+   border: none;
+   border-radius: 5px;
+   background-color: #8a9ca5;
+   color: white;
+   cursor: pointer;
+}
+/**************************報告事項一覧（検索結果）*************/
+
+
+/********************************** user_list画面************************************/
+.user-list {
+   padding:30px;
+   flex-grow: 1;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+   left:60px;
+   gap: 15px;
+   display: flex;
+}
+.user-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 15px;
+      gap: 0 20px;
+      margin-bottom: 15px; 
+      align-items: center;
+      display: flex;
+      padding: 20px;
+      width: 900px;
+      position: relative;
+}
+.user-image {
+   width: 100px;
+   height: 100px;
+   border: 1px solid #ccc;
+   background-color: #eaeaea;
+}
+.user-info {
+   flex-grow: 1;
+}
+.user-info p {
+   margin: 5px 0;
+}
+
+   
+.delete-button,.detail-button {
+   background-color: #989696;
+   color: white;
+   border: none;
+   cursor: pointer;
+   position: relative;
+   width: 80px;
+   padding:5px;
+   border-radius:3px ;  
+   border: 1px solid #ccc; 
+}
+.detail-button{
+   background-color: #5475a8b3;
+   color: white;
+   text-align: center;
+   font-size: small;
+}
+#delete-button1,#delete-button2{
+   position: absolute; 
+   right: 15px;
+   bottom: 15px;  
+}
+/********************************** user_list画面************************************/
+
+
+/**********************************admin_reports画面************************************/ 
+.report-list {
+   padding-top: 30px;
+   flex-grow: 1;
+   flex-direction: column;
+   align-items: center;
+   position: relative;
+   gap: 15px;
+   display: flex;
+}
+.report-card {
+   background-color: white;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   width: 900px;
+   display: flex;
+   padding: 20px;
+   gap: 0 20px;  /* 单个报告方框内各个元素的gap设定 */
+   align-items: center;
+   border-radius:15px;
+}
+.report-image {
+   width: 100px;
+   height: 100px;
+   border: 1px solid #ccc;
+   background-color: #eaeaea;
+}
+#report-image{
+   width: 200px !important;
+   height:auto ;
+}
+.report-info {
+   flex-grow: 1;
+   margin-top: -20px;
+}
+.report-info h3 {
+   margin-bottom: 10px;
+}
+.report-info p {
+   margin-bottom: 10px;
+}
+
+.received ,.unconfirmed,.correction{
+   font-size: smaller;
+   background-color: #5cb85c;
+   width: 70px;
+   padding:3px;
+   border-radius:3px ;
+   color: #fff;
+   position:relative;
+   margin-top: -10px;
+   text-align: center;
+}
+.unconfirmed {
+   background-color: #d9534f;  
+}
+.correction {
+   background-color: #0275d8; 
+}
+.report-actions {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+}
+
+.reporter-received {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 15px;
+   margin-top: -15px; 
+}
+.detail-button-content {
+   display: flex;
+   flex-direction: row; /* 将按钮横排排列 */
+   gap: 20px; 
+}
+#footer-report{
+   height: 90px;
+}
+#footer-item-report{
+   justify-content: center;
+   padding: 15px;
+}
+/**********************************admin_reports画面************************************/ 
+
+
+/*********************************** user_reports画面************************************/ 
+.report-button{
+   border: 0.5px solid #8dec8d;
+   background-color: rgb(215, 238, 212);
+   width: 110px;
+   height: 35px;
+   font-size: large;
+   font-weight: bolder;
+   border-radius: 5px;
+   color:#0d2d3d;
+}
+.reporter{
+   display: block;
+   margin-top: 10px; 
+   text-align: right; 
+   position:relative;
+ 
+  
+}
+.report-button-content {
+   margin-top: 20px; 
+   display: flex;
+   justify-content: center;
+   position: relative; 
+   left: -390px;
+   margin-bottom: 15px;
+}
+/*********************************** user_reports画面************************************/ 

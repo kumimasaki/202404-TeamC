@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>ユーザー報告一覧</title>
+   <link rel="stylesheet" th:href="@{/css/style.css}">
+   <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+   <header id="header-user">
+      <div class="header-content">
+         <div class="site-name">
+            <h1>業務報告システム</h1>
+         </div>
+         <ul class="header-item">
+            <li class="item-list">
+               <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" >
+            </li>
+            <li class="item-list"><a th:text="${users.userName}">ユーザー名前</a></li>
+            <li class="item-list"><a th:href="@{/user/report/list}">報告一覧</a></li>
+            <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/logout}">ログアウト</a></li>
+         </ul>
+      </div>
+   </header>
+   
+   <main>
+       <div class="search-container">
+           <form th:action="@{/user/report/search}" method="get" id="search-form">
+               <label>報告事項一覧（検索結果）</label>
+               <input type="text" name="keyword" placeholder="検索内容．．．">
+               <button type="submit">検索</button>
+           </form>
+       </div>
+
+       <div class="report-button-content">
+           <button id="report-create-button" class="report-button">報告登録</button>
+       </div>
+
+       <div id="reports-list" class="report-list">
+           <!-- Display search results at the top -->
+           <div th:if="${searchResults != null}">
+               <h2>検索結果</h2>
+               <div th:each="report : ${searchResults}">
+                   <div class="report-card">
+                       <div>
+                           <img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
+                       </div>
+                       <div class="report-info">
+                           <h3 th:text="${report.reportTitle}">報告事項</h3>
+                           <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
+                       </div>
+                       <div class="report-actions">
+                           <div class="reporter-received">
+                               <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+                               <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+                           </div>
+                           <div class="detail-button-content">
+                               <a th:href="@{/user/report/details(reportId=${report.reportId})}">
+                                   <button class="detail-button">報告詳細</button>
+                               </a>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <!-- Display all reports -->
+           <div th:each="report : ${reports}" th:if="${report.deleteFlg == 0 && searchResults == null}">
+               <div class="report-card">
+                   <div>
+                       <img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
+                   </div>
+                   <div class="report-info">
+                       <h3 th:text="${report.reportTitle}">報告事項</h3>
+                       <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
+                   </div>
+                   <div class="report-actions">
+                       <div class="reporter-received">
+                           <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+                           <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+                       </div>
+                       <div class="detail-button-content">
+                           <a th:href="@{/user/report/details(reportId=${report.reportId})}">
+                               <button class="detail-button">報告詳細</button>
+                           </a>
+                           <form th:action="@{/user/report/hide}" method="post">
+                               <input type="hidden" name="reportId" th:value="${report.reportId}">
+                               <button type="submit" class="delete-button">削除</button>
+                           </form>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </main>
+
+   <footer id="footer-user">
+      <div class="footer-content" id="footer-report">
+         <div>
+            <ul class="footer-item" id="footer-item-report">
+               <li><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
+               <li>|</li>
+               <li><a href="">ログアウト</a></li>
+            </ul>
+         </div>
+         <div>
+            <p>Copyright &copy; 2024</p>
+         </div>
+      </div>
+   </footer>
+   
+   <script src="/js/user_report_create.js"></script>     
+</body>
+</html>

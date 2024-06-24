@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理者情報を変更</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" th:href="@{/css/user_create.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-name">
+                <h1>業務報告システム</h1>
+            </div>
+            <ul class="header-item">
+           <li class="item-list" >
+			<img  id="item-icon" th:src="@{${adminIconPath}}" alt="">
+		   </li>
+            <li class="item-list" th:text="${admin.adminName}"></li>
+            <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
+            <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+            <li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+            <li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+            <li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+         </ul>
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <a th:href="@{/admin/report/list}" class="back-button"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+
+            <div class="container">
+                <h1>管理者情報変更</h1>
+                <form id="adminForm" th:action="@{/admin/info/update}" method="post" enctype="multipart/form-data">
+                    <div class="form-content">
+                        <input type="hidden" id="adminId" name="adminId" th:value="${admin.adminId}">
+                        <div class="icon-container">
+                            <div >
+                                <img id="icon-placeholder" class="icon-circle" th:src="@{${admin.adminIconPath}}" alt="">
+                            </div>
+                            <input type="file" id="adminIcon" name="adminIcon" class="file-input">
+                            <label for="adminIcon" class="file-label">ファイル選択</label>
+                        </div>
+                        <div class="input-fields">
+                            <div class="input-group">
+                                <label for="username">ユーザー名:</label>
+                                <input type="text" id="username" name="adminName" th:value="${admin.adminName}">
+                            </div>
+                            <div class="input-group">
+                                <label for="email">ユーザーメール:</label>
+                                <input type="email" id="email" name="adminEmail" th:value="${admin.adminEmail}">
+                            </div>
+                            <div class="input-group" id="input-button">
+                                <label for="newPassword">新しいパスワード:</label>
+                                <input type="password" id="newPassword" name="adminPassword">
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button type="button" class="cancel-button" onclick="cancelChanges()">保存せず戻る</button>
+                        <button type="submit" class="submit-button">更新</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+           <ul class="footer-item" id="footer-item-report">
+               <li><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">情報変更</a></li>
+               <li>|</li>
+               <li><a th:href="@{/admin/logout}">ログアウト</a></li>
+            </ul>
+            <p> Copyright &copy; 2024</p>
+        </div>
+    </footer>
+    <script th:src="@{/js/admin_info_change.js}"></script>
+</body>
+</html>
+

@@ -1,0 +1,142 @@
+
+/***********************管理者報告詳細画面*************************************/
+
+/* Body styles */
+
+.content {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 170px;
+}
+.content-text {
+    margin: 0 auto;
+    padding: 30px;
+    border: 2px solid #c9d3de;
+    border-radius: 40px;
+    background-color: #f8fafb;
+    margin-top: -10px;
+}
+.content-item{
+    font-size: small;
+    margin: 1px 0;
+}
+
+.back-link {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #5475a8;
+    font-size: 16px;
+}
+.download-button {
+    background-color: rgb(0, 128, 128);
+    border-color: #b3e6c2;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 2px;
+    margin-bottom: 5px;
+}
+.report-summary {
+    margin-top: 5px;
+}
+
+.report-summary label {
+    display: block;
+    margin-bottom: 10px;  
+    font-weight: bold;
+}
+
+.report-summary textarea {
+    width: 1000px;
+    height: 120px;
+    padding: 10px;
+    border-color:#c9d3de;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    outline-color: #8a9ca5;
+}
+/* Container for the submit button, aligned to the right */
+.submit-container {
+    display: flex;
+    justify-content:center; /* 右对齐 */
+}
+
+.submit-button {
+    background-color: #8bcf8d;
+    border: 1px solid  #22931c;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease;
+    margin-top: -20px;
+}
+#get-btn{
+    margin-top: 30px;
+}
+
+/*****************************ユーザ報告詳細一覧****************************************/
+
+.title{
+    margin-top: -30px;
+    text-align: center;
+}
+
+.report-title {
+    display: flex; 
+    align-items: center; 
+    margin-top: 30px;
+  }
+  .report-title label{
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .report-name {
+    border: 1px solid #415970;
+    padding: 7px;
+    border-radius: 3px;
+    width: 800px;
+    margin-left: 20px;
+  }
+  .reporter{
+    padding-top: 5px;
+  }
+  .reporter label{
+    font-weight: bold;
+  }
+  #reporter{
+    text-align: center;
+    display: block;
+    border-radius: 10px;
+    margin-top: 8px;
+    width: 80px;
+    background-color: antiquewhite;
+  }
+  /*****************************ユーザ報告事項登録****************************************/
+
+  #report-title{
+    border: 1px solid #415970;
+    padding: 7px;
+    border-radius: 3px;
+    width: 800px;
+    margin-left: 20px;
+    outline-color: #8a9ca5;
+  }
+
+#item-file{
+    display: flex; 
+    align-items: center; 
+    margin-bottom: 10px; 
+    margin-top: 10px;
+}
+.add-file{
+    margin-right: 20px;
+    font-weight: bold;
+}
+#title-con{
+    margin-top: -20px;
+}

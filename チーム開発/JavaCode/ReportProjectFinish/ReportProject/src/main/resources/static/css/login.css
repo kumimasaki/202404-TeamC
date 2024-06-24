@@ -1,0 +1,120 @@
+/*********************************ログイン画面************************************/
+*{
+	margin: 0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container {
+   background-color: #fff;
+   width: 30%;
+   margin: 50px auto; 
+   position: relative;
+   top:70px;
+}
+ .login-form {
+   background-color: #f8fafb;
+   width: 500px;
+   height:400px;
+   /* margin: 50px auto; */
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+   align-items: center; 
+   border-radius: 40px ; 
+   border: 2px solid #c9d3de;
+   position: relative;
+   top:70px;
+
+}
+.warning-message{
+  margin-bottom: 10px;
+  color:red;
+  font-size:large;
+}
+.login-form h1 {
+   margin-bottom: 15px;
+   margin-top: 15px;
+}
+
+#login-form-pw{
+   height: 200px;
+}
+#login-form-pw h2{
+   margin-bottom: 15px;
+   margin-top: 15px; 
+}
+form {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+} 
+
+
+.form-text {
+   padding: 12px 60px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   justify-content: left;
+   outline-color: #8a9ca5;
+} 
+
+
+.password-field {
+   display: flex;
+   align-items: center;
+   position: relative;
+   width: 100%;
+}
+
+.password-field button {
+   background: none;
+   border: none;
+   position: absolute;
+   right: 10px;
+   cursor: pointer;
+}
+
+.toggle-password i {
+   font-size: 18px; 
+   color: #346189; 
+   outline: none;  
+   position: absolute;
+   top: -8px;
+   right: 10px;
+} 
+
+button[type="submit"] {
+   padding: 10px;
+   width:160px;
+   background-color: #007bff;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   margin-top: 20px;
+   margin-left: 60px;
+   font-size: 18px;
+}
+
+button[type="submit"]:hover {
+   background-color: #0056b3;
+}
+
+.register-link{
+   display: block;
+   margin-top: 15px;
+   color: #007bff;
+}
+.link span{
+   text-decoration-line: underline;
+}
+.forgot-password-link {
+   display: block;
+   margin-top: 10px;
+   color: #007bff;
+}
+.link{
+   margin-top: 25px;
+   margin-bottom: 30px;
+} 
