@@ -40,8 +40,9 @@ public class AdminReportListController {
             model.addAttribute("reports", reports);
             model.addAttribute("admin", admin);
             // 管理者のアイコンパスと名前をモデルに追加
-            model.addAttribute("adminIconPath", admin.getAdminIconPath());
-            return "admin_reports"; // Correct the view name here
+            String adminIconPath = "/uploads/" + admin.getAdminIcon();
+			model.addAttribute("adminIconPath", adminIconPath);
+			return "admin_reports";
         }
     }
 

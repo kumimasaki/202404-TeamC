@@ -17,10 +17,10 @@
             <li class="item-list">
                <img id="item-icon" th:src="@{'/' + ${users?.userIcon}}" />
             </li>
-            <li class="item-list"><a href="">ユーザー名前</a></li>
-            <li class="item-list"><a href="">報告一覧</a></li>
+            <li class="item-list"><a th:text="${users.userName}">ユーザー名前</a></li>
+            <li class="item-list"><a th:href="@{/user/report/list}">報告一覧</a></li>
             <li class="item-list"><a th:href="@{/user/info/edit/{userId}(userId=${users.userId})}">情報変更</a></li>
-            <li class="item-list"><a href="">ログアウト</a></li>
+            <li class="item-list"><a th:href="@{/user/logout}">ログアウト</a></li>
          </ul>
       </div>
    </header>
@@ -45,7 +45,8 @@
                <div th:each="report : ${searchResults}">
                    <div class="report-card">
                        <div>
-                           <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
+        				<!-- img th:src="@{'/' + ${report.reportFileName}}" alt="User Image" class="report-image"-->
+                   		<img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
                        </div>
                        <div class="report-info">
                            <h3 th:text="${report.reportTitle}">報告事項</h3>
@@ -68,10 +69,11 @@
            </div>
 
            <!-- Display all reports -->
-           <div th:each="report : ${reports}" th:if="${report.deleteFlg == 0}">
+           <div th:each="report : ${reports}" th:if="${report.deleteFlg == 0 && searchResults == null}">
                <div class="report-card">
                    <div>
-                       <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
+                       <!-- img th:src="@{'/' + ${report.reportFileName}}" alt="User Image" class="report-image"-->
+                   		<img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
                    </div>
                    <div class="report-info">
                        <h3 th:text="${report.reportTitle}">報告事項</h3>
@@ -89,7 +91,7 @@
                            </a>
                            <form th:action="@{/user/report/hide}" method="post">
                                <input type="hidden" name="reportId" th:value="${report.reportId}">
-                               <button type="submit" class="delete-button">非表示</button>
+                               <button type="submit" class="delete-button">削除</button>
                            </form>
                        </div>
                    </div>

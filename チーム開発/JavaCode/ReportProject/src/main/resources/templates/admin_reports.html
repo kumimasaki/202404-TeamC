@@ -14,10 +14,10 @@
             <h1>業務報告システム</h1>
          </div>
 
-         <ul class="header-item">
-            <li class="item-list" >
-                <img id="item-icon" th:src="@{'/' + ${adminIconPath}}" alt="">
-            </li>
+        <ul class="header-item">
+           <li class="item-list" >
+			<img  id="item-icon" th:src="@{${adminIconPath}}" alt="">
+		   </li>
             <li class="item-list" th:text="${admin.adminName}"></li>
             <li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
             <li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
@@ -41,7 +41,8 @@
       <div th:if="${searchResults != null}" class="search-results">
          <h2>検索結果</h2>
          <div th:each="report : ${searchResults}" class="report-card">
-            <img th:src="@{'/' + ${adminIconPath}}" alt="ユーザー画像" class="report-image">
+            <!-- img th:src="@{'/' + ${adminIconPath}}" alt="ユーザー画像" class="report-image"-->
+            <img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
             <div class="report-info">
                <h3 th:text="${report.reportTitle}">報告事項</h3>
                <p th:text="${report.contentsOfReport}">コンテンツ</p>
@@ -60,9 +61,10 @@
       </div>
 
       <!-- 全レポート表示 -->
-      <div th:each="report : ${reports}" class="report-list" th:if="${report.deleteFlg == 0}">
+      <div th:each="report : ${reports}" class="report-list" th:if="${report.deleteFlg == 0 && searchResults == null}">
          <div class="report-card">
-            <img th:src="@{'/' + ${adminIconPath}}" alt="ユーザー画像" class="report-image">
+            <!-- img th:src="@{'/' + ${adminIconPath}}" alt="ユーザー画像" class="report-image"-->
+            <img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="" class="report-image">
             <div class="report-info">
                <h3 th:text="${report.reportTitle}">報告事項</h3>
                <p th:text="${report.contentsOfReport}">コンテンツ</p>
@@ -74,7 +76,7 @@
                   <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
                </div>
                <div class="detail-button-content">
-                  <a th:href="@{'/admin/report/details/' + ${report.reportId}}" class="detail-button">報告詳細</a>
+                  <a th:href="@{/admin/report/details/{reportId}(reportId=${report.reportId})}" class="detail-button">報告詳細</a>
                   <form th:action="@{/admin/delete/report/{reportId}(reportId=${report.reportId})}" method="POST">
                      <input type="hidden" name="reportId" th:value="${report.reportId}">
                      <button type="submit" class="delete-button">削除</button>
@@ -89,7 +91,7 @@
       <div class="footer-content" id="footer-report">
          <div>
             <ul class="footer-item" id="footer-item-report">
-               <li><a th:href="@{/admin/info/change}">情報変更</a></li>
+               <li><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">情報変更</a></li>
                <li>|</li>
                <li><a th:href="@{/admin/logout}">ログアウト</a></li>
             </ul>
