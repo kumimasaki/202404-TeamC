@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>報告詳細閲覧</title>
+	<link rel="stylesheet" th:href="@{/css/admin_report_details.css}">
+	<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+
+<body>
+	<header>
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
+			<ul class="header-item">
+				<li class="item-list"><img id="item-icon" th:src="@{${adminIconPath}}" alt=""></li>
+				<li class="item-list" th:text="${adminName}"></li>
+				<li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${adminId})}">管理者情報変更</a></li>
+				<li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+				<li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+			</ul>
+		</div>
+	</header>
+	<!--main>
+	    <div class="content">
+	        <a th:href="@{/admin/report/list}" class="back-link"><i class="fas fa-angle-double-left"></i> ホームに戻る</a>
+	        <div class="content-text" th:if="${report != null}">
+	            <!-- 注意下面这个 form 标签的位置 -->
+	<!--form th:action="@{/admin/report/details/{reportId}}" method="GET">
+	                <h1 th:text="${report.reportTitle}">報告タイトル</h1>
+	                <div class="item">
+	                    <p class="content-item">報告日: <span th:text="${#temporals.format(report.createdAt, 'yyyy年MM月dd日')}">2024年6月03日</span></p>
+	                    <p class="content-item">ファイル名: <span th:text="${report.reportFileName}">xxx.pdf</span> <button class="download-button">ダウンロード</button></p>
+	                </div>
+	                <div class="report-summary">
+	                    <label for="summary">報告概要</label>
+	                    <textarea id="summary" rows="10" th:text="${report.contentsOfReport}"></textarea>
+	                </div>
+	            </!--form> <!-- 正确闭合表单标签 -->
+	<!-- 下面的 div 需要在表单之外 -->
+	<!--div class="submit-container">
+	                <form th:action="@{/admin/report/receipt/process}" method="post">
+	                    <input type="hidden" name="reportId" th:value="${report.reportId}">
+	                    <button type="submit" class="submit-button">受領</button>
+	                </form>
+	            </!--div>
+	        </div>
+	    </div>
+	</main -->
+
+
+	<main>
+		<div class="content">
+			<a th:href="@{/user/report/list}" class="back-link"><i class="fas fa-angle-double-left"></i>
+				ホームに戻る</a>
+
+			<div class="content-text">
+
+				<div class="title">
+					<h1>報告詳細</h1>
+				</div>
+
+				<div class="report-title" id="title-con">
+					<label for="report-title">報告名</label>
+					<p class="report-name" th:text="${report.reportTitle}">報告名</p>
+				</div>
+				
+				<div class="item">
+			
+					<label class="add-file">報告日</label>
+					<p class="content-item"　th:text="${#temporals.format(report.createdAt, 'yyyy年MM月dd日')}"</p>
+				</div>
+				
+
+				<div class="item">
+					<label class="add-file">添付ファイル</label>
+					<p class="content-item">
+						<span th:text="${report.reportFileName}"></span>
+						<button class="download-button">ダウンロード</button>
+						<!--a href="" class="download-button">ダウンロード</a-->
+						<img id="report-image"
+							th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt="">
+					</p>
+				</div>
+
+				<div class="report-summary">
+					<label for="summary">報告事項</label>
+					<textarea id="summary" rows="10" readonly
+						th:text="${report.contentsOfReport}">ご指摘いただいた内容を修正いたしました。</textarea>
+				</div>
+
+				<div class="reporter">
+					<label for="reporter">報告者</label>
+					<p id="reporter">
+						<span th:text="${user.userName}">報告者</span>
+					</p>
+				</div>
+
+				<div class="submit-container">
+					<form th:action="@{/admin/report/receipt/process}" method="post">
+						<input type="hidden" name="reportId" th:value="${report.reportId}">
+						<button type="submit" class="submit-button">受領</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</main>
+
+
+
+	<footer>
+		<div class="footer-content">
+			<div>
+				<ul class="footer-item" id="footer-item-report">
+					<li><a th:href="@{/admin/info/edit/{adminId}(adminId=${adminId})}">情報変更</a></li>
+					<li>|</li>
+					<li><a th:href="@{/admin/logout}">ログアウト</a></li>
+				</ul>
+			</div>
+			<div>
+				<p> Copyright &copy; 2024</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

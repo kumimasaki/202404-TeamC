@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 80vh;
+    margin: 0; 
+    padding-bottom: 40px; 
+}
+
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 145px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 2px solid #c9d3de;
+    border-radius: 40px;
+    margin-top: 20px;
+    background-color: #f8fafb;
+}
+
+.back-button {
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color:  #5475a8;;
+    font-size: 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.form-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.icon-container {
+    text-align: center;
+    margin-right: 30px;
+    margin-left: 10px;
+}
+
+.icon-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.file-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.input-fields {
+    flex-grow: 1;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 400px;
+    
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline-color: #8a9ca5;
+}
+
+#input-button{
+    align-items: center;
+    position: relative;
+}
+.toggle-password{
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    margin-top: -30px;
+    font-size: 20px;
+    color: #346189;
+}
+#fas{
+right: 700px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cancel-button {
+    background-color: #f6d1c9;
+    border-color: #edb9a798;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+   
+}
+
+.submit-button {
+    background-color: #b2ebc3;
+    border-color: #b3e6c2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.error-message {
+    color: red;
+    text-align: center;
+    font-size: 13px;
+}

@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ユーザー追加</title>
+<link rel="stylesheet"
+	th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+<link rel="stylesheet" th:href="@{/css/user_create.css}">
+<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+
+<body>
+	<header id="header-user">
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
+			<ul class="header-item">
+				<li class="item-list"><img id="item-icon"
+					th:src="@{${adminIconPath}}" alt=""></li>
+				<li class="item-list" th:text="${admin.adminName}"></li>
+				<li class="item-list"><a
+					th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a></li>
+				<li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+				<li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+			</ul>
+			<!-- <ul class="header-item">
+                <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
+                <li class="item-list"><a href="">管理者名前</a></li>
+                <li class="item-list"><a href="">管理者情報変更</a></li>
+                <li class="item-list"> <a href="">ユーザー追加</a></li>
+                <li class="item-list"><a href="">ユーザー一覧</a> </li>
+                <li class="item-list"><a href="">報告事項一覧</a></li>
+                <li class="item-list"><a href="">ログアウト</a></li>
+            </ul> -->
+		</div>
+	</header>
+
+	<main>
+		<div class="content">
+			<a th:href="@{/admin/report/list}" class="back-button"> <i
+				class="fas fa-angle-double-left"></i> ホームに戻る
+			</a>
+
+			<div class="container">
+				<h1>ユーザー追加</h1>
+
+				<form id="userForm" th:action="@{/admin/user/create/process}"
+					method="post" enctype="multipart/form-data">
+
+					<div class="form-content">
+						<div class="icon-container">
+							<div>
+							   <img id="icon-placeholder" class="icon-circle"  alt="" >
+							 </div>
+							<input type="file" id="userIcon" name="userIcon" accept="image/*"
+								class="file-input"> 
+							<label for="userIcon" class="file-label">ファイル選択</label>
+						</div>
+						<div class="input-fields">
+							<div class="input-group">
+								<label for="username">ユーザー名:</label> <input type="text"
+									id="username" name="userName">
+							</div>
+							<div class="input-group">
+								<label for="email">ユーザーメール:</label> <input type="email"
+									id="email" name="userEmail">
+							</div>
+							<div class="input-group" id="input-button">
+								<label for="password">パスワード:</label> <input type="password"
+									id="password" name="userPassword">
+								<button type="button" class="toggle-password">
+									<i class="fas fa-eye"></i>
+								</button>
+							</div>
+
+						</div>
+					</div>
+					<div class="error-message" th:if="${error != null}">
+						<p th:text="${error}"></p>
+					</div>
+					<div class="button-group">
+						<input type="hidden" id="adminId" name="adminId"
+							th:value="${adminId}">
+						<button type="button" class="cancel-button"
+							onclick="cancelChanges()">保存せず戻る</button>
+						<button type="submit" class="submit-button">追加</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
+
+	<footer id="footer-user">
+		<div class="footer-content">
+			<ul class="footer-item" id="footer-item-report">
+				<li><a
+					th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">情報変更</a></li>
+				<li>|</li>
+				<li><a th:href="@{/admin/logout}">ログアウト</a></li>
+			</ul>
+			<p>Copyright &copy; 2024</p>
+		</div>
+	</footer>
+	<script src="/js/user_create.js"></script>
+</body>
+
+</html>

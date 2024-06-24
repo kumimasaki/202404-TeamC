@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ユーザー一覧</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+
+<body>
+	<header id="header-user">
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
+			<ul class="header-item">
+				<li class="item-list"><img id="item-icon" th:src="@{${adminIconPath}}" alt=""></li>
+				<li class="item-list" th:text="${adminName}"></li>
+				<li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${adminId})}">管理者情報変更</a></li>
+				<li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+				<li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+			</ul>
+		</div>
+	</header>
+	<main>
+		<div class="search-container">
+			<form th:action="@{/user/search}" method="post">
+				<label>ユーザー一覧（検索結果）</label> <input type="text" name="keyword" placeholder="検索内容．．．">
+				<button type="submit" class="search-button">検索</button>
+			</form>
+		</div>
+		<div class="user-list">
+
+			<div>
+				<div th:each="user:${usersList}" class="user-card">
+					<!-- <img th:src="@{'/' + ${users.userIcon}}">  -->
+					<img class="report-image" th:src="@{'/' + ${user.userIcon}}" alt="">
+					<a th:href="@{/user/create/{userId}(userId=${user.userId})}"></a>
+					<div class="user-info">
+						<h3 th:text="${user.userName}">ユーザー名</h3>
+						<p th:text="'メールアドレス：' + ${user.userEmail}">メールアドレス：</p>
+						<p th:text="'パスワード：' + ${user.userPassword}">パスワード：</p>
+						<form th:action="@{/user/delete}" method="post">
+							<input type="hidden" name="userId" th:value="${user.userId}">
+							<button type="submit" class="delete-button">削除</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- 検索結果 -->
+
+			<div　th:if="${searchResults != null}" th:fragment="searchResultsSection(searchResults)">
+				<h2>検索結果</h2>
+				<div th:if="${searchResults != null and not #lists.isEmpty(searchResults)}">
+					<div th:each="user : ${searchResults}" class="user-card">
+						<img class="report-image" th:src="@{'/' + ${user.userIcon}}" alt="">
+						<a th:href="@{/user/create/{userId}(userId=${user.userId})}"></a>
+						<div class="user-info">
+							<h3 th:text="${user.userName}">ユーザー名</h3>
+							<p th:text="'メールアドレス：' + ${user.userEmail}">メールアドレス：</p>
+							<p th:text="'パスワード：' + ${user.userPassword}">パスワード：</p>
+							<form th:action="@{/user/delete}" method="post">
+								<input type="hidden" name="userId" th:value="${user.userId}">
+								<button type="submit" class="delete-button">削除</button>
+							</form>
+						</div>
+					</div>
+				</div>
+				<div th:if="${searchResults == null or #lists.isEmpty(searchResults)}">
+					<p>ユーザーが見つかりません</p>
+				</div>
+			</div>
+
+		</div>
+	</main>
+	<footer id="footer-user">
+		<div class="footer-content" id="footer-report">
+			<div>
+				<ul class="footer-item" id="footer-item-report">
+					<li><a th:href="@{/admin/info/edit/{adminId}(adminId=${adminId})}">情報変更</a></li>
+					<li>|</li>
+					<li><a th:href="@{/admin/logout}">ログアウト</a></li>
+				</ul>
+			</div>
+			<div>
+				<p>Copyright &copy; 2024</p>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+
+</html>

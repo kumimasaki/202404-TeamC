@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パスワード変更</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-name-login">
+                <h1>業務報告システム </h1>
+            </div>
+        </div> 
+    </header>
+    <div class="container">
+        <main>
+            <div class="login-form" id="login-form-pw">
+                <h2>パスワードの変更が完了しました。</h2>              
+                <a th:href="@{/admin/login}" class="register-link">ログインに戻る</a>
+            </div>
+        </main>
+    </div>
+    <script th:src="@{/js/admin_login_scripts.js}"></script>
+</body>
+</html>

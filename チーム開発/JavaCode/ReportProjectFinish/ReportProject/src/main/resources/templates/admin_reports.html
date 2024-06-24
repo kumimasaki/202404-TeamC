@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>管理者報告一覧</title>
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+
+<body>
+	<header>
+		<div class="header-content">
+			<div class="site-name">
+				<h1>業務報告システム</h1>
+			</div>
+
+			<ul class="header-item">
+				<li class="item-list">
+					<img id="item-icon" th:src="@{${adminIconPath}}" alt="">
+				</li>
+				<li class="item-list"><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">管理者情報変更</a>
+				</li>
+				<li class="item-list"><a th:href="@{/user/create}">ユーザー追加</a></li>
+				<li class="item-list"><a th:href="@{/user/list}">ユーザー一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/report/list}">報告事項一覧</a></li>
+				<li class="item-list"><a th:href="@{/admin/logout}">ログアウト</a></li>
+			</ul>
+		</div>
+	</header>
+
+	<main>
+		<div class="search-container">
+			<form th:action="@{/admin/search}" method="GET">
+				<label>報告事項一覧（検索結果）</label>
+				<input type="text" name="keyword" placeholder="検索内容．．．">
+				<button type="submit" class="search-button">検索</button>
+			</form>
+		</div>
+
+		<!-- 検索結果表示 -->
+		<div th:if="${searchResults != null}" class="report-list">
+			<h2>検索結果</h2>
+			<div th:each="report : ${searchResults}" class="report-card">
+				<img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt=""
+					class="report-image">
+				<div class="report-info">
+					<h3 th:text="${report.reportTitle}">報告事項</h3>
+					<p th:text="${report.contentsOfReport}">コンテンツ</p>
+				</div>
+				<div class="report-actions">
+					<div class="reporter-received">
+						<span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+						<span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+					</div>
+					<div class="detail-button-content">
+						<a th:href="@{'/admin/report/details/' + ${report.reportId}}" class="detail-button">報告詳細</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- 全レポート表示 -->
+		<div th:each="report : ${reports}" class="report-list"
+			th:if="${report.deleteFlg == 0 && searchResults == null}">
+			<div class="report-card">
+				<img th:src="@{/uploads/directory/{imagePath}(imagePath=${report.reportFileName})}" alt=""
+					class="report-image">
+				<div class="report-info">
+					<h3 th:text="${report.reportTitle}">報告事項</h3>
+					<p th:text="${report.contentsOfReport}">コンテンツ</p>
+				</div>
+				<div class="report-actions">
+					<div class="reporter-received">
+						<span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+						<span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+					</div>
+					<div class="detail-button-content">
+						<a th:href="@{/admin/report/details/{reportId}(reportId=${report.reportId})}"
+							class="detail-button">報告詳細</a>
+						<form th:action="@{/admin/delete/report/{reportId}(reportId=${report.reportId})}" method="POST">
+							<input type="hidden" name="reportId" th:value="${report.reportId}">
+							<button type="submit" class="delete-button">削除</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer>
+		<div class="footer-content" id="footer-report">
+			<div>
+				<ul class="footer-item" id="footer-item-report">
+					<li><a th:href="@{/admin/info/edit/{adminId}(adminId=${admin.adminId})}">情報変更</a></li>
+					<li>|</li>
+					<li><a th:href="@{/admin/logout}">ログアウト</a></li>
+				</ul>
+			</div>
+			<div>
+				<p>Copyright &copy; 2024</p>
+			</div>
+		</div>
+	</footer>
+</body>
+
+</html>

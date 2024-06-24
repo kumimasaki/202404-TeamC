@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ユーザーログイン</title>
+<link rel="stylesheet" th:href="@{/css/login.css}">
+<link rel="stylesheet" th:href="@{/css/header.css}">
+<link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css}">
+</head>
+
+<body>
+	<header id="header-user">
+		<div class="header-content">
+			<div class="site-name-login">
+				<h1>業務報告システム</h1>
+			</div>
+		</div>
+	</header>
+	<div class="container">
+		<main>
+			<div class="login-form">
+			 <div th:if="${errorMessage}" class="warning-message">[[${errorMessage}]]</div>
+				<h1>ログイン</h1>
+				<form th:action="@{/user/login/process}" method="POST">
+					<input class="form-text" type="email" placeholder="ユーザーメール"
+						required name="userEmail">
+					<div class="password-field">
+						<input class="form-text" type="password" placeholder="ユーザーパスワード"
+							required name="userPassword">
+						<button type="button" class="toggle-password">
+							<i class="fas fa-eye"></i>
+						</button>
+					</div>
+					<button type="submit">ログイン</button>
+			</form>
+		</main>
+	</div>
+	<script th:src="@{/js/admin_login_scripts.js}"></script>
+
+</body>
+
+</html>

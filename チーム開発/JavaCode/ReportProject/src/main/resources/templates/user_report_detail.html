@@ -15,7 +15,7 @@
     <header id="header-user">
         <div class="header-content">
             <div class="site-name">
-                <h1>業務報告システム </h1>
+                <h1>業務報告システム</h1>
             </div>
             <ul class="header-item">
                 <li class="item-list" id="item-icon"><a href="">アイコン</a></li>
@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="submit-container">
-                    <a th:href="@{/user/report/edit(reportId=${report.reportId})}" class="submit-button">編集画面へ</a>
+                    <a th:href="@{/user/report/editReport(reportId=${report.reportId})}" class="submit-button">編集画面へ</a>
                 </div>
             </div>
         </div>
@@ -81,7 +81,8 @@
               <p> Copyright &copy; 2024</p>
            </div>
         </div>
-  </footer>
+    </footer>
 </body>
 
 </html>
+

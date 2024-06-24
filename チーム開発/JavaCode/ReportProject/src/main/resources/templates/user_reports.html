@@ -27,7 +27,7 @@
    
    <main>
        <div class="search-container">
-           <form th:action="@{/user/report/search}" method="post" id="report-form">
+           <form th:action="@{/user/report/search}" method="get" id="search-form">
                <label>報告事項一覧（検索結果）</label>
                <input type="text" name="keyword" placeholder="検索内容．．．">
                <button type="submit">検索</button>
@@ -38,29 +38,60 @@
            <button id="report-create-button" class="report-button">報告登録</button>
        </div>
 
-       <div class="report-list">
-           <div th:each="report : ${reports}" class="report-card" th:if="${report.deleteFlg == 0}">
-               <div>
-                   <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
-               </div>
-               <div class="report-info">
-                   <h3 th:text="${report.reportTitle}">報告事項</h3>
-                   <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
-               </div>
-               <div class="report-actions">
-                   <div class="reporter-received">
-                       <p th:text="${report.userName}" class="reporter">報告者名</p>
-                       <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
-                       <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+       <div id="reports-list" class="report-list">
+           <!-- Display search results at the top -->
+           <div th:if="${searchResults != null}">
+               <h2>検索結果</h2>
+               <div th:each="report : ${searchResults}">
+                   <div class="report-card">
+                       <div>
+                           <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
+                       </div>
+                       <div class="report-info">
+                           <h3 th:text="${report.reportTitle}">報告事項</h3>
+                           <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
+                       </div>
+                       <div class="report-actions">
+                           <div class="reporter-received">
+                               <p th:text="${report.userName}" class="reporter">報告者名</p>
+                               <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+                               <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+                           </div>
+                           <div class="detail-button-content">
+                               <a th:href="@{/user/report/details(reportId=${report.reportId})}">
+                                   <button class="detail-button">報告詳細</button>
+                               </a>
+                           </div>
+                       </div>
                    </div>
-                   <div class="detail-button-content">
-                       <a th:href="@{/user/report/details(reportId=${report.reportId})}">
-                           <button class="detail-button">報告詳細</button>
-                       </a>
-                       <form th:action="@{/user/report/delete/{reportId}(reportId=${report.reportId})}" method="post">
-                           <input type="hidden" name="reportId" th:value="${report.reportId}">
-                           <button type="submit" class="delete-button">削除</button>
-                       </form>
+               </div>
+           </div>
+
+           <!-- Display all reports -->
+           <div th:each="report : ${reports}" th:if="${report.deleteFlg == 0}">
+               <div class="report-card">
+                   <div>
+                       <img th:src="@{'/' + ${users.userIcon}}" alt="User Image" class="report-image">
+                   </div>
+                   <div class="report-info">
+                       <h3 th:text="${report.reportTitle}">報告事項</h3>
+                       <p th:text="${report.contentsOfReport}" class="content">コンテンツ</p>
+                   </div>
+                   <div class="report-actions">
+                       <div class="reporter-received">
+                           <p th:text="${report.userName}" class="reporter">報告者名</p>
+                           <span th:if="${report.receiptFlg == 1}" class="received">受信済み</span>
+                           <span th:if="${report.receiptFlg == 0}" class="unconfirmed">未確認</span>
+                       </div>
+                       <div class="detail-button-content">
+                           <a th:href="@{/user/report/details(reportId=${report.reportId})}">
+                               <button class="detail-button">報告詳細</button>
+                           </a>
+                           <form th:action="@{/user/report/hide}" method="post">
+                               <input type="hidden" name="reportId" th:value="${report.reportId}">
+                               <button type="submit" class="delete-button">非表示</button>
+                           </form>
+                       </div>
                    </div>
                </div>
            </div>
@@ -82,6 +113,6 @@
       </div>
    </footer>
    
-   <script src="/js/user_report_create.js"></script>
+   <script src="/js/user_report_create.js"></script>     
 </body>
 </html>

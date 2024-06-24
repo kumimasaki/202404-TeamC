@@ -1,64 +1,55 @@
 package rp.com.models.dao;
 
-import java.util.List;
-import java.util.Optional;
-
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-
 import rp.com.models.entity.Reports;
+import java.util.List;
 
 @Repository
 public interface ReportsDao extends JpaRepository<Reports, Long> {
 
     // レポートの保存と更新
-    @Override
+    // SQL: INSERT INTO reports (...) VALUES (...) ON DUPLICATE KEY UPDATE ...
+    // 用途：レポートの新規作成と既存レポートの更新を行う
     Reports save(Reports reports);
 
     // report_idでレポートを検索
-    @Override
-    Optional<Reports> findById(Long reportId);
+    // SQL: SELECT * FROM reports WHERE report_id = ?
+    // 用途：指定されたreport_idのレポートを取得する
+    Reports findByReportId(Long reportId);
 
     // すべてのレポートを検索
-    @Override
+    // SQL: SELECT * FROM reports
+    // 用途：データベース内の全レポートを取得する
     List<Reports> findAll();
 
     // user_idでレポートを検索
+    // SQL: SELECT * FROM reports WHERE user_id = ?
+    // 用途：指定されたuser_idに関連するレポートを取得する
     List<Reports> findByUserId(Long userId);
 
     // admin_idでレポートを検索
+    // SQL: SELECT * FROM reports WHERE admin_id = ?
+    // 用途：指定されたadmin_idに関連するレポートを取得する
     List<Reports> findByAdminId(Long adminId);
 
     // report_idでレポートを削除
-    @Override
-    void deleteById(Long reportId);
-
-    // タイトルにキーワードが含まれるレポートを検索
-    List<Reports> findByReportTitleContaining(String title);
-
-    // コンテンツにキーワードが含まれるレポートを検索
-    List<Reports> findByContentsOfReportContaining(String content);
-
-    // タイトルまたはコンテンツでレポートを検索
-    List<Reports> findByReportTitleContainingOrContentsOfReportContaining(String title, String content);
+    // SQL: DELETE FROM reports WHERE report_id = ?
+    // 用途：指定されたreport_idのレポートを削除する
+    void deleteByReportId(Long reportId);
 
     // receipt_flgでレポートを検索
+    // SQL: SELECT * FROM reports WHERE receipt_flg = ?
+    // 用途：指定されたreceipt_flgの値を持つレポートを取得する
     List<Reports> findByReceiptFlg(int receiptFlg);
 
     // delete_flgでレポートを検索
+    // SQL: SELECT * FROM reports WHERE delete_flg = ?
+    // 用途：指定されたdelete_flgの値を持つレポートを取得する
     List<Reports> findByDeleteFlg(int deleteFlg);
 
-    // report_idでレポートを削除フラグを設定
-    @Query("UPDATE Reports r SET r.deleteFlg = 1 WHERE r.reportId = :reportId")
-    @Modifying
-    @Transactional
-    void markReportAsDeleted(@Param("reportId") Long reportId);
-
-    // 通过 adminId 查找 adminName
-    @Query("SELECT r.adminName FROM Reports r WHERE r.adminId = :adminId")
-    String findAdminNameByAdminId(@Param("adminId") Long adminId);
+    // reportTitle または contentsOfReport に基づいてレポートを検索
+    // SQL: SELECT * FROM reports WHERE LOWER(report_title) LIKE LOWER('%?%') OR LOWER(contents_of_report) LIKE LOWER('%?%')
+    // 用途：指定されたキーワードに基づいてレポートタイトルまたはレポート内容を部分一致検索し、該当するレポートを取得する
+    List<Reports> findByReportTitleContainingIgnoreCaseOrContentsOfReportContainingIgnoreCase(String reportTitle, String contentsOfReport);
 }
